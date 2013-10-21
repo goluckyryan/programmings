@@ -63,16 +63,16 @@ void FourVector::set (int id, double m[3], double T, double theta, double phi){
     angle[0]=theta*deg2rad; angle[1] =phi*deg2rad;
     if (id == 1){
         energy = T*m[1]+mass;
-        momentum = sqrt(pow(energy,2)-mass*mass);
+        momentum = sqrt((energy-mass)*(energy+mass));
     }else if(id ==2){
         momentum = T;
         energy = sqrt(mass*mass + momentum*momentum);
     }else if(id ==3){
         energy = sqrt(pow(T*Z*c/1e6,2)+mass*mass);
-        momentum = sqrt(pow(energy,2)-mass*mass);
+        momentum = sqrt((energy-mass)*(energy+mass));
     }else if(id == 4){
         energy = mass / sqrt( 1- pow(T,2));
-        momentum = sqrt(pow(energy,2)-mass*mass);
+        momentum = sqrt((energy-mass)*(energy+mass));
     }
 
     keA = (energy-mass)/A;

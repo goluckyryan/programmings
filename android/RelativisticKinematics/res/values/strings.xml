@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Relativistic Kinematics</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Exit (under Const.)</string>
+    <string name="ke_label">K.E. [MeV/A]</string>
+    <string name="gamma_label">gamma</string>
+    <string name="beta_label">beta</string>
+    <string name="length_label">length[m]</string>
+    <string name="tof_label">ToF [ns]</string>
+    <string name="Brho_label">Brho [T.m]</string>
+    <string name="mass_label">mass [MeV/c2]</string>
+    <string name="Z_label">unit Charge [e]</string>
+    <string name="A_label">Mass number</string>
+    <string name="momt_label">momt [MeV/c]</string>
+
+</resources>

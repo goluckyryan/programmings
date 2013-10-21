@@ -1,0 +1,5 @@
+#http://mrbook.org/tutorials/make/
+
+
+target: dependencies
+	 system command

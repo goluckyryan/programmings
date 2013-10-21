@@ -1,0 +1,1337 @@
+
+        ############################################
+        !!! WARNING - FPE detection is activated !!!
+        ############################################
+
+*************************************************************
+ Geant4 version Name: geant4-09-04-patch-02    (24-June-2011)
+                      Copyright : Geant4 Collaboration
+                      Reference : NIM A 506 (2003), 250-303
+                            WWW : http://cern.ch/geant4
+*************************************************************
+
+Visualization Manager instantiating with verbosity "warnings (3)"...
+Visualization Manager initialising...
+Registering graphics systems...
+
+You have successfully registered the following graphics systems.
+Current available graphics systems are:
+  ASCIITree (ATree)
+  DAWNFILE (DAWNFILE)
+  G4HepRep (HepRepXML)
+  G4HepRepFile (HepRepFile)
+  RayTracer (RayTracer)
+  VRML1FILE (VRML1FILE)
+  VRML2FILE (VRML2FILE)
+  gMocrenFile (gMocrenFile)
+  OpenGLStoredX (OGL)
+  OpenGLImmediateX (OGLI)
+  OpenGLStoredX (OGLS)
+  OpenGLImmediateX (OGLIX)
+  OpenGLStoredX (OGLSX)
+
+Registering model factories...
+
+You have successfully registered the following model factories.
+Registered model factories:
+  generic
+  drawByCharge
+  drawByParticleID
+  drawByOriginVolume
+  drawByAttribute
+
+Registered filter factories:
+  chargeFilter
+  particleFilter
+  originVolumeFilter
+  attributeFilter
+
+You are using the A01PhysicsList
+Full set of particles (barions bosons and mesons) will be created and
+Standard EM Physics and Low & High Energy parameterized models will be applied.
+A01PhysicsList is optimized for robustness
+and not for any particular usage.
+For the hadronic physics, educated guesses of physics list are prepared for various use cases.
+When you will start REAL calculations for your own interest,
+please consider the usage of hadronic_lists instead of A01PhysicsLists.
+More information can also be found from the Geant4 HyperNews.
+http://geant4-hn.slac.stanford.edu:5090/Geant4-HyperNews/index
+
+
+The materials defined are : 
+
+
+***** Table : Nb of materials = 5 *****
+
+ Material: ArgonGas     density:  1.782 mg/cm3  RadL: 109.708 m    Nucl.Int.Length: 670.868 m    Imean: 188.000 eV   temperature: 273.15 K  pressure:   1.00 atm
+   --->  Element: ArgonGas ( )   Z = 18.0   N =  40.0   A =  39.95 g/mole  ElmMassFraction: 100.00 %  ElmAbundance 100.00 %
+
+ Material:      Air     density:  1.290 mg/cm3  RadL: 285.161 m    Nucl.Int.Length: 662.904 m    Imean:  85.703 eV   temperature: 273.15 K  pressure:   1.00 atm
+   --->  Element: Nitrogen (N)   Z =  7.0   N =  14.0   A =  14.01 g/mole  ElmMassFraction:  70.00 %  ElmAbundance  72.71 %
+   --->  Element: Oxigen (O)   Z =  8.0   N =  16.0   A =  16.00 g/mole  ElmMassFraction:  30.00 %  ElmAbundance  27.29 %
+
+ Material: Scintillator     density:  1.032 g/cm3   RadL:  42.549 cm   Nucl.Int.Length:  70.109 cm   Imean:  64.684 eV 
+   --->  Element: Carbon (C)   Z =  6.0   N =  12.0   A =  12.01 g/mole  ElmMassFraction:  91.45 %  ElmAbundance  47.37 %
+   --->  Element: Hydrogen (H)   Z =  1.0   N =   1.0   A =   1.01 g/mole  ElmMassFraction:   8.55 %  ElmAbundance  52.63 %
+
+ Material:      CsI     density:  4.510 g/cm3   RadL:   1.861 cm   Nucl.Int.Length:  39.278 cm   Imean: 489.505 eV 
+   --->  Element: Iodine (I)   Z = 53.0   N = 126.9   A = 126.90 g/mole  ElmMassFraction:  50.00 %  ElmAbundance  51.15 %
+   --->  Element: Cesium (Cs)   Z = 55.0   N = 132.9   A = 132.90 g/mole  ElmMassFraction:  50.00 %  ElmAbundance  48.85 %
+
+ Material:     Lead     density: 11.350 g/cm3   RadL:   5.612 mm   Nucl.Int.Length:  18.258 cm   Imean: 823.000 eV 
+   --->  Element: Lead ( )   Z = 82.0   N = 207.2   A = 207.19 g/mole  ElmMassFraction: 100.00 %  ElmAbundance 100.00 %
+
+
+
+The geometrical tree defined are : 
+
+worldPhysical[0] worldLogical 3 Air
+  magneticPhysical[0] magneticLogical 0 G4_Galactic
+  firstArmPhysical[0] firstArmLogical 20 Air
+    hodoscope1Physical[0] hodoscope1Logical 0 Scintillator /hodoscope1
+    hodoscope1Physical[1] hodoscope1Logical 0 Scintillator /hodoscope1
+    hodoscope1Physical[2] hodoscope1Logical 0 Scintillator /hodoscope1
+    hodoscope1Physical[3] hodoscope1Logical 0 Scintillator /hodoscope1
+    hodoscope1Physical[4] hodoscope1Logical 0 Scintillator /hodoscope1
+    hodoscope1Physical[5] hodoscope1Logical 0 Scintillator /hodoscope1
+    hodoscope1Physical[6] hodoscope1Logical 0 Scintillator /hodoscope1
+    hodoscope1Physical[7] hodoscope1Logical 0 Scintillator /hodoscope1
+    hodoscope1Physical[8] hodoscope1Logical 0 Scintillator /hodoscope1
+    hodoscope1Physical[9] hodoscope1Logical 0 Scintillator /hodoscope1
+    hodoscope1Physical[10] hodoscope1Logical 0 Scintillator /hodoscope1
+    hodoscope1Physical[11] hodoscope1Logical 0 Scintillator /hodoscope1
+    hodoscope1Physical[12] hodoscope1Logical 0 Scintillator /hodoscope1
+    hodoscope1Physical[13] hodoscope1Logical 0 Scintillator /hodoscope1
+    hodoscope1Physical[14] hodoscope1Logical 0 Scintillator /hodoscope1
+    chamber1Physical[0] chamber1Logical 1 ArgonGas
+      wirePlane1Physical[0] wirePlane1Logical 0 ArgonGas /chamber1
+    chamber1Physical[1] chamber1Logical 1 ArgonGas
+      wirePlane1Physical[0] wirePlane1Logical 0 ArgonGas /chamber1
+    chamber1Physical[2] chamber1Logical 1 ArgonGas
+      wirePlane1Physical[0] wirePlane1Logical 0 ArgonGas /chamber1
+    chamber1Physical[3] chamber1Logical 1 ArgonGas
+      wirePlane1Physical[0] wirePlane1Logical 0 ArgonGas /chamber1
+    chamber1Physical[4] chamber1Logical 1 ArgonGas
+      wirePlane1Physical[0] wirePlane1Logical 0 ArgonGas /chamber1
+  secondArmPhys[0] secondArmLogical 32 Air
+    hodoscope2Physical[0] hodoscope2Logical 0 Scintillator /hodoscope2
+    hodoscope2Physical[1] hodoscope2Logical 0 Scintillator /hodoscope2
+    hodoscope2Physical[2] hodoscope2Logical 0 Scintillator /hodoscope2
+    hodoscope2Physical[3] hodoscope2Logical 0 Scintillator /hodoscope2
+    hodoscope2Physical[4] hodoscope2Logical 0 Scintillator /hodoscope2
+    hodoscope2Physical[5] hodoscope2Logical 0 Scintillator /hodoscope2
+    hodoscope2Physical[6] hodoscope2Logical 0 Scintillator /hodoscope2
+    hodoscope2Physical[7] hodoscope2Logical 0 Scintillator /hodoscope2
+    hodoscope2Physical[8] hodoscope2Logical 0 Scintillator /hodoscope2
+    hodoscope2Physical[9] hodoscope2Logical 0 Scintillator /hodoscope2
+    hodoscope2Physical[10] hodoscope2Logical 0 Scintillator /hodoscope2
+    hodoscope2Physical[11] hodoscope2Logical 0 Scintillator /hodoscope2
+    hodoscope2Physical[12] hodoscope2Logical 0 Scintillator /hodoscope2
+    hodoscope2Physical[13] hodoscope2Logical 0 Scintillator /hodoscope2
+    hodoscope2Physical[14] hodoscope2Logical 0 Scintillator /hodoscope2
+    hodoscope2Physical[15] hodoscope2Logical 0 Scintillator /hodoscope2
+    hodoscope2Physical[16] hodoscope2Logical 0 Scintillator /hodoscope2
+    hodoscope2Physical[17] hodoscope2Logical 0 Scintillator /hodoscope2
+    hodoscope2Physical[18] hodoscope2Logical 0 Scintillator /hodoscope2
+    hodoscope2Physical[19] hodoscope2Logical 0 Scintillator /hodoscope2
+    hodoscope2Physical[20] hodoscope2Logical 0 Scintillator /hodoscope2
+    hodoscope2Physical[21] hodoscope2Logical 0 Scintillator /hodoscope2
+    hodoscope2Physical[22] hodoscope2Logical 0 Scintillator /hodoscope2
+    hodoscope2Physical[23] hodoscope2Logical 0 Scintillator /hodoscope2
+    hodoscope2Physical[24] hodoscope2Logical 0 Scintillator /hodoscope2
+    chamber2Physical[0] chamber2Logical 1 ArgonGas
+      wirePlane2Physical[0] wirePlane2Logical 0 ArgonGas /chamber2
+    chamber2Physical[1] chamber2Logical 1 ArgonGas
+      wirePlane2Physical[0] wirePlane2Logical 0 ArgonGas /chamber2
+    chamber2Physical[2] chamber2Logical 1 ArgonGas
+      wirePlane2Physical[0] wirePlane2Logical 0 ArgonGas /chamber2
+    chamber2Physical[3] chamber2Logical 1 ArgonGas
+      wirePlane2Physical[0] wirePlane2Logical 0 ArgonGas /chamber2
+    chamber2Physical[4] chamber2Logical 1 ArgonGas
+      wirePlane2Physical[0] wirePlane2Logical 0 ArgonGas /chamber2
+    EMcalorimeterPhysical[0] EMcalorimeterLogical 1 CsI
+      cellPhysical[-1] cellLogical 0 CsI /EMcalorimeter
+    HadCalorimeterPhysical[0] HadCalorimeterLogical 1 Lead
+      HadCalColumnPhysical[-1] HadCalColumnLogical 1 Lead
+        HadCalCellPhysical[-1] HadCalCellLogical 1 Lead
+          HadCalLayerPhysical[-1] HadCalLayerLogical 1 Lead
+            HadCalScintiPhysical[0] HadCalScintiLogical 0 Scintillator /HadCalorimeter
+
+conv:   for  gamma    SubType= 14
+      Lambda tables from 1.022 MeV to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        BetheHeitler :   Emin=        0 eV       Emax=         10 TeV
+
+compt:   for  gamma    SubType= 13
+      Lambda tables from 100 eV  to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+       Klein-Nishina :   Emin=        0 eV       Emax=         10 TeV
+
+phot:   for  gamma    SubType= 12
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+       PhotoElectric :   Emin=        0 eV       Emax=         10 TeV
+
+msc:   for e-    SubType= 10
+      Lambda tables from 100 eV  to 10 TeV in 77 bins, spline: 1
+      RangeFactor= 0.04, stepLimitType: 1, latDisplacement: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc93 :   Emin=        0 eV       Emax=         10 TeV
+
+eIoni:   for  e-    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha :   Emin=        0 eV       Emax=         10 TeV
+
+eBrem:   for  e-    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      LPM flag: 1 for E > 1 GeV
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               eBrem :   Emin=        0 eV       Emax=          1 GeV  AngularGenUrban
+            eBremLPM :   Emin=        1 GeV      Emax=         10 TeV  AngularGenUrban
+
+eIoni:   for  e+    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha :   Emin=        0 eV       Emax=         10 TeV
+
+eBrem:   for  e+    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      LPM flag: 1 for E > 1 GeV
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               eBrem :   Emin=        0 eV       Emax=          1 GeV  AngularGenUrban
+            eBremLPM :   Emin=        1 GeV      Emax=         10 TeV  AngularGenUrban
+
+annihil:   for  e+    SubType= 5
+      Lambda tables from 100 eV  to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            eplus2gg :   Emin=        0 eV       Emax=         10 TeV
+
+hIoni:   for  proton    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :   Emin=        0 eV       Emax=          2 MeV
+          BetheBloch :   Emin=        2 MeV      Emax=         10 TeV
+
+msc:   for proton    SubType= 10
+      Lambda tables from 100 eV  to 10 TeV in 77 bins, spline: 1
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :   Emin=        0 eV       Emax=         10 TeV
+
+ionIoni:   for  GenericIon    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 0.1, dRoverRange= 0.1, integral: 1, fluct: 1, linLossLimit= 0.02
+      Stopping Power data for 17 ion/material pairs 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            BraggIon :   Emin=        0 eV       Emax=          2 MeV
+          BetheBloch :   Emin=        2 MeV      Emax=         10 TeV
+
+msc:   for GenericIon    SubType= 10
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :   Emin=        0 eV       Emax=         10 TeV
+
+hIoni:   for  anti_proton    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :   Emin=        0 eV       Emax=          2 MeV
+          BetheBloch :   Emin=        2 MeV      Emax=         10 TeV
+
+hIoni:   for  kaon+    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :   Emin=        0 eV       Emax=    1.05231 MeV
+          BetheBloch :   Emin=  1.05231 MeV      Emax=         10 TeV
+
+msc:   for kaon+    SubType= 10
+      Lambda tables from 100 eV  to 10 TeV in 77 bins, spline: 1
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :   Emin=        0 eV       Emax=         10 TeV
+
+hIoni:   for  kaon-    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :   Emin=        0 eV       Emax=    1.05231 MeV
+          BetheBloch :   Emin=  1.05231 MeV      Emax=         10 TeV
+
+muIoni:   for  mu+    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :   Emin=        0 eV       Emax=        200 keV
+          BetheBloch :   Emin=      200 keV      Emax=          1 GeV
+        MuBetheBloch :   Emin=        1 GeV      Emax=         10 TeV
+
+muMsc:   for mu+    SubType= 10
+      Lambda tables from 100 eV  to 10 TeV in 77 bins, spline: 1
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :   Emin=        0 eV       Emax=         10 TeV
+
+muBrems:   for  mu+    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem :   Emin=        0 eV       Emax=         10 TeV
+
+muPairProd:   for  mu+    SubType= 4
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd :   Emin=        0 eV       Emax=         10 TeV
+
+muIoni:   for  mu-    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :   Emin=        0 eV       Emax=        200 keV
+          BetheBloch :   Emin=      200 keV      Emax=          1 GeV
+        MuBetheBloch :   Emin=        1 GeV      Emax=         10 TeV
+
+muBrems:   for  mu-    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem :   Emin=        0 eV       Emax=         10 TeV
+
+muPairProd:   for  mu-    SubType= 4
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd :   Emin=        0 eV       Emax=         10 TeV
+
+hIoni:   for  pi+    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :   Emin=        0 eV       Emax=    297.505 keV
+          BetheBloch :   Emin=  297.505 keV      Emax=         10 TeV
+
+hIoni:   for  pi-    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :   Emin=        0 eV       Emax=    297.505 keV
+          BetheBloch :   Emin=  297.505 keV      Emax=         10 TeV
+
+msc:   for pi-    SubType= 10
+      Lambda tables from 100 eV  to 10 TeV in 77 bins, spline: 1
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :   Emin=        0 eV       Emax=         10 TeV
+============================================================================================
+             HADRONIC PROCESSES SUMMARY (verbose level 1)
+
+                     Hadronic Processes for <anti_neutron>
+       HadronElastic  Models:                G4LElastic: Emin(GeV)=     0  Emax(GeV)= 1.79769e+305
+AntiNeutronInelastic  Models:  G4LEAntiNeutronInelastic: Emin(GeV)=     0  Emax(GeV)= 25
+                               G4HEAntiNeutronInelastic: Emin(GeV)=    20  Emax(GeV)= 10000
+          AntiNeutronAnnihilationAtRest
+
+                     Hadronic Processes for <anti_proton>
+       HadronElastic  Models:                G4LElastic: Emin(GeV)=     0  Emax(GeV)= 1.79769e+305
+ AntiProtonInelastic  Models:   G4LEAntiProtonInelastic: Emin(GeV)=     0  Emax(GeV)= 25
+                                G4HEAntiProtonInelastic: Emin(GeV)=    20  Emax(GeV)= 10000
+          AntiProtonAnnihilationAtRest
+
+                     Hadronic Processes for <kaon+>
+       HadronElastic  Models:                G4LElastic: Emin(GeV)=     0  Emax(GeV)= 1.79769e+305
+   KaonPlusInelastic  Models:     G4LEKaonPlusInelastic: Emin(GeV)=     0  Emax(GeV)= 25
+                                  G4HEKaonPlusInelastic: Emin(GeV)=    20  Emax(GeV)= 10000
+
+                     Hadronic Processes for <kaon->
+       HadronElastic  Models:                G4LElastic: Emin(GeV)=     0  Emax(GeV)= 1.79769e+305
+  KaonMinusInelastic  Models:    G4LEKaonMinusInelastic: Emin(GeV)=     0  Emax(GeV)= 25
+                                 G4HEKaonMinusInelastic: Emin(GeV)=    20  Emax(GeV)= 10000
+
+                     Hadronic Processes for <lambda>
+       HadronElastic  Models:                G4LElastic: Emin(GeV)=     0  Emax(GeV)= 1.79769e+305
+     LambdaInelastic  Models:       G4LELambdaInelastic: Emin(GeV)=     0  Emax(GeV)= 25
+                                    G4HELambdaInelastic: Emin(GeV)=    20  Emax(GeV)= 10000
+
+                     Hadronic Processes for <neutron>
+       HadronElastic  Models:                G4LElastic: Emin(GeV)=     0  Emax(GeV)= 1.79769e+305
+    NeutronInelastic  Models:      G4LENeutronInelastic: Emin(GeV)=     0  Emax(GeV)= 55
+                                   G4HENeutronInelastic: Emin(GeV)=    45  Emax(GeV)= 10000
+            nFission  Models:                G4LFission: Emin(GeV)=     0  Emax(GeV)= 1.79769e+305
+            nCapture  Models:                G4LCapture: Emin(GeV)=     0  Emax(GeV)= 1.79769e+305
+
+                     Hadronic Processes for <pi+>
+       HadronElastic  Models:                G4LElastic: Emin(GeV)=     0  Emax(GeV)= 1.79769e+305
+   PionPlusInelastic  Models:     G4LEPionPlusInelastic: Emin(GeV)=     0  Emax(GeV)= 55
+                                  G4HEPionPlusInelastic: Emin(GeV)=    45  Emax(GeV)= 10000
+
+                     Hadronic Processes for <pi->
+       HadronElastic  Models:                G4LElastic: Emin(GeV)=     0  Emax(GeV)= 1.79769e+305
+  PionMinusInelastic  Models:    G4LEPionMinusInelastic: Emin(GeV)=     0  Emax(GeV)= 55
+                                 G4HEPionMinusInelastic: Emin(GeV)=    45  Emax(GeV)= 10000
+
+                     Hadronic Processes for <proton>
+       HadronElastic  Models:                G4LElastic: Emin(GeV)=     0  Emax(GeV)= 1.79769e+305
+     ProtonInelastic  Models:       G4LEProtonInelastic: Emin(GeV)=     0  Emax(GeV)= 55
+                                    G4HEProtonInelastic: Emin(GeV)=    45  Emax(GeV)= 10000
+============================================================================================
+
+>>> Event 0 >>> Simulation truth : proton (-0,0,100000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 4.9870028526687 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[9] 43.187753914875 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.6712421465759 (nsec) --- local (x,y) -0.0044465815090209, -0.015726902785927
+  Layer[1] : time 8.3391360801275 (nsec) --- local (x,y) -0.0063961391416923, -0.017397130807488
+  Layer[2] : time 10.007030013918 (nsec) --- local (x,y) -0.010178124565422, -0.021366257707256
+  Layer[3] : time 11.674923947902 (nsec) --- local (x,y) -0.0098346735599221, -0.02816110182467
+  Layer[4] : time 13.342817882237 (nsec) --- local (x,y) -0.011833493478414, -0.03669758708951
+Drift Chamber 2 has 6 hits.
+  Layer[0] : time 34.850141414657 (nsec) --- local (x,y) -147.59611799131, -0.06110210182778
+  Layer[1] : time 36.520937535963 (nsec) --- local (x,y) -177.10496335988, -0.056292793145297
+  Layer[2] : time 38.191734685393 (nsec) --- local (x,y) -206.61903543905, -0.047446908167829
+  Layer[2] : time 39.979157686515 (nsec) --- local (x,y) 197.28078101114, -101.84821755411
+  Layer[3] : time 39.862532013374 (nsec) --- local (x,y) -236.13401245545, -0.034021988323426
+  Layer[4] : time 41.533329730395 (nsec) --- local (x,y) -265.65096746616, -0.020035287158589
+EM Calorimeter has 45 hits. Total Edep is 22599.071289597 (MeV)
+Hadron Calorimeter has 17 hits. Total Edep is 1617.1092434074 (MeV)
+
+>>> Event 1 >>> Simulation truth : proton (0,0,100000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 4.9870028526584 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[9] 43.187996072485 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.6712421466781 (nsec) --- local (x,y) 0.016906612514559, -0.0009785702424989
+  Layer[1] : time 8.3391360803138 (nsec) --- local (x,y) 0.024462685694554, -0.0026133306391852
+  Layer[2] : time 10.007030014187 (nsec) --- local (x,y) 0.033723780751942, -0.0023593092058255
+  Layer[3] : time 11.674923948352 (nsec) --- local (x,y) 0.04506674622358, -0.0026461443622316
+  Layer[4] : time 13.342817882743 (nsec) --- local (x,y) 0.057042221380693, -0.00067883138575229
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.850391725144 (nsec) --- local (x,y) -147.42320440908, 0.084332045234266
+  Layer[1] : time 36.521188438866 (nsec) --- local (x,y) -176.93506433667, 0.08475623400729
+  Layer[2] : time 38.191983919211 (nsec) --- local (x,y) -206.44064586204, 0.082781196315235
+  Layer[3] : time 39.862779056617 (nsec) --- local (x,y) -235.94447957954, 0.079943421967349
+  Layer[4] : time 41.533574434765 (nsec) --- local (x,y) -265.44953729951, 0.077939183001634
+EM Calorimeter has 18 hits. Total Edep is 233.52809775828 (MeV)
+Hadron Calorimeter has 15 hits. Total Edep is 1883.1497890551 (MeV)
+
+>>> Event 2 >>> Simulation truth : proton (0,0,100000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 4.9870028539249 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[9] 43.188354568003 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.6712421504451 (nsec) --- local (x,y) 0.038239083050952, -0.015939466885334
+  Layer[1] : time 8.3391360867777 (nsec) --- local (x,y) 0.063044111595006, -0.023553211774683
+  Layer[2] : time 10.007030022943 (nsec) --- local (x,y) 0.085034554683812, -0.032327744177251
+  Layer[3] : time 11.674923959305 (nsec) --- local (x,y) 0.10692544579723, -0.041903778865335
+  Layer[4] : time 13.342817896022 (nsec) --- local (x,y) 0.1294391510519, -0.052296482308877
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.850742827989 (nsec) --- local (x,y) -147.23847102921, -0.1879901346117
+  Layer[1] : time 36.521540301352 (nsec) --- local (x,y) -176.75418941874, -0.19733211856789
+  Layer[2] : time 38.192337463574 (nsec) --- local (x,y) -206.26832437071, -0.20580796889215
+  Layer[3] : time 39.863134602841 (nsec) --- local (x,y) -235.78234197552, -0.2130608283724
+  Layer[4] : time 41.533931441473 (nsec) --- local (x,y) -265.2948289123, -0.22099753646766
+EM Calorimeter has 17 hits. Total Edep is 287.83947474109 (MeV)
+Hadron Calorimeter has 14 hits. Total Edep is 2653.0809365012 (MeV)
+
+>>> Event 3 >>> Simulation truth : proton (0,0,100000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 4.9870028527478 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[9] 43.187867007601 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.6712421467897 (nsec) --- local (x,y) 0.0034430188034669, -0.010629322079258
+  Layer[1] : time 8.3391360804658 (nsec) --- local (x,y) 0.0024563123592691, -0.012333872858457
+  Layer[2] : time 10.007030014353 (nsec) --- local (x,y) 0.0048749579038264, -0.014339619504602
+  Layer[3] : time 11.674923948427 (nsec) --- local (x,y) 0.0082676182972169, -0.016696179025349
+  Layer[4] : time 13.342817882984 (nsec) --- local (x,y) 0.013103299337262, -0.025404768641568
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.850258352477 (nsec) --- local (x,y) -147.51669800288, -0.091973044922083
+  Layer[1] : time 36.521054821226 (nsec) --- local (x,y) -177.02730935648, -0.097011769649246
+  Layer[2] : time 38.191851250362 (nsec) --- local (x,y) -206.53771870807, -0.1007778943019
+  Layer[3] : time 39.862647456413 (nsec) --- local (x,y) -236.04699199424, -0.10550296156329
+  Layer[4] : time 41.533443939313 (nsec) --- local (x,y) -265.55767302361, -0.10999461933702
+EM Calorimeter has 22 hits. Total Edep is 387.08205872156 (MeV)
+Hadron Calorimeter has 15 hits. Total Edep is 2307.142173269 (MeV)
+
+>>> Event 4 >>> Simulation truth : proton (0,0,100000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 4.9870028524551 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[9] 43.187686933669 (nsec)
+Drift Chamber 1 has 6 hits.
+  Layer[0] : time 6.6712421465138 (nsec) --- local (x,y) -0.0045915413427235, -0.013052555275823
+  Layer[1] : time 8.3391360801326 (nsec) --- local (x,y) -0.006434652787311, -0.016739504424196
+  Layer[2] : time 10.007030013904 (nsec) --- local (x,y) -0.007550895061229, -0.020747562777777
+  Layer[3] : time 11.674923947957 (nsec) --- local (x,y) -0.012150296331211, -0.019928103727048
+  Layer[4] : time 13.342817882168 (nsec) --- local (x,y) -0.015271373510945, -0.01522536578444
+  Layer[4] : time 13.380740789637 (nsec) --- local (x,y) -6.5269633953359, 16.521433830701
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.850074834111 (nsec) --- local (x,y) -147.64549802596, -0.081345548744606
+  Layer[1] : time 36.520872229371 (nsec) --- local (x,y) -177.16082024397, -0.087523937831992
+  Layer[2] : time 38.191669556367 (nsec) --- local (x,y) -206.67579422945, -0.094424625589877
+  Layer[3] : time 39.862466823021 (nsec) --- local (x,y) -236.19046012807, -0.10148810565431
+  Layer[4] : time 41.533263897257 (nsec) --- local (x,y) -265.70414653531, -0.10548226846512
+EM Calorimeter has 26 hits. Total Edep is 432.89944223368 (MeV)
+Hadron Calorimeter has 16 hits. Total Edep is 2575.2797505232 (MeV)
+
+>>> Event 0 >>> Simulation truth : pi+ (0,0,100000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 4.9867880840992 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[10] 42.693600199468 (nsec)
+Drift Chamber 1 has 8 hits.
+  Layer[0] : time 6.6709548430561 (nsec) --- local (x,y) -0.0025335866694825, 0.024559042026616
+  Layer[1] : time 8.3387769456608 (nsec) --- local (x,y) -0.0064182230430409, 0.040388322202119
+  Layer[2] : time 10.006599047972 (nsec) --- local (x,y) -0.0098455018296634, 0.052462528522833
+  Layer[3] : time 11.674421149965 (nsec) --- local (x,y) -0.012468483917653, 0.060981578419967
+  Layer[3] : time 11.681831408894 (nsec) --- local (x,y) 0.28619223072222, -0.19738015330377
+  Layer[3] : time 11.683776797736 (nsec) --- local (x,y) 0.28051580333712, -0.28327697531609
+  Layer[3] : time 11.685722186577 (nsec) --- local (x,y) 0.31675088832562, -0.37309706727789
+  Layer[4] : time 13.34224325199 (nsec) --- local (x,y) -0.015700018818534, 0.069759304679481
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.366142197887 (nsec) --- local (x,y) -83.969559323254, -0.18164849475241
+  Layer[1] : time 36.034904420193 (nsec) --- local (x,y) -100.75999062643, -0.21408477839804
+  Layer[2] : time 37.70366675263 (nsec) --- local (x,y) -117.55139816833, -0.25017930925637
+  Layer[3] : time 39.372429227239 (nsec) --- local (x,y) -134.34407189734, -0.28788864572881
+  Layer[4] : time 41.041191795051 (nsec) --- local (x,y) -151.13757667034, -0.32617950405362
+EM Calorimeter has 46 hits. Total Edep is 49182.989812429 (MeV)
+Hadron Calorimeter has 14 hits. Total Edep is 1009.7169437023 (MeV)
+
+>>> Event 1 >>> Simulation truth : pi+ (0,0,100000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 4.9867880840525 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[10] 42.693889128235 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.6709548425507 (nsec) --- local (x,y) 0.0073848081381883, -0.012928582058193
+  Layer[1] : time 8.3387769444801 (nsec) --- local (x,y) 0.0044740378242669, -0.020537331174664
+  Layer[2] : time 10.006599046387 (nsec) --- local (x,y) 0.0029290563467854, -0.028057440215053
+  Layer[3] : time 11.674421148284 (nsec) --- local (x,y) -0.00077748688843294, -0.034504957213499
+  Layer[4] : time 13.342243250202 (nsec) --- local (x,y) -0.0060095265847742, -0.040239962924963
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.366580525287 (nsec) --- local (x,y) -82.697342892001, -0.17591922235786
+  Layer[1] : time 36.035313219391 (nsec) --- local (x,y) -99.22195448651, -0.18951669694289
+  Layer[2] : time 37.704045707362 (nsec) --- local (x,y) -115.7446966057, -0.20113573461527
+  Layer[3] : time 39.372778320585 (nsec) --- local (x,y) -132.26857403736, -0.21473062770861
+  Layer[4] : time 41.041510856343 (nsec) --- local (x,y) -148.79174550761, -0.23142184242535
+EM Calorimeter has 21 hits. Total Edep is 331.03090143249 (MeV)
+Hadron Calorimeter has 13 hits. Total Edep is 2529.0253423911 (MeV)
+
+>>> Event 2 >>> Simulation truth : pi+ (-0,0,100000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 4.9867880843566 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[10] 42.695295211102 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.670954846984 (nsec) --- local (x,y) 0.049611547354356, 0.017202484300075
+  Layer[1] : time 8.3387769524792 (nsec) --- local (x,y) 0.081562316264854, 0.027862994232607
+  Layer[2] : time 10.006599057633 (nsec) --- local (x,y) 0.11174718359701, 0.038798931961859
+  Layer[3] : time 11.67442116287 (nsec) --- local (x,y) 0.14254996056596, 0.049107271321301
+  Layer[4] : time 13.342243268613 (nsec) --- local (x,y) 0.1756279679151, 0.059627796011067
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.367934851832 (nsec) --- local (x,y) -82.671311306017, 0.19301386640096
+  Layer[1] : time 36.036677635579 (nsec) --- local (x,y) -99.287247070707, 0.20339902044822
+  Layer[2] : time 37.70542042721 (nsec) --- local (x,y) -115.90325449362, 0.21294173076042
+  Layer[3] : time 39.374163302121 (nsec) --- local (x,y) -132.52001434417, 0.22100461383415
+  Layer[4] : time 41.042906201448 (nsec) --- local (x,y) -149.13699448091, 0.22891510802862
+EM Calorimeter has 18 hits. Total Edep is 268.3633462299 (MeV)
+Hadron Calorimeter has 16 hits. Total Edep is 2136.8464415004 (MeV)
+
+>>> Event 3 >>> Simulation truth : pi+ (0,0,100000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 4.9867880839955 (nsec)
+Hodoscope 2 has 2 hits.
+  Hodoscope[10] 42.693382021317 (nsec)
+  Hodoscope[11] 97.469028523404 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.6709548429236 (nsec) --- local (x,y) -0.01922991364226, 0.0062023868203421
+  Layer[1] : time 8.3387769456176 (nsec) --- local (x,y) -0.036188350519712, 0.0041626635550571
+  Layer[2] : time 10.006599048649 (nsec) --- local (x,y) -0.055502781904732, -0.00039046934643
+  Layer[3] : time 11.67442115201 (nsec) --- local (x,y) -0.076957968883127, -0.0060293865559361
+  Layer[4] : time 13.342243255514 (nsec) --- local (x,y) -0.098676129284566, -0.013833261494405
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.366084137156 (nsec) --- local (x,y) -82.691539059854, -0.095694675803421
+  Layer[1] : time 36.034814267897 (nsec) --- local (x,y) -99.192869650169, -0.10860517129261
+  Layer[2] : time 37.703544389609 (nsec) --- local (x,y) -115.69411908137, -0.12018035955506
+  Layer[3] : time 39.372274652915 (nsec) --- local (x,y) -132.196656743, -0.1295673683791
+  Layer[4] : time 41.0410050494 (nsec) --- local (x,y) -148.7004056738, -0.13696316570171
+EM Calorimeter has 57 hits. Total Edep is 25390.513990724 (MeV)
+Hadron Calorimeter has 19 hits. Total Edep is 1183.1961143498 (MeV)
+
+>>> Event 4 >>> Simulation truth : pi+ (0,0,100000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 4.9867880839289 (nsec)
+Hodoscope 2 has 2 hits.
+  Hodoscope[10] 42.695049400932 (nsec)
+  Hodoscope[17] 787.22359919967 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.6709548428148 (nsec) --- local (x,y) 0.015540152014651, 0.0044150258056972
+  Layer[1] : time 8.3387769454744 (nsec) --- local (x,y) 0.030968598238097, 0.011010040547209
+  Layer[2] : time 10.006599048507 (nsec) --- local (x,y) 0.049804638089406, 0.017326206381769
+  Layer[3] : time 11.674421152595 (nsec) --- local (x,y) 0.075930488302, 0.022485573865099
+  Layer[4] : time 13.342243256871 (nsec) --- local (x,y) 0.10270026952234, 0.029534618327651
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.367687593816 (nsec) --- local (x,y) -82.746068574456, 0.19457122672095
+  Layer[1] : time 36.036430450746 (nsec) --- local (x,y) -99.362656319459, 0.21311752423183
+  Layer[2] : time 37.705173286011 (nsec) --- local (x,y) -115.97905020142, 0.23006346917646
+  Layer[3] : time 39.37391650052 (nsec) --- local (x,y) -132.5988633974, 0.25002664473793
+  Layer[4] : time 41.042659631921 (nsec) --- local (x,y) -149.21792543931, 0.27071337597562
+EM Calorimeter has 7 hits. Total Edep is 222.48519266091 (MeV)
+Hadron Calorimeter has 14 hits. Total Edep is 1553.0479034663 (MeV)
+
+>>> Event 0 >>> Simulation truth : e+ (0,0,100000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 4.9867832233216 (nsec)
+Hodoscope 2 has 3 hits.
+  Hodoscope[9] 43.186078460664 (nsec)
+  Hodoscope[6] 56.475591273923 (nsec)
+  Hodoscope[12] 56.156664707863 (nsec)
+Drift Chamber 1 has 6 hits.
+  Layer[0] : time 6.6709483400549 (nsec) --- local (x,y) -0.0026736336207316, 0.0038850919727444
+  Layer[0] : time 6.9701591822519 (nsec) --- local (x,y) -138.51183482542, 142.18076201104
+  Layer[1] : time 8.3387688161595 (nsec) --- local (x,y) 0.0017049374015809, 0.00013561963113778
+  Layer[2] : time 10.006589292233 (nsec) --- local (x,y) 0.0052217814601962, -0.0033249880850816
+  Layer[3] : time 11.674409768667 (nsec) --- local (x,y) 0.014248846222355, -0.01012735684325
+  Layer[4] : time 13.342230245173 (nsec) --- local (x,y) 0.024281455552334, -0.01733022526377
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.848830976367 (nsec) --- local (x,y) -147.4582305248, -0.088443236661577
+  Layer[1] : time 36.519555211724 (nsec) --- local (x,y) -176.97573183181, -0.097891667277131
+  Layer[2] : time 38.190279377436 (nsec) --- local (x,y) -206.49287872934, -0.10765510163956
+  Layer[3] : time 39.86100374222 (nsec) --- local (x,y) -236.0110393372, -0.11352278628769
+  Layer[4] : time 41.531728131327 (nsec) --- local (x,y) -265.52932422164, -0.1130318268095
+EM Calorimeter has 39 hits. Total Edep is 89231.707229257 (MeV)
+Hadron Calorimeter has 5 hits. Total Edep is 92.457887634894 (MeV)
+
+>>> Event 1 >>> Simulation truth : e+ (0,0,100000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 4.9867832232376 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[9] 43.185580852104 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.6709483406162 (nsec) --- local (x,y) -0.012495169390429, 0.0079379094670496
+  Layer[1] : time 8.3387688176294 (nsec) --- local (x,y) -0.028889413180088, 0.013869076162759
+  Layer[2] : time 10.006589294456 (nsec) --- local (x,y) -0.042744547358104, 0.021587345601818
+  Layer[3] : time 11.674409771173 (nsec) --- local (x,y) -0.056753131561778, 0.026194536804714
+  Layer[4] : time 13.342230248081 (nsec) --- local (x,y) -0.070121535801361, 0.03580205419744
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.84831062009 (nsec) --- local (x,y) -147.90350925348, 0.062963974447203
+  Layer[1] : time 36.51903889727 (nsec) --- local (x,y) -177.44156582752, 0.064823483111293
+  Layer[2] : time 38.189767433606 (nsec) --- local (x,y) -206.98093938719, 0.070325210559992
+  Layer[3] : time 39.860495837591 (nsec) --- local (x,y) -236.51964045707, 0.073774236572196
+  Layer[4] : time 41.531224915512 (nsec) --- local (x,y) -266.06176738457, 0.074937480154938
+EM Calorimeter has 39 hits. Total Edep is 83730.780414647 (MeV)
+Hadron Calorimeter has 6 hits. Total Edep is 105.05115923281 (MeV)
+
+>>> Event 2 >>> Simulation truth : e+ (0,0,100000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 4.9867832232303 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[6] 43.23260644802 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.6709483400488 (nsec) --- local (x,y) -0.0034178505759832, -0.0029901649002519
+  Layer[1] : time 8.3387688161887 (nsec) --- local (x,y) -0.0061665174210186, -0.0090952970257538
+  Layer[2] : time 10.006589292419 (nsec) --- local (x,y) -0.011115223474988, -0.015747279864063
+  Layer[3] : time 11.674409768666 (nsec) --- local (x,y) -0.019185502544843, -0.019134937149917
+  Layer[4] : time 13.342230244982 (nsec) --- local (x,y) -0.028484628637717, -0.022403583042941
+Drift Chamber 2 has 6 hits.
+  Layer[0] : time 34.851621151185 (nsec) --- local (x,y) -296.36546030594, -0.17843921965627
+  Layer[1] : time 36.531110550852 (nsec) --- local (x,y) -355.61487338614, -0.19068399002171
+  Layer[2] : time 38.210599290789 (nsec) --- local (x,y) -414.8626054494, -0.20411935122155
+  Layer[3] : time 39.890087773941 (nsec) --- local (x,y) -474.1096836812, -0.21574115590354
+  Layer[4] : time 41.569576965332 (nsec) --- local (x,y) -533.35856695069, -0.22311511248351
+  Layer[4] : time 42.11610422346 (nsec) --- local (x,y) -477.49615968365, -133.98951366764
+EM Calorimeter has 39 hits. Total Edep is 81194.217359064 (MeV)
+Hadron Calorimeter has 5 hits. Total Edep is 49.55028670606 (MeV)
+
+>>> Event 3 >>> Simulation truth : e+ (0,0,100000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 4.9867832233972 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[9] 43.184672808419 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.6709483401023 (nsec) --- local (x,y) -0.012031388856721, 0.0026380655506497
+  Layer[1] : time 8.3387688161229 (nsec) --- local (x,y) -0.013193569544134, -0.00025249572944765
+  Layer[2] : time 10.00658929214 (nsec) --- local (x,y) -0.01580971390339, -0.0013750296494786
+  Layer[3] : time 11.67440976827 (nsec) --- local (x,y) -0.021816605685402, -0.0034114975478829
+  Layer[4] : time 13.342230267414 (nsec) --- local (x,y) -0.10320399175804, -0.021200377157015
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.847397490817 (nsec) --- local (x,y) -148.49645699905, -0.29474098565544
+  Layer[1] : time 36.518127483266 (nsec) --- local (x,y) -178.04322397766, -0.31649919326386
+  Layer[2] : time 38.188857154556 (nsec) --- local (x,y) -207.58835684072, -0.3407079552091
+  Layer[3] : time 39.859586226074 (nsec) --- local (x,y) -237.13043962669, -0.36694138155323
+  Layer[4] : time 41.530315808888 (nsec) --- local (x,y) -266.67512031865, -0.39403926018224
+EM Calorimeter has 49 hits. Total Edep is 84106.098023249 (MeV)
+Hadron Calorimeter has 7 hits. Total Edep is 65.082185311053 (MeV)
+
+>>> Event 4 >>> Simulation truth : e+ (-0,0,100000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 4.986783223248 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[6] 43.228658945209 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.6709483575045 (nsec) --- local (x,y) -0.040985961656028, -0.064261473043944
+  Layer[1] : time 8.3387688537298 (nsec) --- local (x,y) -0.079737520407428, -0.1318166087203
+  Layer[2] : time 10.006589349688 (nsec) --- local (x,y) -0.12038695767583, -0.19764531701949
+  Layer[3] : time 11.674409845643 (nsec) --- local (x,y) -0.16271410795425, -0.26240728332481
+  Layer[4] : time 13.342230341644 (nsec) --- local (x,y) -0.20389807743638, -0.32800010249535
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.850293467482 (nsec) --- local (x,y) -289.97045569936, -1.199816896317
+  Layer[1] : time 36.529257277225 (nsec) --- local (x,y) -347.86555748145, -1.2690827023947
+  Layer[2] : time 38.208220428509 (nsec) --- local (x,y) -405.75894337574, -1.3380739284841
+  Layer[3] : time 39.887184550133 (nsec) --- local (x,y) -463.65485746679, -1.4078090441496
+  Layer[4] : time 41.566148606442 (nsec) --- local (x,y) -521.55060290753, -1.4762244979191
+EM Calorimeter has 32 hits. Total Edep is 84378.137916521 (MeV)
+Hadron Calorimeter has 6 hits. Total Edep is 43.809595391426 (MeV)
+
+>>> Event 0 >>> Simulation truth : proton (-0,0,10000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 5.0086961450061 (nsec)
+Hodoscope 2 has 0 hits.
+Drift Chamber 1 has 35 hits.
+  Layer[0] : time 6.7002651604654 (nsec) --- local (x,y) 0.082098984922046, -0.21457639478841
+  Layer[0] : time 6.7851696042652 (nsec) --- local (x,y) 8.7749705285049, -5.2639710932445
+  Layer[1] : time 8.5131575105783 (nsec) --- local (x,y) 37.336571227276, -63.248677858142
+  Layer[1] : time 12.24075345081 (nsec) --- local (x,y) -290.67685450504, 84.583769746431
+  Layer[1] : time 8.4503547889378 (nsec) --- local (x,y) -141.24300926171, 62.810556264568
+  Layer[1] : time 10.423828824225 (nsec) --- local (x,y) 319.1417579728, -98.441016538379
+  Layer[1] : time 8.8115105403726 (nsec) --- local (x,y) -15.588777315544, -27.845987660742
+  Layer[1] : time 8.4511739792953 (nsec) --- local (x,y) -34.788105207216, -126.84949128084
+  Layer[2] : time 10.327467771236 (nsec) --- local (x,y) 74.946576947552, -127.01211111806
+  Layer[2] : time 18.320113733158 (nsec) --- local (x,y) -628.34652225996, 154.06700167397
+  Layer[2] : time 18.32062199737 (nsec) --- local (x,y) -628.37404740635, 154.07242164163
+  Layer[2] : time 18.328181208863 (nsec) --- local (x,y) -648.27932123694, 163.19802886351
+  Layer[2] : time 18.328771573271 (nsec) --- local (x,y) -648.21411007107, 163.17678146265
+  Layer[2] : time 18.335802302836 (nsec) --- local (x,y) -647.3951244392, 162.9711782028
+  Layer[2] : time 18.328771573271 (nsec) --- local (x,y) -648.21411007107, 163.17678146265
+  Layer[2] : time 18.329542152297 (nsec) --- local (x,y) -648.21018495498, 163.16142097656
+  Layer[2] : time 18.330277852429 (nsec) --- local (x,y) -648.1987753688, 163.1489167066
+  Layer[2] : time 18.330938036023 (nsec) --- local (x,y) -648.18529477682, 163.14250570517
+  Layer[2] : time 18.331538731241 (nsec) --- local (x,y) -648.17756286593, 163.13433581479
+  Layer[2] : time 18.332049328251 (nsec) --- local (x,y) -648.16827721565, 163.12633756181
+  Layer[2] : time 10.20124540294 (nsec) --- local (x,y) -283.94909782282, 126.61696072029
+  Layer[2] : time 14.169844551927 (nsec) --- local (x,y) 641.34043233197, -197.68990123691
+  Layer[2] : time 10.928445219967 (nsec) --- local (x,y) -31.682935232946, -58.067944064832
+  Layer[2] : time 10.202914681131 (nsec) --- local (x,y) -70.115788791364, -254.78723586522
+  Layer[3] : time 12.141769650273 (nsec) --- local (x,y) 112.53632445825, -190.74259797121
+  Layer[3] : time 24.85696679451 (nsec) --- local (x,y) -964.8702487344, 205.03053921726
+  Layer[3] : time 24.858087998199 (nsec) --- local (x,y) -964.92370614939, 205.03667638221
+  Layer[3] : time 24.858087998199 (nsec) --- local (x,y) -964.92370614939, 205.03667638221
+  Layer[3] : time 24.858324654958 (nsec) --- local (x,y) -965.15822126909, 205.11679175022
+  Layer[3] : time 11.952337178006 (nsec) --- local (x,y) -426.91791099756, 190.32867181603
+  Layer[3] : time 17.918753424738 (nsec) --- local (x,y) 963.79686522303, -296.34543627689
+  Layer[3] : time 13.045828690897 (nsec) --- local (x,y) -48.041966741394, -86.6907096199
+  Layer[4] : time 13.956087752874 (nsec) --- local (x,y) 150.14591098041, -254.47169357713
+  Layer[4] : time 13.703548724968 (nsec) --- local (x,y) -569.99826366696, 254.08369686327
+  Layer[4] : time 15.163869106145 (nsec) --- local (x,y) -63.783341921132, -115.23413118129
+Drift Chamber 2 has 0 hits.
+EM Calorimeter has 0 hits. Total Edep is 0 (MeV)
+Hadron Calorimeter has 0 hits. Total Edep is 0 (MeV)
+
+>>> Event 1 >>> Simulation truth : proton (-0,0,10000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 5.0086957015337 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[9] 43.376611824817 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.7002644271116 (nsec) --- local (x,y) 0.077164654290125, -0.1474364060484
+  Layer[1] : time 8.3754168018258 (nsec) --- local (x,y) 0.12055541302507, -0.2405965117899
+  Layer[2] : time 10.050569341467 (nsec) --- local (x,y) 0.18374359048428, -0.29841224640792
+  Layer[3] : time 11.725722040371 (nsec) --- local (x,y) 0.25196727838569, -0.36435107506083
+  Layer[4] : time 13.400874852761 (nsec) --- local (x,y) 0.33257566320794, -0.41442127511576
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 35.002627650157 (nsec) --- local (x,y) -147.59569030141, -0.4777431903289
+  Layer[1] : time 36.68071375688 (nsec) --- local (x,y) -177.19053884051, -0.46546934736917
+  Layer[2] : time 38.358798506125 (nsec) --- local (x,y) -206.77753518134, -0.46662175809114
+  Layer[3] : time 40.036882030511 (nsec) --- local (x,y) -236.357402262, -0.44899249414005
+  Layer[4] : time 41.714970207192 (nsec) --- local (x,y) -265.96005956028, -0.42697489801555
+EM Calorimeter has 5 hits. Total Edep is 175.73796150778 (MeV)
+Hadron Calorimeter has 8 hits. Total Edep is 250.8833170991 (MeV)
+
+>>> Event 2 >>> Simulation truth : proton (-0,0,10000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 5.0086958089268 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[9] 43.37739411784 (nsec)
+Drift Chamber 1 has 6 hits.
+  Layer[0] : time 6.7002639298291 (nsec) --- local (x,y) 0.19017912573921, -0.13201740356728
+  Layer[1] : time 8.3754157165132 (nsec) --- local (x,y) 0.29438749411543, -0.1845697882968
+  Layer[2] : time 10.050567587208 (nsec) --- local (x,y) 0.37863914787409, -0.24764555230193
+  Layer[3] : time 11.725719927467 (nsec) --- local (x,y) 0.45399300261642, -0.27795267988763
+  Layer[4] : time 13.400873071682 (nsec) --- local (x,y) 0.51694520583105, -0.26823579534394
+  Layer[4] : time 13.962624070212 (nsec) --- local (x,y) -207.81233697538, 66.5542414931
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 35.003462057407 (nsec) --- local (x,y) -147.02510258537, -0.38657021108552
+  Layer[1] : time 36.681545744159 (nsec) --- local (x,y) -176.60459602169, -0.41877544844133
+  Layer[2] : time 38.359625438399 (nsec) --- local (x,y) -206.16321062693, -0.4113327081108
+  Layer[3] : time 40.037700734156 (nsec) --- local (x,y) -235.69867330492, -0.43302632967915
+  Layer[4] : time 41.715770971736 (nsec) --- local (x,y) -265.20791997223, -0.492905124065
+EM Calorimeter has 9 hits. Total Edep is 276.68612663952 (MeV)
+Hadron Calorimeter has 8 hits. Total Edep is 146.4420721187 (MeV)
+
+>>> Event 3 >>> Simulation truth : proton (-0,0,10000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 5.0086956671876 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[9] 43.373830670938 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.7002643437323 (nsec) --- local (x,y) -0.077645485445739, -0.062047792816744
+  Layer[1] : time 8.3754167460535 (nsec) --- local (x,y) -0.14776945357677, -0.18438873066443
+  Layer[2] : time 10.050569330027 (nsec) --- local (x,y) -0.22735022168784, -0.29591612503278
+  Layer[3] : time 11.725722069023 (nsec) --- local (x,y) -0.30316348823455, -0.41837429366538
+  Layer[4] : time 13.400874961759 (nsec) --- local (x,y) -0.36033973354482, -0.58410510735838
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.999883876355 (nsec) --- local (x,y) -149.15031880408, -3.5445853964201
+  Layer[1] : time 36.677961665668 (nsec) --- local (x,y) -178.70208685361, -3.7597065284156
+  Layer[2] : time 38.356039202261 (nsec) --- local (x,y) -208.25185034061, -3.9760402564315
+  Layer[3] : time 40.034115265292 (nsec) --- local (x,y) -237.79336613962, -4.2064760949288
+  Layer[4] : time 41.712195976114 (nsec) --- local (x,y) -267.35735806297, -4.4650567734006
+EM Calorimeter has 12 hits. Total Edep is 221.08789447585 (MeV)
+Hadron Calorimeter has 7 hits. Total Edep is 198.5010678827 (MeV)
+
+>>> Event 4 >>> Simulation truth : proton (0,0,10000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 5.0086962093779 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[9] 43.378899291982 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.7002645501699 (nsec) --- local (x,y) 0.25108393504815, 0.0084136453451434
+  Layer[1] : time 8.3754165820944 (nsec) --- local (x,y) 0.39318441577476, 0.038832449587699
+  Layer[2] : time 10.050568801816 (nsec) --- local (x,y) 0.52489118181219, 0.078175550953681
+  Layer[3] : time 11.725721182025 (nsec) --- local (x,y) 0.66380060929718, 0.10470642876466
+  Layer[4] : time 13.400873734589 (nsec) --- local (x,y) 0.81920086773011, 0.15391076156908
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 35.004824961931 (nsec) --- local (x,y) -146.34405295261, 0.94190591187018
+  Layer[1] : time 36.682922421838 (nsec) --- local (x,y) -175.9961848997, 0.94271818087422
+  Layer[2] : time 38.361029239077 (nsec) --- local (x,y) -205.69474286506, 0.98176914580416
+  Layer[3] : time 40.039137769045 (nsec) --- local (x,y) -235.4010525973, 1.033211761493
+  Layer[4] : time 41.71724170126 (nsec) --- local (x,y) -265.08349358796, 1.0703168941503
+EM Calorimeter has 24 hits. Total Edep is 1559.2529149561 (MeV)
+Hadron Calorimeter has 7 hits. Total Edep is 66.682564979554 (MeV)
+
+>>> Event 0 >>> Simulation truth : pi+ (0,0,10000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 4.9872692085258 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[10] 42.687584699544 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.6715987099502 (nsec) --- local (x,y) -0.31093985603538, -0.2136449518555
+  Layer[1] : time 8.3395819908806 (nsec) --- local (x,y) -0.54343557676216, -0.2931143253417
+  Layer[2] : time 10.007565318168 (nsec) --- local (x,y) -0.80051563540121, -0.38011446979433
+  Layer[3] : time 11.675548627243 (nsec) --- local (x,y) -1.0424586491914, -0.47021179199965
+  Layer[4] : time 13.343531982843 (nsec) --- local (x,y) -1.3062420450234, -0.56739410145285
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.359720536338 (nsec) --- local (x,y) -83.791805709736, -1.4799801956613
+  Layer[1] : time 36.028564258857 (nsec) --- local (x,y) -99.855260359319, -1.5545693581486
+  Layer[2] : time 37.697408453772 (nsec) --- local (x,y) -115.92314965572, -1.6149049842744
+  Layer[3] : time 39.366254068981 (nsec) --- local (x,y) -132.00432134372, -1.6527893328029
+  Layer[4] : time 41.035099538929 (nsec) --- local (x,y) -148.08410739851, -1.6905367574412
+EM Calorimeter has 22 hits. Total Edep is 1778.1277319713 (MeV)
+Hadron Calorimeter has 8 hits. Total Edep is 64.666046518432 (MeV)
+
+>>> Event 1 >>> Simulation truth : pi+ (-0,0,10000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 4.9872691699422 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[10] 42.694690215269 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.6715985143129 (nsec) --- local (x,y) -0.13050859464123, -0.1140669438942
+  Layer[1] : time 8.3395816496083 (nsec) --- local (x,y) -0.19838911461152, -0.23152933379829
+  Layer[2] : time 10.007564813982 (nsec) --- local (x,y) -0.28218314358166, -0.36822540309264
+  Layer[3] : time 11.67554800636 (nsec) --- local (x,y) -0.37080158182985, -0.52696192094399
+  Layer[4] : time 13.343531195319 (nsec) --- local (x,y) -0.43818603751997, -0.68926605038292
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.366621807913 (nsec) --- local (x,y) -83.428650820099, -1.9303455003743
+  Layer[1] : time 36.03550537697 (nsec) --- local (x,y) -99.859906380008, -1.9969131573171
+  Layer[2] : time 37.704391124689 (nsec) --- local (x,y) -116.31101713388, -2.0575370013615
+  Layer[3] : time 39.373276932212 (nsec) --- local (x,y) -132.7626082713, -2.1273733395586
+  Layer[4] : time 41.042163573122 (nsec) --- local (x,y) -149.22165758337, -2.2168541805614
+EM Calorimeter has 5 hits. Total Edep is 257.2010584185 (MeV)
+Hadron Calorimeter has 8 hits. Total Edep is 229.44894213613 (MeV)
+
+>>> Event 2 >>> Simulation truth : pi+ (-0,0,10000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 4.9872692834977 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[10] 42.696936696563 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.6715988580786 (nsec) --- local (x,y) 0.035271376627184, 0.4440070949956
+  Layer[1] : time 8.3395821789465 (nsec) --- local (x,y) 0.028056799847872, 0.71852126383698
+  Layer[2] : time 10.007565506122 (nsec) --- local (x,y) 0.0041188935759706, 0.99313068308417
+  Layer[3] : time 11.675548858683 (nsec) --- local (x,y) -0.05623608052056, 1.2726958437718
+  Layer[4] : time 13.34353217809 (nsec) --- local (x,y) -0.13564521722499, 1.5269992588802
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.368757128105 (nsec) --- local (x,y) -83.308629355325, 5.5112363757161
+  Layer[1] : time 36.037659711069 (nsec) --- local (x,y) -99.909513238144, 5.8361189014048
+  Layer[2] : time 37.70656423597 (nsec) --- local (x,y) -116.52829733556, 6.1369949889983
+  Layer[3] : time 39.375472298973 (nsec) --- local (x,y) -133.17868644832, 6.4516365545217
+  Layer[4] : time 41.044383470559 (nsec) --- local (x,y) -149.8570689706, 6.7641920854008
+EM Calorimeter has 26 hits. Total Edep is 607.56103075888 (MeV)
+Hadron Calorimeter has 8 hits. Total Edep is 95.284974265718 (MeV)
+
+>>> Event 3 >>> Simulation truth : pi+ (0,0,10000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 4.9872691676673 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[10] 42.699280441924 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.6715984861006 (nsec) --- local (x,y) -0.0013811451889233, 0.024639869024458
+  Layer[1] : time 8.3395815759149 (nsec) --- local (x,y) -0.0014305791738146, 0.086157978460895
+  Layer[2] : time 10.007564671179 (nsec) --- local (x,y) 0.0098777651300891, 0.15021094779392
+  Layer[3] : time 11.675547768264 (nsec) --- local (x,y) 0.038343601515636, 0.20447639621179
+  Layer[4] : time 13.343530887192 (nsec) --- local (x,y) 0.066908521448546, 0.2960995923159
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.371063236107 (nsec) --- local (x,y) -83.258001435808, 1.3389650701884
+  Layer[1] : time 36.039976451585 (nsec) --- local (x,y) -99.957538642614, 1.4374641796034
+  Layer[2] : time 37.708889828051 (nsec) --- local (x,y) -116.65845508085, 1.5403966478348
+  Layer[3] : time 39.377805571029 (nsec) --- local (x,y) -133.38040919496, 1.6676760890822
+  Layer[4] : time 41.046722131429 (nsec) --- local (x,y) -150.10985202148, 1.7658363887283
+EM Calorimeter has 23 hits. Total Edep is 2951.9502983701 (MeV)
+Hadron Calorimeter has 8 hits. Total Edep is 124.04543809831 (MeV)
+
+>>> Event 4 >>> Simulation truth : pi+ (0,0,10000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 4.9872691735788 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[5] 42.698805750787 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.6715985642159 (nsec) --- local (x,y) 0.19055076044086, -0.080786972735398
+  Layer[1] : time 8.3395817257826 (nsec) --- local (x,y) 0.30660117812176, -0.18909198261821
+  Layer[2] : time 10.007564870976 (nsec) --- local (x,y) 0.41363351535299, -0.27668466725429
+  Layer[3] : time 11.675513073603 (nsec) --- local (x,y) 0.2058986108276, 0.82968702969705
+  Layer[4] : time 13.343455753308 (nsec) --- local (x,y) -0.067760965396657, 2.0882241164318
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.299774851544 (nsec) --- local (x,y) -340.43399850032, 18.537628043337
+  Layer[1] : time 35.982880901744 (nsec) --- local (x,y) -408.00579711141, 19.923598614094
+  Layer[2] : time 37.665985873683 (nsec) --- local (x,y) -475.57469092244, 21.332937752233
+  Layer[3] : time 39.349086497546 (nsec) --- local (x,y) -543.13375107719, 22.74675339761
+  Layer[4] : time 41.032182751634 (nsec) --- local (x,y) -610.68317194772, 24.153390920781
+EM Calorimeter has 4 hits. Total Edep is 257.5586403131 (MeV)
+Hadron Calorimeter has 2 hits. Total Edep is 40.629730423175 (MeV)
+
+>>> Event 0 >>> Simulation truth : e+ (-0,0,10000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 4.9867832266695 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[5] 43.267184316454 (nsec)
+Drift Chamber 1 has 7 hits.
+  Layer[0] : time 6.670948355361 (nsec) --- local (x,y) 0.027652938598637, -0.010078399166485
+  Layer[1] : time 8.3387688345428 (nsec) --- local (x,y) 0.044026619608835, -0.033901265682354
+  Layer[1] : time 8.6214037463941 (nsec) --- local (x,y) 45.444592164749, -5.4358237515327
+  Layer[1] : time 9.1022320615546 (nsec) --- local (x,y) 80.541729698072, -50.265705470216
+  Layer[2] : time 10.006589313526 (nsec) --- local (x,y) 0.016515104561768, -0.044012788342617
+  Layer[3] : time 11.674409796796 (nsec) --- local (x,y) -0.023754318142029, -0.068243253790092
+  Layer[4] : time 13.342230291655 (nsec) --- local (x,y) -0.084829459955092, -0.11142790254173
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.860008743358 (nsec) --- local (x,y) -357.07010927837, -0.34692191461799
+  Layer[1] : time 36.544726296709 (nsec) --- local (x,y) -428.42329281312, -0.34101815996001
+  Layer[2] : time 38.229455788731 (nsec) --- local (x,y) -499.80179944304, -0.36471786075403
+  Layer[3] : time 39.914193005269 (nsec) --- local (x,y) -571.19669616194, -0.37696262807037
+  Layer[4] : time 41.598943265917 (nsec) --- local (x,y) -642.61925393242, -0.3691370078837
+EM Calorimeter has 16 hits. Total Edep is 8377.0527962656 (MeV)
+Hadron Calorimeter has 2 hits. Total Edep is 0.21831466668534 (MeV)
+
+>>> Event 1 >>> Simulation truth : e+ (0,0,10000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 4.9867832312248 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[9] 43.193678493348 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.6709484113648 (nsec) --- local (x,y) 0.048892586173165, -0.11299027313557
+  Layer[1] : time 8.3387689504314 (nsec) --- local (x,y) 0.17834215313952, -0.15641470683469
+  Layer[2] : time 10.006589526252 (nsec) --- local (x,y) 0.3508646036873, -0.17122926601526
+  Layer[3] : time 11.674410119984 (nsec) --- local (x,y) 0.53800067051396, -0.1567259406692
+  Layer[4] : time 13.342230781346 (nsec) --- local (x,y) 0.7732539730528, -0.15546184609403
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.851969741585 (nsec) --- local (x,y) -166.47782347885, 0.30857823398151
+  Layer[1] : time 36.523586018438 (nsec) --- local (x,y) -200.23039342239, 0.41455945586293
+  Layer[2] : time 38.195205576403 (nsec) --- local (x,y) -233.99751243756, 0.53686061491315
+  Layer[3] : time 39.866822907763 (nsec) --- local (x,y) -267.75464570961, 0.67881467370792
+  Layer[4] : time 41.538439188434 (nsec) --- local (x,y) -301.50703486143, 0.83635244569309
+EM Calorimeter has 19 hits. Total Edep is 9445.9232085215 (MeV)
+Hadron Calorimeter has 3 hits. Total Edep is 1.6794257598972 (MeV)
+
+>>> Event 2 >>> Simulation truth : e+ (-0,0,10000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 4.9867832543988 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[9] 43.18692499553 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.6709483927186 (nsec) --- local (x,y) -0.070260380112554, -0.028276143769342
+  Layer[1] : time 8.3387688921927 (nsec) --- local (x,y) -0.0078055690545345, 0.027648742468696
+  Layer[2] : time 10.006589387138 (nsec) --- local (x,y) 0.055039779814497, 0.068068711875888
+  Layer[3] : time 11.674409877913 (nsec) --- local (x,y) 0.11007945491908, 0.10600789833737
+  Layer[4] : time 13.342230373171 (nsec) --- local (x,y) 0.15853845582505, 0.16617337037471
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.849504193076 (nsec) --- local (x,y) -147.58185201912, 1.4008159603021
+  Layer[1] : time 36.520254516835 (nsec) --- local (x,y) -177.23155892081, 1.5132442572676
+  Layer[2] : time 38.191007932279 (nsec) --- local (x,y) -206.89679576464, 1.6542944405646
+  Layer[3] : time 39.861772708521 (nsec) --- local (x,y) -236.61940725474, 1.8107352429937
+  Layer[4] : time 41.532538116263 (nsec) --- local (x,y) -266.34516650769, 1.9754602068876
+EM Calorimeter has 17 hits. Total Edep is 9688.0054669186 (MeV)
+Hadron Calorimeter has 1 hits. Total Edep is 0.54519363310541 (MeV)
+
+>>> Event 3 >>> Simulation truth : e+ (0,0,10000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 4.9867832292006 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[6] 43.227937803137 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.6709483479391 (nsec) --- local (x,y) 0.011148354334117, -0.016931539088979
+  Layer[1] : time 8.3387688252337 (nsec) --- local (x,y) -0.0019894141557989, -0.0037459046571995
+  Layer[2] : time 10.006589309509 (nsec) --- local (x,y) -0.042920093813781, -0.020453728899363
+  Layer[3] : time 11.674409810424 (nsec) --- local (x,y) -0.12887099189992, -0.024859184335992
+  Layer[4] : time 13.342230310367 (nsec) --- local (x,y) -0.20541160300579, 0.013237333195218
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.850597910955 (nsec) --- local (x,y) -286.58605457299, 3.2848853771025
+  Layer[1] : time 36.529335911833 (nsec) --- local (x,y) -343.88901128714, 3.5593189221765
+  Layer[2] : time 38.208075302767 (nsec) --- local (x,y) -401.19562605625, 3.834165049033
+  Layer[3] : time 39.8868394512 (nsec) --- local (x,y) -458.5673840287, 4.1091302457974
+  Layer[4] : time 41.565614782126 (nsec) --- local (x,y) -515.96858421893, 4.3755731190327
+EM Calorimeter has 16 hits. Total Edep is 8742.5511436611 (MeV)
+Hadron Calorimeter has 3 hits. Total Edep is 1.9302304755433 (MeV)
+
+>>> Event 4 >>> Simulation truth : e+ (0,0,10000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 4.986783227108 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[9] 43.189402132332 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.670948406872 (nsec) --- local (x,y) 0.12847181279277, 0.055686518165311
+  Layer[1] : time 8.3387689469994 (nsec) --- local (x,y) 0.25695086225413, 0.10723686633388
+  Layer[2] : time 10.006589519357 (nsec) --- local (x,y) 0.41615241415359, 0.16499401004476
+  Layer[3] : time 11.67441011006 (nsec) --- local (x,y) 0.57572735542058, 0.25827645905591
+  Layer[4] : time 13.342230687697 (nsec) --- local (x,y) 0.71540006222351, 0.36307610235672
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.852056140361 (nsec) --- local (x,y) -145.907320392, 2.1620540485902
+  Layer[1] : time 36.522806204073 (nsec) --- local (x,y) -175.55551185159, 2.3183186052111
+  Layer[2] : time 38.193552634604 (nsec) --- local (x,y) -205.18526703773, 2.4796102976838
+  Layer[3] : time 39.864294441011 (nsec) --- local (x,y) -234.79165215459, 2.6278073657384
+  Layer[4] : time 41.535037751852 (nsec) --- local (x,y) -264.40564559181, 2.7796122848212
+EM Calorimeter has 20 hits. Total Edep is 9432.6938733949 (MeV)
+Hadron Calorimeter has 2 hits. Total Edep is 0.27268675612953 (MeV)
+
+>>> Event 0 >>> Simulation truth : proton (0,0,1000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 6.8392443424377 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[9] 59.446044115999 (nsec)
+Drift Chamber 1 has 6 hits.
+  Layer[0] : time 9.1549406593199 (nsec) --- local (x,y) -1.2637910491763, -0.85323411565832
+  Layer[1] : time 11.448494347149 (nsec) --- local (x,y) -1.947667670564, -2.1796448075653
+  Layer[2] : time 13.742338099745 (nsec) --- local (x,y) -2.5718053313168, -3.6365469962753
+  Layer[3] : time 16.036458909208 (nsec) --- local (x,y) -3.3647350073501, -4.7672772294056
+  Layer[4] : time 18.331122071289 (nsec) --- local (x,y) -3.9921702489236, -6.0444340858512
+  Layer[4] : time 18.301899470858 (nsec) --- local (x,y) 31.126397131507, 99.322687697124
+Drift Chamber 2 has 6 hits.
+  Layer[0] : time 47.949482389296 (nsec) --- local (x,y) -151.86040647789, -73.374000305326
+  Layer[1] : time 50.252446962686 (nsec) --- local (x,y) -182.04095488431, -81.139903016856
+  Layer[2] : time 52.555624367904 (nsec) --- local (x,y) -212.2106808331, -88.694913527654
+  Layer[3] : time 54.859165975298 (nsec) --- local (x,y) -242.59531309244, -96.295395834778
+  Layer[4] : time 57.163281765429 (nsec) --- local (x,y) -273.38652957811, -103.85598135319
+  Layer[4] : time 57.124115479391 (nsec) --- local (x,y) -252.5788904878, -147.37355490197
+EM Calorimeter has 8 hits. Total Edep is 146.21027401353 (MeV)
+Hadron Calorimeter has 1 hits. Total Edep is 0.0010013782958822 (MeV)
+
+>>> Event 1 >>> Simulation truth : proton (0,0,1000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 6.8396045558486 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[9] 59.429964424326 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 9.1545680829032 (nsec) --- local (x,y) 0.14038093414559, -0.70452835679724
+  Layer[1] : time 11.447361501308 (nsec) --- local (x,y) 0.64855891668421, -2.9084765310685
+  Layer[2] : time 13.740436004231 (nsec) --- local (x,y) 1.340960879999, -4.9824129227837
+  Layer[3] : time 16.033939040684 (nsec) --- local (x,y) 2.6026464421849, -7.2701816501589
+  Layer[4] : time 18.327711666318 (nsec) --- local (x,y) 3.8912110096547, -9.672161900209
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 47.946168670029 (nsec) --- local (x,y) -149.33226406497, -43.098117551196
+  Layer[1] : time 50.246894903049 (nsec) --- local (x,y) -181.22742337226, -45.964340644956
+  Layer[2] : time 52.547873144873 (nsec) --- local (x,y) -213.21266737509, -48.697342435414
+  Layer[3] : time 54.849188034888 (nsec) --- local (x,y) -245.64372514448, -51.254563221939
+  Layer[4] : time 57.150849015314 (nsec) --- local (x,y) -278.09810230282, -53.787281999603
+EM Calorimeter has 5 hits. Total Edep is 374.83452176657 (MeV)
+Hadron Calorimeter has 0 hits. Total Edep is 0 (MeV)
+
+>>> Event 2 >>> Simulation truth : proton (-0,0,1000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 6.839702276507 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[9] 59.477652489746 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 9.1543983441648 (nsec) --- local (x,y) 2.0190703334527, 1.4526834234667
+  Layer[1] : time 11.446892769814 (nsec) --- local (x,y) 3.9256616670284, 2.5899073626805
+  Layer[2] : time 13.739706943932 (nsec) --- local (x,y) 6.2082030024057, 3.7598817398545
+  Layer[3] : time 16.033033588162 (nsec) --- local (x,y) 9.2069006619902, 4.9408766601284
+  Layer[4] : time 18.326607689167 (nsec) --- local (x,y) 12.315429351718, 5.9879142940981
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 47.992701830612 (nsec) --- local (x,y) -127.08646815886, 15.897717573427
+  Layer[1] : time 50.293548387904 (nsec) --- local (x,y) -159.32717839965, 15.731289029034
+  Layer[2] : time 52.594865672151 (nsec) --- local (x,y) -191.67813782066, 15.756172376125
+  Layer[3] : time 54.896384521004 (nsec) --- local (x,y) -223.79219916315, 15.789021441811
+  Layer[4] : time 57.198118150506 (nsec) --- local (x,y) -255.84900390833, 16.325057335144
+EM Calorimeter has 1 hits. Total Edep is 310.13866524619 (MeV)
+Hadron Calorimeter has 0 hits. Total Edep is 0 (MeV)
+
+>>> Event 3 >>> Simulation truth : proton (0,0,1000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 6.8407801500133 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[9] 59.381216435157 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 9.1557951677457 (nsec) --- local (x,y) -2.5134757507779, 0.34952408696269
+  Layer[1] : time 11.448670739795 (nsec) --- local (x,y) -3.151178285717, -0.14257324389308
+  Layer[2] : time 13.741758300689 (nsec) --- local (x,y) -3.6321987250235, -0.62787606807541
+  Layer[3] : time 16.035051935418 (nsec) --- local (x,y) -4.4155050527899, -1.1493106610889
+  Layer[4] : time 18.328575935318 (nsec) --- local (x,y) -5.1445048084369, -1.7313425893139
+Drift Chamber 2 has 6 hits.
+  Layer[0] : time 47.899353436436 (nsec) --- local (x,y) -163.89320187514, -12.612415369988
+  Layer[1] : time 50.199744243312 (nsec) --- local (x,y) -195.34013639522, -14.145980941585
+  Layer[1] : time 50.373305026421 (nsec) --- local (x,y) -200.87836676158, 27.2371709719
+  Layer[2] : time 52.500419478822 (nsec) --- local (x,y) -226.06663481729, -15.438398542978
+  Layer[3] : time 54.801296282047 (nsec) --- local (x,y) -256.79259015088, -16.832843845905
+  Layer[4] : time 57.102448481176 (nsec) --- local (x,y) -287.67947556872, -18.446091626913
+EM Calorimeter has 3 hits. Total Edep is 328.89790878282 (MeV)
+Hadron Calorimeter has 0 hits. Total Edep is 0 (MeV)
+
+>>> Event 4 >>> Simulation truth : proton (-0,0,1000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 6.8393573731423 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[9] 59.317104872659 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 9.1541348698949 (nsec) --- local (x,y) -2.3637576059002, 3.689014171448
+  Layer[1] : time 11.446753568706 (nsec) --- local (x,y) -4.3934825973866, 5.473569339426
+  Layer[2] : time 13.739572243141 (nsec) --- local (x,y) -6.4389482330982, 7.4220556257252
+  Layer[3] : time 16.032575900988 (nsec) --- local (x,y) -8.7198004152404, 9.4336027471527
+  Layer[4] : time 18.32579382266 (nsec) --- local (x,y) -11.395893550822, 11.272653434528
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 47.836350444033 (nsec) --- local (x,y) -189.77714245541, 24.46145831046
+  Layer[1] : time 50.136623399885 (nsec) --- local (x,y) -221.22852011943, 25.251437623699
+  Layer[2] : time 52.437044738166 (nsec) --- local (x,y) -252.54498397538, 25.913529628057
+  Layer[3] : time 54.73767114737 (nsec) --- local (x,y) -283.75405969197, 26.584464164633
+  Layer[4] : time 57.038551914455 (nsec) --- local (x,y) -315.03331610591, 27.3478760064
+EM Calorimeter has 1 hits. Total Edep is 306.72259731165 (MeV)
+Hadron Calorimeter has 0 hits. Total Edep is 0 (MeV)
+
+>>> Event 0 >>> Simulation truth : pi+ (0,0,1000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 5.0351636772944 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[10] 43.127476771325 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.7358186121806 (nsec) --- local (x,y) 0.2508374106396, -0.8617086454639
+  Layer[1] : time 8.4199735615477 (nsec) --- local (x,y) 0.77940255168152, -1.5090340156279
+  Layer[2] : time 10.104130907923 (nsec) --- local (x,y) 1.3141132609686, -1.7325041993494
+  Layer[3] : time 11.788291474369 (nsec) --- local (x,y) 1.995132825597, -1.7161805005975
+  Layer[4] : time 13.472453974498 (nsec) --- local (x,y) 2.4587499229504, -1.7712779215437
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.715703332934 (nsec) --- local (x,y) -97.187282682537, 8.6150048592942
+  Layer[1] : time 36.401331623632 (nsec) --- local (x,y) -117.68542330069, 10.681967197649
+  Layer[2] : time 38.086974094059 (nsec) --- local (x,y) -138.21732008197, 13.166964021356
+  Layer[3] : time 39.772641969712 (nsec) --- local (x,y) -158.9224053376, 15.526861220122
+  Layer[4] : time 41.458311511524 (nsec) --- local (x,y) -179.60609443714, 17.977596693805
+EM Calorimeter has 4 hits. Total Edep is 189.09702974704 (MeV)
+Hadron Calorimeter has 2 hits. Total Edep is 19.897067012189 (MeV)
+
+>>> Event 1 >>> Simulation truth : pi+ (0,0,1000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 5.0351599435599 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[10] 43.206981627106 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.7357661354914 (nsec) --- local (x,y) 1.9855321833052, -0.5893759839365
+  Layer[1] : time 8.4198735341318 (nsec) --- local (x,y) 3.5543920884443, -0.91402942542995
+  Layer[2] : time 10.103989089709 (nsec) --- local (x,y) 5.4908395265444, -1.4134068008715
+  Layer[3] : time 11.788106936644 (nsec) --- local (x,y) 7.2616680855783, -2.0051275416597
+  Layer[4] : time 13.472227052578 (nsec) --- local (x,y) 8.8803103207096, -2.5868156589047
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.768745515088 (nsec) --- local (x,y) -91.720504357638, -13.925526946853
+  Layer[1] : time 36.454726369666 (nsec) --- local (x,y) -115.08519838582, -14.263250928736
+  Layer[2] : time 38.14116402265 (nsec) --- local (x,y) -139.26311422912, -13.826390264436
+  Layer[3] : time 39.835300043633 (nsec) --- local (x,y) -172.27642045527, 1.2525078408113
+  Layer[4] : time 41.529449335803 (nsec) --- local (x,y) -205.21013001101, 16.578506803071
+EM Calorimeter has 1 hits. Total Edep is 160.7698154632 (MeV)
+Hadron Calorimeter has 3 hits. Total Edep is 12.945051282089 (MeV)
+
+>>> Event 2 >>> Simulation truth : pi+ (0,0,1000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 5.0351674199077 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[10] 43.056700003318 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.7357536931842 (nsec) --- local (x,y) -0.45942866248571, 1.6849913060608
+  Layer[1] : time 8.4198407185392 (nsec) --- local (x,y) -1.525509300157, 2.4263899371113
+  Layer[2] : time 10.1039336757 (nsec) --- local (x,y) -2.9412747136777, 3.1178990723819
+  Layer[3] : time 11.78802750917 (nsec) --- local (x,y) -4.1346517424441, 3.9720589245104
+  Layer[4] : time 13.472129210565 (nsec) --- local (x,y) -5.4587124034162, 5.2032620542799
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.648227991551 (nsec) --- local (x,y) -94.482469249593, 19.333913071379
+  Layer[1] : time 36.333192563553 (nsec) --- local (x,y) -110.05584658106, 20.405788457489
+  Layer[2] : time 38.018185535043 (nsec) --- local (x,y) -125.87321494762, 21.412040655768
+  Layer[3] : time 39.703172705314 (nsec) --- local (x,y) -141.5885950234, 22.109913397429
+  Layer[4] : time 41.388185596978 (nsec) --- local (x,y) -157.47176560701, 23.431282240998
+EM Calorimeter has 7 hits. Total Edep is 376.98294602978 (MeV)
+Hadron Calorimeter has 0 hits. Total Edep is 0 (MeV)
+
+>>> Event 3 >>> Simulation truth : pi+ (-0,0,1000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 5.0351600290689 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[10] 43.224339242912 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.7357302573011 (nsec) --- local (x,y) 1.8651039354952, -0.1898564115317
+  Layer[1] : time 8.419804231636 (nsec) --- local (x,y) 3.9858588346045, -0.49708753916214
+  Layer[2] : time 10.103876233681 (nsec) --- local (x,y) 5.7135296012128, -0.93795439342903
+  Layer[3] : time 11.787949454882 (nsec) --- local (x,y) 7.3210151613326, -1.2901087925406
+  Layer[4] : time 13.472025404418 (nsec) --- local (x,y) 8.9705182314438, -1.2848272785971
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.769311419256 (nsec) --- local (x,y) -85.278626473101, -0.85091755768136
+  Layer[1] : time 36.461890463403 (nsec) --- local (x,y) -105.84017111093, -11.523067165083
+  Layer[2] : time 38.156589994484 (nsec) --- local (x,y) -125.94021735233, -25.238661052933
+  Layer[3] : time 39.851336029752 (nsec) --- local (x,y) -146.18651461298, -39.150063166538
+  Layer[4] : time 41.546064337292 (nsec) --- local (x,y) -166.25404208949, -53.04397818157
+EM Calorimeter has 2 hits. Total Edep is 177.61208495958 (MeV)
+Hadron Calorimeter has 2 hits. Total Edep is 14.985858056944 (MeV)
+
+>>> Event 4 >>> Simulation truth : pi+ (-0,0,1000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 5.0351637116496 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[10] 43.083873234028 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.7357325624869 (nsec) --- local (x,y) 0.091250475804862, -0.22306242497351
+  Layer[1] : time 8.419800845695 (nsec) --- local (x,y) 0.059112237687654, -1.0469604643205
+  Layer[2] : time 10.103871253373 (nsec) --- local (x,y) 0.15315106444468, -1.843823997524
+  Layer[3] : time 11.787943885261 (nsec) --- local (x,y) 0.24488248101419, -2.3186574574397
+  Layer[4] : time 13.472019540734 (nsec) --- local (x,y) 0.091832969723498, -2.9326791784934
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.674871796198 (nsec) --- local (x,y) -93.931374632898, -7.6988170721584
+  Layer[1] : time 36.359964247117 (nsec) --- local (x,y) -111.06344253847, -8.1513567903274
+  Layer[2] : time 38.045048638743 (nsec) --- local (x,y) -128.09330521881, -8.9405125814064
+  Layer[3] : time 39.730182520106 (nsec) --- local (x,y) -145.52278461734, -9.7280159482855
+  Layer[4] : time 41.415294000907 (nsec) --- local (x,y) -162.73547750975, -10.562174573328
+EM Calorimeter has 8 hits. Total Edep is 419.82479087025 (MeV)
+Hadron Calorimeter has 0 hits. Total Edep is 0 (MeV)
+
+>>> Event 0 >>> Simulation truth : e+ (-0,0,1000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 4.9867850663163 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[6] 43.217110152313 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.6709529373874 (nsec) --- local (x,y) 0.041788898490481, -2.0425175708604
+  Layer[1] : time 8.33877930644 (nsec) --- local (x,y) 0.030579937078428, -3.3630847860997
+  Layer[2] : time 10.006607470247 (nsec) --- local (x,y) -0.24490930156491, -4.8572992096052
+  Layer[3] : time 11.674436693818 (nsec) --- local (x,y) -0.55868800752886, -6.4476295360729
+  Layer[4] : time 13.342266907378 (nsec) --- local (x,y) -1.037320729002, -8.0867622755745
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.836966797259 (nsec) --- local (x,y) -303.11882434593, -46.560025134481
+  Layer[1] : time 36.516456065105 (nsec) --- local (x,y) -362.29577225203, -49.487230537287
+  Layer[2] : time 38.195651614668 (nsec) --- local (x,y) -420.73849064203, -51.985294393607
+  Layer[3] : time 39.87494012311 (nsec) --- local (x,y) -479.40907606938, -54.742242180122
+  Layer[4] : time 41.55419040328 (nsec) --- local (x,y) -537.94640100479, -58.139233562243
+EM Calorimeter has 7 hits. Total Edep is 847.14451935507 (MeV)
+Hadron Calorimeter has 0 hits. Total Edep is 0 (MeV)
+
+>>> Event 1 >>> Simulation truth : e+ (0,0,1000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 4.9867833381892 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[9] 43.19115435931 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.6709492072449 (nsec) --- local (x,y) -0.13435041492694, -0.22541368470335
+  Layer[1] : time 8.3387704060407 (nsec) --- local (x,y) -0.21638560035583, -0.68593932530416
+  Layer[2] : time 10.006591852379 (nsec) --- local (x,y) -0.24367107611581, -1.217035044001
+  Layer[3] : time 11.674413961053 (nsec) --- local (x,y) -0.2162283068794, -1.9344406876323
+  Layer[4] : time 13.342237140819 (nsec) --- local (x,y) -0.20376794685283, -2.8335781513397
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.853410146598 (nsec) --- local (x,y) -146.80488315757, -21.161320185364
+  Layer[1] : time 36.524095999836 (nsec) --- local (x,y) -176.06642388013, -23.010090771121
+  Layer[2] : time 38.195009737776 (nsec) --- local (x,y) -206.48591991194, -24.68845501763
+  Layer[3] : time 39.865890248198 (nsec) --- local (x,y) -236.76503093751, -25.850546379143
+  Layer[4] : time 41.536696503244 (nsec) --- local (x,y) -266.68733451347, -26.604059663539
+EM Calorimeter has 13 hits. Total Edep is 974.66489742634 (MeV)
+Hadron Calorimeter has 0 hits. Total Edep is 0 (MeV)
+
+>>> Event 2 >>> Simulation truth : e+ (-0,0,1000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 4.9867861173939 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[9] 43.193160441892 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.6709514340175 (nsec) --- local (x,y) 1.3677692640486, 0.52759673696119
+  Layer[1] : time 8.3387724595327 (nsec) --- local (x,y) 1.6760483440374, 0.78311474064483
+  Layer[2] : time 10.006593150579 (nsec) --- local (x,y) 1.9236534117936, 0.82414298949078
+  Layer[3] : time 11.67441411238 (nsec) --- local (x,y) 2.2758570942734, 0.70540248722537
+  Layer[4] : time 13.342234832674 (nsec) --- local (x,y) 2.5004603407602, 0.78987736820977
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.855063294554 (nsec) --- local (x,y) -148.30848678082, 4.122925999617
+  Layer[1] : time 36.525970338479 (nsec) --- local (x,y) -178.73008373632, 4.9634092068652
+  Layer[2] : time 38.196882155023 (nsec) --- local (x,y) -209.17665681302, 5.7500774563484
+  Layer[3] : time 39.867768536472 (nsec) --- local (x,y) -239.50048850518, 6.4176463164109
+  Layer[4] : time 41.538654231894 (nsec) --- local (x,y) -269.82492481281, 6.8700763960555
+EM Calorimeter has 7 hits. Total Edep is 960.89930234929 (MeV)
+Hadron Calorimeter has 0 hits. Total Edep is 0 (MeV)
+
+>>> Event 3 >>> Simulation truth : e+ (-0,0,1000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 4.9867849798674 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[9] 43.222864333897 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.6709792165681 (nsec) --- local (x,y) 2.15424471833, 0.58679356522491
+  Layer[1] : time 8.3388409770088 (nsec) --- local (x,y) 4.0754503714504, 3.5327227281001
+  Layer[2] : time 10.006706082992 (nsec) --- local (x,y) 6.2511325851958, 6.4707643550182
+  Layer[3] : time 11.674568890092 (nsec) --- local (x,y) 8.23418244469, 9.4294480977605
+  Layer[4] : time 13.342428370684 (nsec) --- local (x,y) 10.306747938883, 12.147702144517
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.882838197104 (nsec) --- local (x,y) -136.25459751514, 48.670226873025
+  Layer[1] : time 36.554040043962 (nsec) --- local (x,y) -167.9786443166, 51.554171116922
+  Layer[2] : time 38.225340824922 (nsec) --- local (x,y) -200.16950038662, 54.417642736665
+  Layer[3] : time 39.896632024849 (nsec) --- local (x,y) -232.31204668983, 57.324219218374
+  Layer[4] : time 41.567920683398 (nsec) --- local (x,y) -264.43905462604, 60.267576634883
+EM Calorimeter has 7 hits. Total Edep is 970.69281188723 (MeV)
+Hadron Calorimeter has 1 hits. Total Edep is 0.35256721899402 (MeV)
+
+>>> Event 4 >>> Simulation truth : e+ (-0,0,1000)
+Hodoscope 1 has 1 hits.
+  Hodoscope[7] 4.9867833678758 (nsec)
+Hodoscope 2 has 1 hits.
+  Hodoscope[9] 43.151805449317 (nsec)
+Drift Chamber 1 has 5 hits.
+  Layer[0] : time 6.6709518693422 (nsec) --- local (x,y) -1.0383593036285, 0.65489104156576
+  Layer[1] : time 8.3387785632771 (nsec) --- local (x,y) -2.2594415262769, 1.2624880203554
+  Layer[2] : time 10.006607701922 (nsec) --- local (x,y) -3.7333351996809, 1.9096498830817
+  Layer[3] : time 11.674437243923 (nsec) --- local (x,y) -5.2266788563869, 2.5945269332031
+  Layer[4] : time 13.342263773458 (nsec) --- local (x,y) -6.4880588037114, 3.0647864667578
+Drift Chamber 2 has 5 hits.
+  Layer[0] : time 34.813984439875 (nsec) --- local (x,y) -174.78094533206, 13.82090478229
+  Layer[1] : time 36.484878045834 (nsec) --- local (x,y) -205.12998716094, 14.865557377011
+  Layer[2] : time 38.155746708699 (nsec) --- local (x,y) -235.35755454525, 15.847625238586
+  Layer[3] : time 39.826592681643 (nsec) --- local (x,y) -265.47973686423, 16.546677172263
+  Layer[4] : time 41.497391322432 (nsec) --- local (x,y) -295.36997567153, 16.993685534943
+EM Calorimeter has 12 hits. Total Edep is 950.1493739566 (MeV)
+Hadron Calorimeter has 0 hits. Total Edep is 0 (MeV)
+Graphics systems deleted.
+Visualization Manager deleting...
+

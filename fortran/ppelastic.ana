@@ -1,0 +1,10 @@
+analyzer
+ // analyzer number
+
+hts1
+0, # 100 100 11, 5 20 70, "Left-SMWDC Yield"
+0, # 100 100 12, 5 20 70, "Right-SMWDC Yield"
+0, # 100 100 13, 5 20 70, "Total-SMWDC Yield"
+0, # 100 100 14, 5 20 70, "Diff-SMWDC Yield"
+0, # 100 100 15, 5 20 70, "Error-SMWDC Yield"
+

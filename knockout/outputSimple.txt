@@ -1,0 +1,13 @@
+Reasction       TiL     S       k       th_k    ph_k    th_NN   ph_NN   T1L     th_1L           T2L     th_2L   T1      th_1            T2      th_2    DSCfactor
+22O(p,pn)21O 	250	0	100	90	0	90	0	125.009	-34.8076	125.012	50.3744	125.009	-34.8076	160.592	137.653	1.4425
+22O(p,pn)21O 	250	10	100	90	0	90	0	118.673	-33.6405	118.683	49.3729	118.673	-33.6405	154.262	138.711	1.42402
+22O(p,pn)21O 	261	10	100	90	0	90	0	124.121	-33.8347	124.131	49.1962	124.121	-33.8347	160.612	138.74	1.41263
+22O(p,pn)21O 	261	10	100	90	0	100	0	145.637	-29.1431	102.615	53.8825	145.637	-29.1431	180.917	143.366	2.26176
+14O(p,pn)13O 	260	0	0	0	0	0	0	nan	nan	nan	nan	nan	nan	nan	nan	nan
+14O(p,pn)13O 	260	0	0	0	0	0	0	nan	nan	nan	nan	nan	nan	nan	nan	nan
+14O(p,pn)13O 	260	0	0	0	0	0	0	-nan	-nan	-nan	-nan	-nan	-nan	-nan	-nan	-nan
+14O(p,pn)13O 	260	0	0	0	0	0	0	-nan	-nan	-nan	-nan	-nan	-nan	-nan	-nan	-nan
+14O(p,pn)13O 	260	0	0	0	0	0	0	-nan	-nan	-nan	-nan	-nan	-nan	-nan	-nan	-nan
+14O(p,pn)13O 	260	0	0	0	0	0	0	-nan	-nan	-nan	-nan	-nan	-nan	-nan	-nan	-nan
+14O(p,pn)13O 	260	0	0	0	0	0	0	1.13687e-13	-180	260	180	1.13687e-13	-180	-1.13687e-13	180	-0
+14O(p,pn)13O 	260	0	0	0	0	0	0	1.13687e-13	-180	260	180	1.13687e-13	-180	-1.13687e-13	180	-0

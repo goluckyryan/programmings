@@ -12,8 +12,8 @@ void InputCheck(int a, char *b[]);
 int main(int argc, char *argv[])
 {
 	InputCheck (argc, argv);
-	Knockout(argv);
-	//Exp(argv);
+	//Knockout(argv);
+	Exp(argv);
 	Display();
     //Display4V();
     return 0;

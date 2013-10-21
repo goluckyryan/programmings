@@ -1,18 +1,15 @@
 CC=g++
 #CFLAG = -Wall -g
 
-INCKUDEDIR = -I../CppLibrary
+all: knockout4V.o Exp4V.o
 
-all: knockout.o knockoutExp.o knockoutPerl.o
+	
+knockout4V.o: knockout4V.cpp knockoutLibrary4V.h ../CppLibrary/nuclei_mass.h ../CppLibrary/fourVector.h ../CppLibrary/lorentzian.h 
+	$(CC) knockout4V.cpp -o knockout4V.o 
 
-knockout.o: knockout.cpp knockoutLibrary.h ../CppLibrary/nuclei_mass.h ../CppLibrary/mass03.txt
-	$(CC) knockout.cpp -o knockout.o
+Exp4V.o: Exp4V.cpp knockoutLibrary4V.h ../CppLibrary/nuclei_mass.h ../CppLibrary/fourVector.h ../CppLibrary/lorentzian.h 
+	$(CC) Exp4V.cpp -o Exp4V.o 
 
-knockoutExp.o: knockoutExp.cpp knockoutLibrary.h
-	$(CC) knockoutExp.cpp -o knockoutExp.o 
-
-knockoutPerl.o: knockoutPerl.cpp knockoutLibrary.h
-	$(CC) knockoutPerl.cpp -o knockoutPerl.o 
 
 clean:
-	rm -rf knockout.o knockoutExp.o knockoutPerl.o
+	rm -rf  knockout4V.o Exp4V.o

@@ -1,24 +1,4 @@
 /*  Knockout of O(p,pn)R
-
-The Lorentz Tranform on aribtary direction is well discrpted in Goldstien P .281
-
-Generation of data.dat file for specific parameter
-
-assume Phi_k = Phi_NN = 0
-
-The Paramters are k Theta_k, Theta_NN, S
-
-The possible experimental data are the 4-momentum of P1L and P2L
-
-P1L = {T1L, Theta_P1L}
-P2L = {T2L, Theta_P2L}
-
-The program should specific 2 paramters (say, k and Theta_k)
-then, run the other 2, (say, S and Theta_NN)
-Then, result of P1L and P2L, 
-
-the program should point the x-axis and y-axis data
-
 ____________________________
 the input are 4 (k, Theta_k, x-axis, y-axis)
 

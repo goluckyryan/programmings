@@ -97,7 +97,6 @@ double mass_resi_gs;
     FourVector cm, cm_c, cm_L;
 
     Lorentzian L1, L2, L3;
-    RotMatrix4D Rot1, Rot2;
 
 
 //prototype____________________________________________________________________
@@ -106,6 +105,7 @@ void Display4V();
 
 double DSCfactor(FourVector A, FourVector C ,double beta);  // dsc from oxygen frame A to frame C
 
+void Exp(char arg[]);
 void Knockout( char argv[]);
 
 
@@ -119,36 +119,60 @@ void Display(){
     printf("A(a, b+c)B = %3.0f%s(p, p1+p2)%3.0f%s  => Neo(p,p1)p2 \n", mass_v1[2], proj.c_str(), mass_resi[2], residual.c_str());
     printf("S: %5.1f MeV, T(a): %5.1f MeV/A \n",S,TKEA );
     printf("k: %5.1f MeV/c, Theta(k): %5.1f deg, Phi(k): %5.1f deg \n",k,Theta_k,Phi_k );
-    printf("Theta(NN): %5.1f deg, Phi(NN): %5.1f deg \n",Theta_NN,Phi_NN );
+    printf("Theta(NN): %8.3f deg, Phi(NN): %8.3f deg \n",Theta_NN,Phi_NN );
     printf("DSC factor for p2 from nucleus frame to Lab frame = %12.4f \n", DSCfactor(p2,p2_L, v2.beta));
 
+    cout << "-----\e[33m Nucleus Frame \e[m------"<< endl;
     v1.printKinamatics(6,  "  A   ");
     v2.printKinamatics(0,  "  a   ");
     resi.printKinamatics(0," resi ");
-    cout << "\e[32m" ;
-    Neo.printKinamatics(0, " Neo  "); cout << "\e[m";
+    Neo.printKinamatics(0, " Neo  ");
     p1.printKinamatics(0,  "  b   ");
     p2.printKinamatics(0,  "  c   ");
-    cm.printKinamatics(0,  " cm   ");
-    cout << "---------------------"<< endl;
+/*    cm.printKinamatics(0,  " cm   ");
+    cout << "-----\e[33m CM Frame \e[m------"<< endl;
     cm_c.printKinamatics(0,  " cm_c ");
     v1_c.printKinamatics(0,  "  A_c ");
     v2_c.printKinamatics(0,  "  a_c ");
     resi_c.printKinamatics(0,"resi_c");
     Neo_c.printKinamatics(0, "Neo_c ");
     p1_c.printKinamatics(0,  "  b_c ");
-    p2_c.printKinamatics(0,  "  c_c ");
-//    (Neo_c+v2_c).print("","\n");
-//    (p1_c+p2_c).print("","\n");
-    cout << "---------------------"<<endl;
+    p2_c.printKinamatics(0,  "  c_c ");   */
+    cout << "-----\e[33m Lab Frame \e[m----------"<<endl;
     v1_L.printKinamatics(0,  "  A_L ");
     v2_L.printKinamatics(0,  "  a_L ");
     resi_L.printKinamatics(0,"resi_L");
     Neo_L.printKinamatics(0, " Neo_L");
-    p1_L.printKinamatics(0,  "  b_L ");
-    p2_L.printKinamatics(0,  "  c_L ");
 
-    cout << endl;
+
+    cout <<                  "  b_L ";
+    printf("%3.0f ", p1_L.A);
+    printf("%3.0f ", p1_L.Z);
+    printf("%8.2f ", p1_L.mass);
+    printf("%8.2f ", p1_L.energy);
+    cout << "\e[32m";
+    printf("%8.2f ", p1_L.keA); cout << "\e[m";
+    printf("%8.2f ", p1_L.momentum);
+    printf("%8.4f ", p1_L.beta);
+    cout << "\e[32m";
+    printf("%8.2f ", p1_L.angle[0]*rad2deg);
+    printf("%8.2f ", p1_L.angle[1]*rad2deg);
+    cout << "\e[m" << endl;
+
+
+    cout <<"  c_L ";
+    printf("%3.0f ", p2_L.A);
+    printf("%3.0f ", p2_L.Z);
+    printf("%8.2f ", p2_L.mass);
+    printf("%8.2f ", p2_L.energy);
+    cout << "\e[32m";
+    printf("%8.2f ", p2_L.keA); cout << "\e[m";
+    printf("%8.2f ", p2_L.momentum);
+    printf("%8.4f ", p2_L.beta);
+    cout << "\e[32m";
+    printf("%8.2f ", p2_L.angle[0]*rad2deg);
+    printf("%8.2f ", p2_L.angle[1]*rad2deg);
+    cout << "\e[m"<<endl;
 
 	cout<< "======================================================="<<endl;
 }
@@ -209,6 +233,84 @@ double DSCfactor(FourVector A, FourVector C, double beta){
 
 }
 
+void Exp( char *argv[]){
+
+    double KE_1, Theta_1, Phi_1;
+    double KE_2, Theta_2, Phi_2;
+
+    Z_num    = atoi(argv[1]);
+    A_num    = atoi(argv[2]);
+    TKEA     = atof(argv[3]);
+    KE_1     = atof(argv[4]);
+    Theta_1  = atof(argv[5]);
+    Phi_1    = atof(argv[6]);
+    KE_2     = atof(argv[7]);
+    Theta_2  = atof(argv[8]);
+    Phi_2    = atof(argv[9]);
+
+    mass_v1[1] = (double) Z_num;
+    mass_v1[2] = (double) A_num;
+    mass_v1[0] = Nucleus_Mass(mass_v1[1],mass_v1[2]);
+    proj = Nucleus_Name(mass_v1[1],mass_v1[2]);
+    mass_v2[1]= 1, mass_v2[2]=1, mass_v2[0]   = Nucleus_Mass(mass_v2[1],mass_v2[2]);
+
+    mass_p1[1]= 1, mass_p1[2]=1, mass_p1[0]   = Nucleus_Mass(mass_p1[1],mass_p1[2]);
+    mass_p2[1]= 1, mass_p2[2]=1, mass_p2[0]   = Nucleus_Mass(mass_p2[1],mass_p2[2]);
+
+    mass_resi[1]= mass_v1[1] - mass_p1[1];
+    mass_resi[2]= mass_v1[2] - mass_p1[2];
+    mass_resi_gs = Nucleus_Mass(mass_resi[1],mass_resi[2]);
+    residual = Nucleus_Name(mass_resi[1],mass_resi[2]);
+
+    v2.set(1,mass_v2, TKEA,180,0);
+
+    v1_L.set(4, mass_v1, v2.beta, 0, 0);
+    v2_L.set(1, mass_v2, 0, 0, 0);
+
+    p1_L.set(1,mass_p1, KE_1, Theta_1, Phi_1);
+    p2_L.set(1,mass_p2, KE_2, Theta_2, Phi_2);
+
+    resi_L = v1_L+v2_L-p1_L -p2_L;
+    Neo_L = v1_L-resi_L;
+
+    cm = (p1_L+p2_L)/2;
+
+    L1.set(-cm.beta, cm.angle[0]*rad2deg,cm.angle[1]*rad2deg); // Lab to CM
+    L2.set(cm.beta, cm.angle[0]*rad2deg,cm.angle[1]*rad2deg);  // CM to Lab
+    L3.set(v2.beta, v2.angle[0]*rad2deg,v2.angle[1]*rad2deg); // Lab to Nucleus
+
+    cm_c = L1^cm;
+    v1_c = L1^v1_L;
+    v2_c = L1^v2_L;
+    p1_c = L1^p1_L;
+    p2_c = L1^p2_L;
+    resi_c = L1^resi_L;
+    Neo_c = v1_c-resi_c;
+
+    v1 = L3^v1_L;
+    v2 = L3^v2_L;
+    p1 = L3^p1_L;
+    p2 = L3^p2_L;
+    resi = v1 + v2 - p1 - p2;
+    Neo = v1 - resi;
+
+    k = Neo.momentum;
+    Theta_k = Neo.angle[0]*rad2deg;
+    Phi_k = Neo.angle[1]*rad2deg;
+
+    Theta_NN = p1_c.angle[0]*rad2deg;
+    Phi_NN = p1_c.angle[1]*rad2deg;
+
+    S = sqrt(pow(resi.mass,2) + pow(resi.momentum,2)) - v1.mass + p1.mass;
+
+    //printf("p1 : %8.3F , %8.3F, %8.3F \n", KE_1, Theta_1, Phi_1);
+    //printf("p2 : %8.3F , %8.3F, %8.3F \n", KE_2, Theta_2, Phi_2);
+
+    //printf("k = %8.3F,  %8.3F, %8.3F \n", k, Theta_k, Phi_k);
+    //printf("S = %8.3F,  %8.3F, %8.3F \n", S, Theta_NN, Phi_NN);
+
+
+}
 
 void Knockout( char *argv[]){
 
@@ -244,9 +346,9 @@ void Knockout( char *argv[]){
 
     cm = (Neo + v2)/2;
 
-    L1.set(-cm.beta, cm.angle[0]*rad2deg,cm.angle[1]*rad2deg);
-    L2.set(cm.beta, cm.angle[0]*rad2deg,cm.angle[1]*rad2deg);
-    L3.set(-v2.beta, v2.angle[0]*rad2deg,v2.angle[1]*rad2deg);
+    L1.set(-cm.beta, cm.angle[0]*rad2deg,cm.angle[1]*rad2deg); //Nucleus to CM
+    L2.set(cm.beta, cm.angle[0]*rad2deg,cm.angle[1]*rad2deg);  // CM to Nucleus
+    L3.set(-v2.beta, v2.angle[0]*rad2deg,v2.angle[1]*rad2deg); // Nucleus to Lab
 
     cm_c = L1^cm;
     v1_c = L1^v1;

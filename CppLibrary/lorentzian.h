@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <cmath>
 #include "constant.h"
+#include "../CppLibrary/RotMatrix4D.h"
 
 using namespace std;
 

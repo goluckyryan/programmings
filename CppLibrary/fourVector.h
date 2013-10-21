@@ -18,11 +18,11 @@ class FourVector{
         double keA   ;   //MeV/A
         double momentum; // MeV/c
         double beta;
-        double angle[2]; //0 = theta , 1 = phi
+        double angle[2]; //0 = theta , 1 = phi, in rad
 
         FourVector ();  // overloading constructor
-        FourVector (int, double m[3],double, double, double); //constructor
-        void set(int, double m[3], double, double, double);
+        FourVector (int id, double m[3],double, double, double); //constructor
+        void set(int id, double m[3], double, double, double);
         void recalulate(double, double);
         FourVector operator + (FourVector); //vector sum
         FourVector operator - (FourVector); //vector substract
@@ -32,7 +32,7 @@ class FourVector{
        // FourVector operator * (FourVector); //vector cross product
         void normalize();
         void print(string pre, string suf) const;
-        void printKinamatics(int, string) const;
+        void printKinamatics(int id, string msg) const;
         void debug(string) const;
 };
 

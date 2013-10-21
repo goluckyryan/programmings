@@ -64,8 +64,8 @@ k = ki-k1-k2
 #include <stdlib.h> // standard General Utlilities Library
 #include <fstream> // File I/O
 #include <time.h>
-#include "constant.h"
-#include "nuclei_mass.h"
+#include "../CppLibrary/constant.h"
+#include "../CppLibrary/nuclei_mass.h"
 
 using namespace std; // declare a namespace "std", every variable in this code is inside "std"
 
@@ -76,9 +76,10 @@ double TiL; //Kinetic energy of i in Labframe
 double k; //momentum of orbial neutron
 double Theta_k, Phi_k;
 
-double m1=Nucleus_Mass(1,1), m2=Nucleus_Mass(1,1);
+string dum;
+double m1=Nucleus_Mass(1,1,dum), m2=Nucleus_Mass(1,1,dum);
 double mi=m1;
-string reaction="O(p,2p)", residual="O";
+string reaction="(p,2p)", proj="O", residual="O";
 
 double T1L;
 double theta_1L;
@@ -153,7 +154,7 @@ void Display(){
 
 	//cout << endl ;
 	cout << "=======================================================" << endl;
-	cout << "Reaction :    \e[32m      "<<ma_num << reaction << ma_num-1 << residual <<" \e[m " <<endl;
+	cout << "Reaction :    \e[32m      "<<ma_num << proj << reaction << ma_num-1 << residual <<" \e[m " <<endl;
 	cout << "input parameter:" << endl;
 	cout << "TiL = " << TiL <<", S = "<< S << ", k = " << k  <<endl
 			 << " Theta_k(deg)  = "<< Theta_k*180/pi <<  ",\tPhi_k(deg)  = " << Phi_k*180/pi << endl
@@ -241,8 +242,9 @@ double DSCfactor(double A[],double C[],double b){
 
 void EXP(int ma_num, int e_num, double a, double b, double c, double d, double e, double f, double g){
 
-    double mO=Nucleus_Mass(ma_num,e_num);
-    cout << "Mo = " << mO << endl;
+    double mO=Nucleus_Mass(e_num,ma_num);
+    proj = Nucleus_Name(e_num,ma_num);
+    residual = Nucleus_Name(e_num-1,ma_num-1);
 	TiL=a;
 	T1L=b;
 	theta_1L = c;
@@ -438,7 +440,9 @@ double SIN(double a){
 
 void Simulation(int ma_num, int e_num, double a, double b, double c, double d, double e, double f, double g){
 
-    double mO=Nucleus_Mass(ma_num,e_num);
+    double mO=Nucleus_Mass(e_num,ma_num);
+    proj = Nucleus_Name(e_num,ma_num);
+    residual = Nucleus_Name(e_num-1,ma_num-1);
     //cout << "mass[MeV]=" << mO << endl;
 	TiL=a;
 	k=b;

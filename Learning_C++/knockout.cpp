@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <stdio.h>
 #include <cmath>
 #include "../CppLibrary/constant.h"
@@ -9,19 +10,33 @@
 
 using namespace std;
 
-int main(){
+int main(int argc, char *argv[]){
+
     double S = 0; //Seperation energy
     double TKEA = 250;  //kinetic energy pre nucleon
     double k = 0, k_theta = 0, k_phi = 0;
     double theta_NN =90, phi_NN =0;
+    string nameA, namea, name1,name2,nameResid;
 
-    cout << "S [MeV] : ";
-    cin >> S;
-    cout << "T(a) [MeV] : ";
-    cin >> TKEA;
-    cout << "(k, theta(k), phi(k)) :";
-    cin >> k >> k_theta >> k_phi;
-   // cout << "(theta "
+    namea = "p";
+    name1 = "p";
+    name2= "p";
+
+    int Z, A;
+
+    if (argc == 8) {
+        Z = atoi(argv[1]);
+        A = atoi(argv[2]);
+        TKEA = atof(argv[3]);
+        S  = atof(argv[4]);
+        k  = atof(argv[5]);
+        k_theta = atof(argv[6]);
+        k_phi = atof(argv[7]);
+
+    }else{
+        cout << "./knockout.o Z A TKEA Sp k k_thtea k_phi"<< endl;
+        exit(2);
+    }
 
     // normal kinematics reaction  A(a, b+c)B
     FourVector v1, v2; //v1 = A, v2 = a
@@ -43,10 +58,12 @@ int main(){
     double mass_v1[3];
     double mass_v2[3];
     double mass_resi[3];
+    double mass_resi_gs;
     double mass_p1[3];
     double mass_p2[3];
 
-    mass_v1[1]=22, mass_v1[2]=8, mass_v1[0]   = Nucleus_Mass(mass_v1[1],mass_v1[2]);
+    mass_v1[1]= Z, mass_v1[2]=A, mass_v1[0]   = Nucleus_Mass(mass_v1[1],mass_v1[2]);
+    nameA = Nucleus_Name(mass_v1[1],mass_v1[2]);
     mass_v2[1]= 1, mass_v2[2]=1, mass_v2[0]   = Nucleus_Mass(mass_v2[1],mass_v2[2]);
 
     mass_p1[1]= 1, mass_p1[2]=1, mass_p1[0]   = Nucleus_Mass(mass_p1[1],mass_p1[2]);
@@ -55,6 +72,8 @@ int main(){
     mass_resi[1]= mass_v1[1] - mass_p1[1];
     mass_resi[2]= mass_v1[2] - mass_p1[2];
     mass_resi[0]= sqrt(pow(mass_v1[0]-mass_p1[0]+S,2)-pow(k,2));
+    mass_resi_gs = Nucleus_Mass(mass_resi[1],mass_resi[2]);
+    nameResid = Nucleus_Name(mass_resi[1],mass_resi[2]);
 
     v1.set(1, mass_v1, 0, 0, 0);
     v2.set(1, mass_v2, TKEA, 0, 0);
@@ -91,23 +110,20 @@ int main(){
 
     ///================================ Display
     cout << "========================================" << endl;
-    printf("A(a, b+c)B \n");
-    printf("S: %5.1f MeV, T(a): %5.1f MeV \n",S,TKEA );
+    printf("A(a, b+c)B = %s(%s, %s+%s)%s\n", nameA.c_str(), namea.c_str(),name1.c_str(), name2.c_str(),nameResid.c_str());
+    printf("S: %5.1f MeV, T(a): %5.1f MeV/A \n",S,TKEA );
     printf("k: %5.1f MeV/c, Theta(k): %5.1f deg, Phi(k): %5.1f deg \n",k,k_theta,k_phi );
     printf("Theta(NN): %5.1f deg, Phi(NN): %5.1f deg \n",theta_NN,phi_NN );
 
     v1.printKinamatics(6,  " v1   ");
+    v2.printKinamatics(0,  " v2   ");
     resi.printKinamatics(0," resi ");
     cout << "\e[32m" ;
     Neo.printKinamatics(0, " Neo  "); cout << "\e[m";
-    v2.printKinamatics(0,  " v2   ");
     p1.printKinamatics(0, " p1   ");
     p2.printKinamatics(0, " p2   ");
-
     cm.printKinamatics(0,  " cm   ");
-
-    cout << endl;
-
+    cout << "---------------------"<< endl;
     cm_c.printKinamatics(0,  " cm_c ");
     resi_c.printKinamatics(0, "resi_c");
     Neo_c.printKinamatics(0, "Neo_c ");
@@ -117,9 +133,7 @@ int main(){
     p1_c.printKinamatics(0,  " p1_c ");
 //    (Neo_c+v2_c).print("","\n");
 //    (p1_c+p2_c).print("","\n");
-
-    cout << endl;
-
+    cout << "---------------------"<<endl;
     v1_L.printKinamatics(0,  " v1_L ");
     resi_L.printKinamatics(0, "resi_L");
     Neo_L.printKinamatics(0, " Neo_L");
@@ -128,7 +142,7 @@ int main(){
     p1_L.printKinamatics(0,  " p1_L ");
 
     cout << endl;
-
+/*
     v1.print(  " v1  ","\n");
     resi.print("resi ","\n");
     Neo.print( " Neo ","\n");
@@ -150,6 +164,6 @@ int main(){
     v2_L.print(  " v2_L  ","\n");
     p1_L.print(  " p1_L  ","\n");
     p2_L.print(  " p2_L  ","\n");
-
+*/
     return 0;
 }

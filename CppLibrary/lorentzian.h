@@ -13,7 +13,7 @@ class Lorentzian{
         double beta, gamma, angle[2];
 
         Lorentzian();
-        void set(double, double, double);
+        void set(double beta_a, double Theta, double Phi);
         Lorentzian (double, double, double);
         Lorentzian operator * (Lorentzian); //matrix multiplicatio
         Lorentzian operator + (RotMatrix4D); //matrix multiplicatio
@@ -38,8 +38,8 @@ Lorentzian::Lorentzian() {
     angle[1] = 0; //phi
 }
 
-void Lorentzian::set (double a, double Theta, double Phi){
-    beta = a ;
+void Lorentzian::set (double beta_a, double Theta, double Phi){
+    beta = beta_a ;
 	double g = 1/sqrt(1- pow(beta,2));
 
 	Theta = Theta * deg2rad;

@@ -22,8 +22,7 @@ int main(int argc, char *argv[])
 }
 //============================================
 void InputCheck (int a, char *b[]){
-	if(a < 11) {
-	}else {
+	if(a != 10 ) {
  		cout << endl << "Usage: " << endl
 			 << "./Exp4V.o Z A TKEA k Theta_kx(deg) Phi_kx(deg) Theta_NN(deg) Phi_NN(deg) S" << endl << endl;
         exit(0);

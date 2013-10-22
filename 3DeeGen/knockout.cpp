@@ -1,1 +1,0 @@
-/home/goluckyryan/Dropbox/programmings/knockout/knockout.cpp

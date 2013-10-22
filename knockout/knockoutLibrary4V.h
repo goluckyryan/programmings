@@ -1,4 +1,4 @@
-/*  Knockout of O(p,pn)R
+/*  Knockout of O(p,2p)R
 
 The Lorentz Tranform on aribtary direction is well discrpted in Goldstien P .281
 
@@ -107,6 +107,8 @@ double DSCfactor(FourVector A, FourVector C ,double beta);  // dsc from oxygen f
 
 void Exp(char arg[]);
 void Knockout( char argv[]);
+
+void Output(string filename);
 
 
 //function___________________________________________________________________
@@ -372,5 +374,49 @@ void Knockout( char *argv[]){
     p2_L = L3^p2;
     resi_L = L3^resi;
 
+
+}
+
+void Output(string filename){
+
+    string tmp;
+
+    ifstream file_out1(filename.c_str());
+    file_out1 >> tmp;
+    if (tmp.empty()){
+        cout << "creating " << filename << endl;
+
+        FILE*file;
+        file = fopen(filename.c_str(),"w");
+        fprintf(file, "%16s %8s %6s %6s %8s %8s %8s %8s %8s %8s %8s %8s %8s %8s\n",
+                      "reaction", "TKEA", "S", "k", "Theta_k", "Phi_k", "Theta_NN", "Phi_NN",
+                      "KE1", "Theta_1", "Phi_1",
+                      "KE2", "Theta_2", "Phi_2");
+//        file_out1 << <<"Reaction\tTiL\tS\tk\tTheta_k\tPhi_k\tTheta_NN\tPhi_NN\tT1L(p)\ttheta_1L\tT2L(n)\ttheta2L\tT1(p)\ttheta_1\tT2(n)\ttheta2\tDSC_factor" << endl;
+        fclose(file);
+    }
+    file_out1.close();
+
+    ofstream file_out;
+    file_out.open(filename.c_str(), ios::app);
+
+    file_out << setw(2) << mass_v1[1]<< proj;
+    file_out << "(p,2p)";
+    file_out << setw(2) << mass_resi[1]<<residual;
+    file_out << fixed << setw(9) << setprecision(2) << TKEA ;
+    file_out << fixed << setw(7) << setprecision(2) <<  S ;
+    file_out << fixed << setw(7) << setprecision(2) <<  k ;
+    file_out << fixed << setw(9) << setprecision(2) <<  Theta_k ;
+    file_out << fixed << setw(9) << setprecision(2) <<  Phi_k ;
+    file_out << fixed << setw(9) << setprecision(2) <<  Theta_NN ;
+    file_out << fixed << setw(9) << setprecision(2) <<  Phi_NN ;
+    file_out << fixed << setw(9) << setprecision(2) <<  p1_L.keA ;
+    file_out << fixed << setw(9) << setprecision(2) <<  p1_L.angle[0]*rad2deg ;
+    file_out << fixed << setw(9) << setprecision(2) <<  p1_L.angle[1]*rad2deg ;
+    file_out << fixed << setw(9) << setprecision(2) <<  p2_L.keA ;
+    file_out << fixed << setw(9) << setprecision(2) <<  p2_L.angle[0]*rad2deg ;
+    file_out << fixed << setw(9) << setprecision(2) <<  p2_L.angle[1]*rad2deg ;
+    file_out << endl;
+    file_out.close();
 
 }

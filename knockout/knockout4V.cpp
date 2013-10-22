@@ -16,6 +16,7 @@ int main(int argc, char *argv[])
 	//Exp(argv);
 	Display();
     //Display4V();
+    Output("output.txt");
     return 0;
 
 }

@@ -23,7 +23,7 @@ double DotProduct(double *a, double *b){
 }
 
 double *CrossProduct(double a[3], double b[3]){
-    double c[3];
+    double *c;
     c[0]=a[1]*b[2]-a[2]*b[1];
     c[1]=-a[0]*b[2]+a[2]*b[0];
     c[2]=a[0]*b[1]-a[1]*b[0];
@@ -40,4 +40,38 @@ double *MatrixProduct(int dimension, double **a, double *b){
     }
     return c;
     delete [] c;
+}
+
+int *InversionVector(int dimension, int *a){
+    int *b = new int [dimension-1];
+    int count;
+
+    for (int i = 1; i < dimension ; i++ ){
+        count = 0;
+        for(int j = 0; j < i ; j ++){
+            //cout << a[j] << ", " << a[i] << endl;
+            if ( a[j] > a[i]){
+                count ++ ;
+            }
+        }
+        b[i-1]= count;
+    }
+
+    return b;
+
+}
+
+
+int Parity(int dimension, int *a){
+    int *b;
+    int sum =0;
+
+    b = InversionVector(dimension, a);
+
+    for ( int i = 0; i < dimension; i ++){
+        sum = sum + b[i];
+    }
+
+    return pow(-1, sum);
+
 }

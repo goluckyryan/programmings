@@ -18,11 +18,12 @@ void test(){
 		h->SetName(name);
 		h->SetTitle(title);
 		h->FillRandom("gaus",1000);
+		Hlist.Add(h);
 		h->Draw();
 		canvas->Update();
 	}
 	TFile f("demo.root","recreate");
-	Hlist->Write();
+	f.Write();
 	f.Close();
 	
 }

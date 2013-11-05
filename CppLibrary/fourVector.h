@@ -31,7 +31,7 @@ class FourVector{
         double     operator ^ (FourVector); //vector dot product
        // FourVector operator * (FourVector); //vector cross product
         void normalize();
-        void print(string pre, string suf) const;
+        void print(string pre, string suf) const; //const = the function does not change the data. 
         void printKinamatics(int id, string msg) const;
         void debug(string) const;
 };

@@ -1,9 +1,4 @@
-#include <iostream>
-#include "TH1F"
-#include "TCanvas"
-#include "TObjArray"
-
-void test(){
+void test_1(){
 
 	char name[10], title[20]; 
 	TObjArray Hlist(0);
@@ -23,7 +18,7 @@ void test(){
 		canvas->Update();
 	}
 	TFile f("demo.root","recreate");
-	f.Write();
+	Hlist.Write();
 	f.Close();
 	
 }

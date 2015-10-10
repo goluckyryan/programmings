@@ -14,27 +14,31 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int A_text=0x7f070013;
-        public static final int A_view=0x7f070012;
-        public static final int Brho_but=0x7f070005;
-        public static final int Brho_text=0x7f07000c;
-        public static final int Z_text=0x7f070011;
-        public static final int Z_view=0x7f070010;
-        public static final int beta_but=0x7f070002;
-        public static final int beta_text=0x7f070009;
-        public static final int gamma_but=0x7f070000;
-        public static final int gamma_text=0x7f070008;
-        public static final int ke_but=0x7f070007;
-        public static final int ke_text=0x7f070006;
-        public static final int length_text=0x7f07000a;
-        public static final int length_view=0x7f070003;
-        public static final int mass_text=0x7f07000f;
-        public static final int mass_view=0x7f07000e;
-        public static final int menu_settings=0x7f070014;
-        public static final int momt_but=0x7f070001;
+        public static final int A_text=0x7f070005;
+        public static final int A_view=0x7f070004;
+        public static final int Brho_but=0x7f070016;
+        public static final int Brho_text=0x7f070017;
+        public static final int Sn_text=0x7f070009;
+        public static final int Sn_view=0x7f070008;
+        public static final int Sp_text=0x7f070007;
+        public static final int Sp_view=0x7f070006;
+        public static final int Z_text=0x7f070003;
+        public static final int Z_view=0x7f070002;
+        public static final int beta_but=0x7f070010;
+        public static final int beta_text=0x7f070011;
+        public static final int gamma_but=0x7f07000e;
+        public static final int gamma_text=0x7f07000f;
+        public static final int ke_but=0x7f07000a;
+        public static final int ke_text=0x7f07000b;
+        public static final int length_text=0x7f070013;
+        public static final int length_view=0x7f070012;
+        public static final int mass_text=0x7f070001;
+        public static final int mass_view=0x7f070000;
+        public static final int menu_settings=0x7f070018;
+        public static final int momt_but=0x7f07000c;
         public static final int momt_text=0x7f07000d;
-        public static final int tof_but=0x7f070004;
-        public static final int tof_text=0x7f07000b;
+        public static final int tof_but=0x7f070014;
+        public static final int tof_text=0x7f070015;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -45,6 +49,8 @@ public final class R {
     public static final class string {
         public static final int A_label=0x7f04000b;
         public static final int Brho_label=0x7f040008;
+        public static final int Sn_label=0x7f04000d;
+        public static final int Sp_label=0x7f04000c;
         public static final int Z_label=0x7f04000a;
         public static final int app_name=0x7f040000;
         public static final int beta_label=0x7f040005;
@@ -54,7 +60,7 @@ public final class R {
         public static final int length_label=0x7f040006;
         public static final int mass_label=0x7f040009;
         public static final int menu_settings=0x7f040002;
-        public static final int momt_label=0x7f04000c;
+        public static final int momt_label=0x7f04000e;
         public static final int tof_label=0x7f040007;
     }
     public static final class style {

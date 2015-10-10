@@ -1,6 +1,6 @@
 CC=g++
 
-all: 3DeeGen.o 3knockGen.o make_infile.o read_outfile.o
+all: 3DeeGen.o 3knockGen.o make_infile.o read_outfile.o XsecTransform.o
 
 3DeeGen.o: 3DeeGen.cpp
 	$(CC) 3DeeGen.cpp -o 3DeeGen.o
@@ -13,6 +13,9 @@ make_infile.o: make_infile.cpp
 	
 read_outfile.o: read_outfile.cpp
 	$(CC) read_outfile.cpp -o read_outfile.o
+
+XsecTransform.o: XsecTransform.cpp
+	$(CC) XsecTransform.cpp -o XsecTransform.o
 
 clean:
 	rm -rfv *.o 

@@ -1,0 +1,97 @@
+#! /usr/bin/perl
+use Tk;
+use Tk::Font;
+use Math::Trig;
+
+# this is a GUI application which
+# 1) choose the iseXX.dat, and change the working directory 
+# 2) use gunplot script "plot_fid+FTamp.gp" to do FFT and plot
+# 3) can save the plot.
+
+#last edit : Sun Jun 10 22:20:49 2012 , ryan
+
+###################
+#============================================================MainWindow
+$mw = new MainWindow;
+$mw -> title ("GUI Fouier Transform");
+$font       = $mw->Font(-family=> 'courierfont', 
+                  -size  => 12);
+$small_font = $mw->Font(-family=> 'Helvetica', 
+                  -size  => 8);
+#===========================================================Labels
+$start_l	=$mw -> Label(-text => "Start row",
+			      -font => $font);
+$end_l		=$mw -> Label(-text => "End row",
+			      -font => $font);
+$header		=$mw -> Label(-text => "Call gnuplot to do FFT and plot",
+			      -font => $font);
+$footnote	=$mw -> Label(-text => "if the range is not right, edit plot.gp",
+			      -font => $small_font);
+#===========================================================Entries 
+$start_e 	=$mw -> Entry( -text => "900",
+			       -font => $font,
+			       -width => 5,
+			       -justify =>'center');
+$end_e		=$mw -> Entry( -text => "4999",
+			       -font => $font,
+			       -width => 5,
+			       -justify =>'center');
+$filename_e		=$mw -> Entry( -textvariable => \$filename,
+			       -font => $font,
+			       -width => 10,
+			       -justify =>'center');
+
+#===========================================================Buttons 
+$LOAD_b         = $mw   -> Button(  -text => "Load",
+                                    -font => $font, 
+                                    -command => \&Load,
+                                    -width => 10);
+$FFTW_b         = $mw   -> Button(  -text => "FFTW & Plot",
+                                    -font => $font, 
+                                    -command => \&FFTW,
+                                    -width => 10);
+#===========================================================CheckButton
+$Save_cb	= $mw	-> Checkbutton ( -text => "Save", 
+					 -variable => \$out,
+					 -onvalue =>"1",
+					 -offvalue => "0");
+                                     
+#===========================================================Layout 
+$header -> grid("-");
+$LOAD_b -> grid();
+$filename_e->grid();
+$start_l-> grid($start_e);
+$end_l->grid($end_e);
+$FFTW_b->grid($Save_cb);
+$footnote->grid("-");
+
+
+MainLoop;
+
+#*********************** functions *****************************
+sub Load{
+	$types = [ ['data files', '.dat'], ['Saved Plot', '.png'], ['All Files','*']];
+  	$tempfile = $mw-> getOpenFile( -filetypes => $types,
+  			               -defaultextension => '.dat');
+ 	@fullfile = split('/',$tempfile) ;
+ 	#print "@fullfile";
+ 	$filename = $fullfile[-1];
+ 	$directory = substr($tempfile,0,length($tempfile)-length($filename));
+ 	print "change directory to : \033[0;34m".$directory."\033[0m\n";
+ 	chdir $directory;
+}
+
+sub FFTW {
+	if ($filename=='') {
+		$filename = "no file!";
+		return;
+	}
+	$start = $start_e -> get();
+	$end = $end_e -> get();
+	@temp = split(/\./,$filename);
+	$num = substr($temp[0],3);
+	system("gnuplot -e \"iseN='$num'; start='$start' ; end='$end' ; out='$out'\" -p /Users/mobileryan/Dropbox/C++_programs/plot.gp")
+
+}
+
+

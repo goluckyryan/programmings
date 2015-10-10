@@ -18,18 +18,20 @@ import android.widget.EditText;
 
 public class MainActivity extends Activity {
 
-	double mp = 938.27203; // mass of proton
-	double c = 0.299792458; // speed of light m/ns
-	double mass;
+	double c = 299.792458; // speed of light mm/ns
+	double mass = 938.272046;
+	double Sp = 0;
+	double Sn = 0;
 	double KE = 0;
 	double momt = 0;
 	double Gamma = 1;
 	double beta = 0;
-	double length = 1;
+	double length = 1000;
 	double tof = 1000000;
 	double Brho = 0;
 	int Z = 1; // number of unit charge of particle
 	int A = 1; // number of unit charge of particle
+	
 	Button mass_Cal;
 	Button ke_Cal;
 	Button momt_Cal;
@@ -37,8 +39,10 @@ public class MainActivity extends Activity {
 	Button beta_Cal;
 	Button tof_Cal;
 	Button Brho_Cal;
-	// Button isotopes;
+
 	EditText mass_dis;
+	EditText Sp_dis;
+	EditText Sn_dis;
 	EditText Z_dis;
 	EditText A_dis;
 	EditText KE_dis;
@@ -61,9 +65,10 @@ public class MainActivity extends Activity {
 		beta_Cal = (Button) findViewById(R.id.beta_but);
 		tof_Cal = (Button) findViewById(R.id.tof_but);
 		Brho_Cal = (Button) findViewById(R.id.Brho_but);
-		// isotopes = (Button) findViewById(R.id.isotopes_but );
 
 		mass_dis = (EditText) findViewById(R.id.mass_text);
+		Sp_dis = (EditText) findViewById(R.id.Sp_text);
+		Sn_dis = (EditText) findViewById(R.id.Sn_text);
 		Z_dis = (EditText) findViewById(R.id.Z_text);
 		A_dis = (EditText) findViewById(R.id.A_text);
 		KE_dis = (EditText) findViewById(R.id.ke_text);
@@ -74,7 +79,9 @@ public class MainActivity extends Activity {
 		tof_dis = (EditText) findViewById(R.id.tof_text);
 		Brho_dis = (EditText) findViewById(R.id.Brho_text);
 
-		mass_dis.setText("" + mp);
+		mass_dis.setText("" + mass);
+		Sp_dis.setText("" + Sp);
+		Sn_dis.setText("" + Sn);
 		Z_dis.setText("" + Z);
 		A_dis.setText("" + A);
 		KE_dis.setText("" + KE);
@@ -94,8 +101,14 @@ public class MainActivity extends Activity {
 				A = Integer.parseInt(A_dis.getText().toString());
 				Log.i("Read","A = "+Integer.toString(A)+", Z = "+Integer.toString(Z)) ;
 				
-				mass = FindMass(A,Z);
+				mass = FindMassByMassDefect(A,Z);
 				mass_dis.setText("" + mass);
+				
+				Sp = FindSp(0,A,Z);
+				Sp_dis.setText("" + Sp);
+				
+				Sn = FindSp(1,A,Z);
+				Sn_dis.setText("" + Sn);
 				
 			}
 		});
@@ -108,7 +121,9 @@ public class MainActivity extends Activity {
 				Z = Integer.parseInt(Z_dis.getText().toString());
 				A = Integer.parseInt(A_dis.getText().toString());
 				length = Double.parseDouble(length_dis.getText().toString());
-				mass = FindMass(A,Z);
+				mass = FindMassByMassDefect(A,Z);
+				Sp = FindSp(0,A,Z);
+				Sn = FindSp(1,A,Z);
 				
 				KE = Double.parseDouble(KE_dis.getText().toString()) * A;
 
@@ -116,9 +131,11 @@ public class MainActivity extends Activity {
 				beta = Math.pow((1 - 1 / Math.pow(Gamma, 2)), 0.5);
 				momt = mass * Gamma * beta;
 				tof = length / (beta * c);
-				Brho = mass * Gamma * beta / c / 1000 / Z;
+				Brho = mass * Gamma * beta / c / Z;
 
 				mass_dis.setText("" + mass);
+				Sp_dis.setText("" + Sp);
+				Sn_dis.setText("" + Sn);
 				momt_dis.setText("" + momt);
 				Gamma_dis.setText("" + Gamma);
 				beta_dis.setText("" + beta);
@@ -136,7 +153,9 @@ public class MainActivity extends Activity {
 				Z = Integer.parseInt(Z_dis.getText().toString());
 				A = Integer.parseInt(A_dis.getText().toString());
 				length = Double.parseDouble(length_dis.getText().toString());
-				mass = FindMass(A,Z);
+				mass = FindMassByMassDefect(A,Z);
+				Sp = FindSp(0,A,Z);
+				Sn = FindSp(1,A,Z);
 				
 				momt = Double.parseDouble(momt_dis.getText().toString());
 
@@ -145,9 +164,11 @@ public class MainActivity extends Activity {
 				beta = Math.pow((1 - 1 / Math.pow(Gamma, 2)), 0.5);
 				momt = mass * Gamma * beta;
 				tof = length / (beta * c);
-				Brho = mass * Gamma * beta / c / 1000 / Z;
+				Brho = mass * Gamma * beta / c / Z;
 
 				mass_dis.setText("" + mass);
+				Sp_dis.setText("" + Sp);
+				Sn_dis.setText("" + Sn);
 				KE_dis.setText("" + KE);
 				Gamma_dis.setText("" + Gamma);
 				beta_dis.setText("" + beta);
@@ -165,7 +186,9 @@ public class MainActivity extends Activity {
 				Z = Integer.parseInt(Z_dis.getText().toString());
 				A = Integer.parseInt(A_dis.getText().toString());
 				length = Double.parseDouble(length_dis.getText().toString());
-				mass = FindMass(A,Z);
+				mass = FindMassByMassDefect(A,Z);
+				Sp = FindSp(0,A,Z);
+				Sn = FindSp(1,A,Z);
 				
 				Gamma = Double.parseDouble(Gamma_dis.getText().toString());
 
@@ -173,9 +196,11 @@ public class MainActivity extends Activity {
 				beta = Math.pow((1 - 1 / Math.pow(Gamma, 2)), 0.5);
 				momt = mass * Gamma * beta;
 				tof = length / (beta * c);
-				Brho = mass * Gamma * beta / c / 1000 / Z;
+				Brho = mass * Gamma * beta / c / Z;
 
 				mass_dis.setText("" + mass);
+				Sp_dis.setText("" + Sp);
+				Sn_dis.setText("" + Sn);
 				KE_dis.setText("" + KE);
 				momt_dis.setText("" + momt);
 				beta_dis.setText("" + beta);
@@ -193,7 +218,9 @@ public class MainActivity extends Activity {
 				Z = Integer.parseInt(Z_dis.getText().toString());
 				A = Integer.parseInt(A_dis.getText().toString());
 				length = Double.parseDouble(length_dis.getText().toString());
-				mass = FindMass(A,Z);
+				mass = FindMassByMassDefect(A,Z);
+				Sp = FindSp(0,A,Z);
+				Sn = FindSp(1,A,Z);
 				
 				beta = Double.parseDouble(beta_dis.getText().toString());
 
@@ -201,9 +228,11 @@ public class MainActivity extends Activity {
 				KE = (Gamma - 1) * mass / A;
 				momt = mass * Gamma * beta;
 				tof = length / (beta * c);
-				Brho = mass * Gamma * beta / c / 1000 / Z;
+				Brho = mass * Gamma * beta / c / Z;
 
 				mass_dis.setText("" + mass);
+				Sp_dis.setText("" + Sp);
+				Sn_dis.setText("" + Sn);
 				KE_dis.setText("" + KE);
 				momt_dis.setText("" + momt);
 				Gamma_dis.setText("" + Gamma);
@@ -221,7 +250,9 @@ public class MainActivity extends Activity {
 				Z = Integer.parseInt(Z_dis.getText().toString());
 				A = Integer.parseInt(A_dis.getText().toString());
 				length = Double.parseDouble(length_dis.getText().toString());
-				mass = FindMass(A,Z);
+				mass = FindMassByMassDefect(A,Z);
+				Sp = FindSp(0,A,Z);
+				Sn = FindSp(1,A,Z);
 				
 				tof = Double.parseDouble(tof_dis.getText().toString());
 
@@ -229,9 +260,11 @@ public class MainActivity extends Activity {
 				Gamma = 1 / Math.pow(1 - Math.pow(beta, 2), 0.5);
 				momt = mass * Gamma * beta;
 				KE = (Gamma - 1) * mass / A;
-				Brho = mass * Gamma * beta / c / 1000 / Z;
+				Brho = mass * Gamma * beta / c  / Z;
 
 				mass_dis.setText("" + mass);
+				Sp_dis.setText("" + Sp);
+				Sn_dis.setText("" + Sn);
 				KE_dis.setText("" + KE);
 				momt_dis.setText("" + momt);
 				Gamma_dis.setText("" + Gamma);
@@ -249,17 +282,23 @@ public class MainActivity extends Activity {
 				Z = Integer.parseInt(Z_dis.getText().toString());
 				A = Integer.parseInt(A_dis.getText().toString());
 				length = Double.parseDouble(length_dis.getText().toString());
-				mass = FindMass(A,Z);
+				mass = FindMassByMassDefect(A,Z);
+				Sp = FindSp(0,A,Z);
+				Sn = FindSp(1,A,Z);
 				
 				Brho = Double.parseDouble(Brho_dis.getText().toString());
 
-				Gamma = Math.pow(Math.pow(Brho * Z * 1000 * c / mass, 2) + 1,0.5);
+				Gamma = Math.pow(Math.pow(Brho * Z  * c / mass, 2) + 1,0.5);
 				KE = (Gamma - 1) * mass / A;
 				beta = Math.pow((1 - 1 / Math.pow(Gamma, 2)), 0.5);
 				momt = mass * Gamma * beta;
 				tof = length / (beta * c);
 
+			//	ShowResult(mass, KE, momt, Gamma, beta, tof, Brho);
+				
 				mass_dis.setText("" + mass);
+				Sp_dis.setText("" + Sp);
+				Sn_dis.setText("" + Sn);
 				KE_dis.setText("" + KE);
 				momt_dis.setText("" + momt);
 				Gamma_dis.setText("" + Gamma);
@@ -278,26 +317,43 @@ public class MainActivity extends Activity {
 		return true;
 	}
 	
-
-	private double FindMass(int a,int b){
-	//	Log.i("Read","a ="+Integer.toString(a)+", b = "+Integer.toString(b)) ;
+	private double FindMassByMassDefect(int a,int z){
+		//	Log.i("Read","a ="+Integer.toString(a)+", z = "+Integer.toString(z)) ;
 		int A_tmp, Z_tmp, numLine=1;
-		double m1_tmp, m2_tmp;
+		double mDefect; 
 		
-		double amu = 931.494; 
+		// TODO add a (A-Z), Z filter, there is a maximum and minimum slop  
+		// TODO or A and numLine, say for A > 50, numLine should start at 454
+		
+		double mp = 938.272046;
+		double mn = 939.565378;
 					
 		int flag = 0;
 		AssetManager assetManager = getAssets();
 		BufferedReader reader = null;
 		
+		int numLineStart = 40;
+		int numLineEnd = 3392;
+		
+		if ( a >= 50 && a <  100){
+			numLineStart = 454; 
+		}else if (a >= 100 && a < 150){
+			numLineStart = 1100;
+		}else if (a >= 150 && a < 200){
+			numLineStart = 1899;
+		}else if (a >= 200){
+			numLineStart = 2622;
+		}
+		Log.i("Read","numLineStart = "+Integer.toString(numLineStart)) ;
+		
         try {
-			InputStream massData = assetManager.open("mass03.txt");
+			InputStream massData = assetManager.open("mass12.txt");
         	reader = new BufferedReader(new InputStreamReader(massData));
             String text = null;
        //     Log.i("Read","flag = " + Integer.toString(flag)+", numLine = " + Integer.toString(numLine));
             // repeat until all lines is read
             while ((text = reader.readLine()) != null && flag == 0) {
-            	if(numLine >= 40 && numLine <3128){
+            	if(numLine >= numLineStart && numLine <=numLineEnd){
             	//	Log.i("Read","numLine ="+Integer.toString(numLine)) ;
             	//	Log.i("Read",text.toString()) ;
             	//	Log.i("Read","A_tmp string = " + text.substring(15, 19)) ;
@@ -305,17 +361,18 @@ public class MainActivity extends Activity {
             		A_tmp = Integer.parseInt(text.substring(15, 19).replaceAll("\\s",""));
             		Z_tmp = Integer.parseInt(text.substring(10, 14).replaceAll("\\s",""));
             	//	Log.i("Read","A_tmp ="+Integer.toString(A_tmp)+", Z_tmp = "+Integer.toString(Z_tmp)) ;
-            		if(A_tmp == a && Z_tmp == b){
-            	//		Log.i("Read","m1_tmp string = " + text.substring(96, 99)) ;
-	            //		Log.i("Read","m2_tmp string = " + text.substring(99, 112)) ;
-            			m1_tmp = Double.parseDouble(text.substring(96, 99).replaceAll("\\s",""));
-            			m2_tmp = Double.parseDouble(text.substring(99, 112).replaceAll("\\s","").replaceAll("[#]",""));
-            	//		Log.i("Read","m1_tmp ="+Double.toString(m1_tmp)+", m2_tmp = "+Double.toString(m2_tmp)) ;
-            			mass = (m1_tmp+m2_tmp/1e6)*amu;
-            	//		Log.i("Read","mass ="+Double.toString(mass)) ;
+            		if(A_tmp == a && Z_tmp == z){
+            			//Log.i("Read","mDefect string = " + text.substring(54, 65)) ;
+            			mDefect = Double.parseDouble(text.substring(54, 65).replaceAll("#","").replaceAll("\\s",""));
+            			Log.i("Read","mDefect per A ="+Double.toString(mDefect)) ;
+            			mass = z*mp + (a-z)*mn - a*mDefect/1000;
+            			//Log.i("Read","mass ="+Double.toString(mass)) ;
             			flag = 1;
+            		}else if (A_tmp > a){
+            			Log.i("Read","A_temp > a = "+Integer.toString(A_tmp)+". Stop search.") ;
+            			break;
             		}
-     
+ 
             	}
             	numLine ++;
             }
@@ -326,20 +383,45 @@ public class MainActivity extends Activity {
         } finally {
             try {
                 if (reader != null) {
-                    reader.close();
+                	reader.close();
                 }
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-        
+	        
         if (flag ==0){
         	mass = -404;
         }
-		
+			
 		return mass;
 	}
 
-	
-}
+	private double FindSp(int id, int a,int z){
+		
+		if (a == 1 ){
+			return 0;
+		}
+		
+		double mass3 = 0;
+		double massRes = 0;
+		
+		if ( id == 0){
+			mass3 = 938.272046; // proton
+			massRes = FindMassByMassDefect(a-1, z-1); 
+		}else if (id == 1){
+			mass3 = 939.565378; // neutron 
+			massRes = FindMassByMassDefect(a-1, z); 
+		}
 
+		double mass1 = FindMassByMassDefect(a, z);
+		Log.i("Read","id = "+id+", massRes = "+Double.toString(massRes)) ;
+		
+        if (mass1 != -404 && massRes != -404){
+        	return massRes + mass3 - mass1;
+        }else{
+        	return -404;
+        }
+        
+	}
+}

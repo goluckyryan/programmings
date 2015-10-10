@@ -44,7 +44,7 @@ int RKfouth (const double KE, int L, int nStep, double dr, float V0, float R0, f
   fprintf(paraOut, "# start: %7.5f fm, dr:%5.3f, end: %10.5f fm, nStep: %3d \n", rStart, dr, rEnd, nStep);
   fprintf(paraOut, "#%12s %12s %9s%-3.0f %12s %12s %12s %12s %9s%-3.0f\n", "r", "Pot/100", "(Pot+LS)/", scale, "u", "du/dr", "R", "dR/dr", "KE/", scale);
   fprintf(paraOut, "#----------\n");
-  fprintf(paraOut, " %12.3E %12.3E %12.3E %12.3E %12.3E %12.3E %12.3E %12.3E\n", rStart, Pot(rStart, V0, R0, a0)/scale, 0, SolU[0][0], SolU[0][1], SolU[0][0]/rStart, SolU[0][1]/rStart - SolU[0][0]/pow(rStart,2), 0.0);
+  fprintf(paraOut, " %12.3E %12.3E %12.3E %12.3E %12.3E %12.3E %12.3E %12.3E\n", rStart, Pot(rStart, V0, R0, a0)/scale, 0.0, SolU[0][0], SolU[0][1], SolU[0][0]/rStart, SolU[0][1]/rStart - SolU[0][0]/pow(rStart,2), KE/scale);
 
   double maxu = 0;  
   for(int i = 0; i <= nStep; i++){

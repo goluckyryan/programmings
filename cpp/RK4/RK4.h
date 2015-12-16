@@ -22,6 +22,8 @@ int RKfouth (const double KE, int L, int nStep, double dr, float V0, float R0, f
 
   // output is a file "RK4.dat"
 
+  //TODO using a array as potential
+
   const double scale = abs(V0);
   double rStart = 0.00001;
   double rEnd = rStart + dr * nStep;
@@ -30,6 +32,7 @@ int RKfouth (const double KE, int L, int nStep, double dr, float V0, float R0, f
   printf(" KE: %6.2f MeV, L: %2d \n", KE, L);
   printf(" V0: %6.2f MeV, R0: %6.2f fm, a0: %6.2f fm \n", V0, R0, a0);
   printf(" start: %7.5f fm, dr:%5.3f, end: %10.5f fm, nStep: %3d \n", rStart, dr, rEnd, nStep);
+  printf(" --------> save in RK4.dat \n");
  
   const int nStep1 = nStep + 1 ;
   double SolU[nStep1][2]; // SolU[i][0] is U, SolU[i][1] is du/dr

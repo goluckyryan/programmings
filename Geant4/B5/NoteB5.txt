@@ -1,0 +1,49 @@
+main 
+   +- DetectorConstruction.hh
+      +- DetectorConstruction()
+         +- initialization
+         +- #DefineCommands
+      +- ~DetectorConstruction()
+      +- Construct()
+         +- HodoscopeSD.hh
+            +- HodoscopeHit.hh
+               +- HodoscopeHit()
+               +- Draw()
+               +- GetAttDefs()
+               +- CreateAttValues()
+               +- Print()
+            +- HodoscaopeSD()
+            +- Initialize()
+            +- ProcessHits()
+         +- #ConstructMaterials
+         +- defined solids
+      +- ConstructSDandField()
+         +- set sensitive detector
+      +- SetArmAngle()
+      +- GetArmAngle()
+      +- ConstructMaterials()
+      +- DefineCommands()
+      +- fxxxx
+   +- ActionInitialization.hh
+      +- ActionInitialization()
+         +- PrimaryGeneratorAction.hh
+            +- PrimaryGeneratorAction()
+               +- initialization
+            +- SetMomentum()
+            +- SetSigmaMomentum()
+            +- SetSigmaAngle()
+            +- SetRandomize()
+            +- DefineCommands()
+               +- defined /B5/generator
+         +- RunAction.hh
+            +- RunAction()
+               +- Analysis.h
+                  +- g4root.hh
+               +- define histogram
+            +- BeginOfRunAction()
+               +- open File
+            +- EndOfRunAction()
+               +- write Root File
+         +- EventAction.hh
+              
+

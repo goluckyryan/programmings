@@ -1,0 +1,2 @@
+/home/goluckyryan/Dropbox/programmings/Geant4/N04-build/CMakeFiles/n4.dir
+/home/goluckyryan/Dropbox/programmings/Geant4/N04-build/CMakeFiles/n04.dir

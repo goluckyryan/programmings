@@ -1,0 +1,81 @@
+% Simple level diagram, resized and in a figure environment.
+\documentclass{article}
+
+\usepackage{tikz}
+\usepackage{verbatim}
+\usetikzlibrary{arrows}
+
+%=================== Define new command for simplicity
+\newcommand{\len}{3} %length of the energy level
+\newcommand{\spa}{4} %space the energy level
+\newcommand{\off}{0.3} % vertical offset of energy display 
+
+\newcommand{\ket}[1]{$\left|#1\right\rangle$}
+\newcommand{\jpi}[2]{#1$^{#2}$}
+\newcommand{\iso}[2]{$^{#1}$#2}
+%\newcommand{\lev}[2]{\draw [level](0,#1) -- (\len,#1) node[right]{#1, #2}}
+%\newcommand{\levS}[3]{\draw [level](#3,#1) -- (#3+\len,#1) node[right]{#1, #2}}
+%\newcommand{\thershold}[1]{\draw [color =red, level](\len,#1) -- (-1,#1) node[left]{#1}}
+
+\newcommand{\lev}[3]{
+	\draw [level](0,#1) -- (\len,#1) ;
+	\draw (\len +0.1,#1) -- (\len +0.3, #1 + #3) -- (\len +0.6, #1 + #3);
+	\node[right] at (\len +0.6,#1+#3) {#1, #2};
+	}
+
+\newcommand{\levS}[5]{
+	\draw [level](#3,#1+#5) -- (#3+\len,#1+#5) ;
+	\draw (#3+\len +0.1,#1+#5) -- (#3+\len +0.3, #1+#5 + #4) -- (#3+\len +0.6, #1+#5 + #4);
+	\node[right] at (#3+\len +0.6,#1+#4+#5) {#1, #2};
+	}
+	
+\newcommand{\thershold}[2]{
+	\draw [color =red, level](\len,#1) -- (-1.5,#1) node[left]{#1};
+	\node[color =black, above] at (-1.5,#1) {#2};
+	}
+
+%================== beging of doc
+\begin{document}
+\pagenumbering{gobble} % remove page number, and reset it to 1 on next page.
+
+%================== Place the TikZ picture in a figure environment.
+\begin{figure}
+\centerline{
+  \resizebox{15cm}{!}{ %reside the picture
+    \begin{tikzpicture}[
+      scale=0.5, %scale of the lines
+      level/.style={thick},
+      %level/.style={line width = 0.3 mm}, %another method for line width control
+      virtual/.style={thick,densely dashed},
+      trans/.style={thick,<->,shorten >=2pt,shorten <=2pt,>=stealth},
+      classical/.style={thin,double,<->,shorten >=4pt,shorten <=4pt,>=stealth},
+      label/.style = { font=\bf}
+    ]
+    %Name the isotope
+    %\node at (9, 14){\Huge \iso{24}{O}};
+    % Draw the energy levels. Exp 24Mg
+    \levS{0.0}{\jpi{0}{+}}{0}{0}{0.657};
+    \levS{1.247}{\jpi{2}{+}}{0}{0}{0.657};
+    \levS{3.308}{\jpi{4}{+}}{0}{0}{0.657};
+    \levS{4.402}{\jpi{2}{+}}{0}{0}{0.657};
+    % Draw another level scheme  22Na
+    \levS{0.0}{\jpi{0}{+}}{\len+\spa}{0}{0};
+    \levS{0.657}{\jpi{0}{+}}{\len+\spa}{0}{0};
+    \levS{1.952}{\jpi{2}{+}}{\len+\spa}{0}{0};
+    \levS{4.071}{\jpi{4}{+}}{\len+\spa}{0}{0};
+    \levS{5.063}{\jpi{2}{+}}{\len+\spa}{0}{0};
+    % Draw another level scheme SFO
+    \levS{0.0}{\jpi{0}{+}}{\len+\len+2*\spa}{0}{0.657};
+    \levS{1.275}{\jpi{2}{+}}{\len+\len+2*\spa}{0}{0.657};
+    \levS{3.357}{\jpi{4}{+}}{\len+\len+2*\spa}{0}{0.657};
+    \levS{4.456}{\jpi{2}{+}}{\len+\len+2*\spa}{0}{0.657};
+    % Draw the symbol of isotopes
+    \node[label] at (\len/2, -2) {\iso{22}{Mg}};
+    \node[label] at (\len/2+\len+\spa, -2) {\iso{22}{Na}};
+    \node[label] at (\len/2+2*\len+2*\spa, -2) {\iso{22}{Ne}};
+    \end{tikzpicture}
+  }
+}
+\end{figure}
+
+\end{document} 

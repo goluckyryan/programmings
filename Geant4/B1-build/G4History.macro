@@ -1,0 +1,159 @@
+/run/verbose 2
+/run/initialize
+/control/execute vis.mac
+/vis/open VRML2FILE
+/vis/sceneHandler/create VRML2FILE
+/vis/viewer/create ! ! 600
+/vis/viewer/set/autoRefresh false
+/vis/verbose errors
+/vis/drawVolume
+/vis/scene/create
+/vis/scene/add/volume world
+/vis/sceneHandler/attach
+/vis/viewer/set/viewpointVector -1 0 0
+/vis/viewer/set/lightsVector -1 0 0
+/vis/viewer/set/style wireframe
+/vis/viewer/set/auxiliaryEdge true
+/vis/viewer/set/lineSegmentsPerCircle 100
+/vis/scene/add/trajectories smooth
+/tracking/storeTrajectory 2
+/vis/scene/notifyHandlers
+/vis/modeling/trajectories/create/drawByCharge
+/vis/modeling/trajectories/drawByCharge-0/default/setDrawStepPts true
+/vis/scene/notifyHandlers scene-0
+/vis/modeling/trajectories/drawByCharge-0/default/setStepPtsSize 2
+/vis/scene/notifyHandlers scene-0
+/vis/scene/endOfEventAction accumulate
+/vis/scene/add/axes
+/vis/scene/notifyHandlers
+/vis/scene/add/eventID
+/vis/scene/notifyHandlers
+/vis/set/colour red
+/vis/set/lineWidth 2
+/vis/scene/add/frame
+/vis/scene/notifyHandlers
+/vis/set/colour
+/vis/set/lineWidth
+/vis/geometry/set/visibility World 0 false
+/vis/scene/notifyHandlers
+/vis/geometry/set/visibility Envelope 0 false
+/vis/viewer/set/style surface
+/vis/viewer/set/hiddenMarker true
+/vis/viewer/set/viewpointThetaPhi 120 150
+/vis/viewer/set/autoRefresh true
+/vis/verbose warnings
+/control/execute run1.mac
+/run/initialize
+/control/verbose 2
+/run/verbose 2
+/event/verbose 0
+/tracking/verbose 2
+/run/setCutForAGivenParticle e- 100 mm
+/gun/particle ion
+/gun/ion 10 22 10 0
+/gun/energy 13200 MeV
+/run/beamOn 100
+/vis/scene/notifyHandlers scene-0
+/control/execute run1.mac
+/run/initialize
+/control/verbose 2
+/run/verbose 2
+/event/verbose 0
+/tracking/verbose 2
+/run/setCutForAGivenParticle e- 100 mm
+/gun/particle ion
+/gun/ion 10 22 10 0
+/gun/energy 13200 MeV
+/run/beamOn 10
+/control/execute run1.mac
+/run/initialize
+/control/verbose 2
+/run/verbose 2
+/event/verbose 0
+/tracking/verbose 2
+/run/setCutForAGivenParticle e- 0.1 mm
+/gun/particle ion
+/gun/ion 10 22 10 0
+/gun/energy 13200 MeV
+/run/beamOn 10
+/control/execute run1.mac
+/run/initialize
+/control/verbose 2
+/run/verbose 2
+/event/verbose 0
+/tracking/verbose 2
+/run/setCutForAGivenParticle e- 0.1 mm
+/gun/particle ion
+/gun/ion 10 22 10 0
+/gun/energy 13200 MeV
+/run/beamOn 10
+/control/execute run1.mac
+/run/initialize
+/control/verbose 2
+/run/verbose 2
+/event/verbose 0
+/tracking/verbose 2
+/run/setCutForAGivenParticle e- 100 mm
+/gun/particle ion
+/gun/ion 10 22 10 0
+/gun/energy 13200 MeV
+/run/beamOn 10
+/control/execute run1.mac
+/run/initialize
+/control/verbose 2
+/run/verbose 2
+/event/verbose 0
+/tracking/verbose 0
+/run/setCutForAGivenParticle e- 100 mm
+/gun/particle ion
+/gun/ion 10 22 10 0
+/gun/energy 13200 MeV
+/run/beamOn 100
+/process/list
+/control/execute run1.mac
+/run/initialize
+/control/verbose 2
+/run/verbose 2
+/event/verbose 0
+/tracking/verbose 0
+/run/setCutForAGivenParticle e- 100 mm
+/gun/particle ion
+/gun/ion 10 22 10 0
+/gun/energy 13200 MeV
+/run/beamOn 100
+/process/list
+/control/execute run1.mac
+/run/initialize
+/control/verbose 2
+/run/verbose 2
+/event/verbose 0
+/tracking/verbose 0
+/run/setCutForAGivenParticle e- 100 mm
+/gun/particle ion
+/gun/ion 10 22 10 0
+/gun/energy 13200 MeV
+/run/beamOn 100
+/process/list
+/control/execute run1.mac
+/run/initialize
+/control/verbose 2
+/run/verbose 2
+/event/verbose 0
+/tracking/verbose 0
+/run/setCutForAGivenParticle e- 100 mm
+/gun/particle ion
+/gun/ion 10 22 10 0
+/gun/energy 13200 MeV
+/run/beamOn 100
+/control/execute run1.mac
+/run/initialize
+/control/verbose 2
+/run/verbose 2
+/event/verbose 0
+/tracking/verbose 0
+/run/setCutForAGivenParticle e- 100 mm
+/run/printProgress 100
+/gun/particle ion
+/gun/ion 10 22 10 0
+/gun/energy 13200 MeV
+/run/beamOn 1000

@@ -6,7 +6,7 @@
 #include "constant.h"
 #include "vector4D.h"
 
-using namespace std;
+//using namespace std;
 
 class FourVector: public Vector4D{
     public:
@@ -111,7 +111,7 @@ void FourVector::normalize(){
     ele[3]=momentum*cos(angle[0]);
 
 
-    cout << "vector nomralized !" << endl;
+    printf("vector nomralized !\n");
 }
 
 void FourVector::AngleCal(){
@@ -183,15 +183,20 @@ FourVector FourVector::operator * (FourVector v2) { //cross product
 */
 
 void FourVector::print(string pre, string suf) const{
-    cout << pre;
+    printf("%s", pre.c_str());
     printf("{%11.3f, %11.3f, %11.3f, %11.3f}",ele[0],ele[1],ele[2],ele[3]);
-    cout << suf;
+        
+    printf(", Mass: %10.3f MeV, ", mass);
+    printf("Momt: %10.3f MeV/c, ", momentum);
+    printf("Angle: %10.5f deg, %10.5f deg", angle[0]/deg2rad, angle[1]/deg2rad);
+    
+    printf("%s", suf.c_str());;
 }
 
 void FourVector::printKinamatics(int id, string msg) const{
 
     if (id != 0){
-        printf("%*d  ",id-2, id);
+        printf("%*d   ",id-2, id);
         printf("%3s ", "A");
         printf("%3s ", "Z");
         printf("%8s ", "mass");
@@ -201,10 +206,10 @@ void FourVector::printKinamatics(int id, string msg) const{
         printf("%8s ", "beta");
         printf("%8s ", "theta");
         printf("%8s ", "phi");
-        cout << endl;
+        printf("%8s \n", "pi-theta");
     }
 
-    cout << msg;
+    printf("%s", msg.c_str());
     printf("%3.0f ", A);
     printf("%3.0f ", Z);
     printf("%8.2f ", mass);
@@ -214,24 +219,24 @@ void FourVector::printKinamatics(int id, string msg) const{
     printf("%8.4f ", beta);
     printf("%8.2f ", angle[0]*rad2deg);
     printf("%8.2f ", angle[1]*rad2deg);
-    cout << endl;
+    printf("%8.2f \n", 180-angle[0]*rad2deg);
 
 }
 
 void FourVector::debug(string msg) const{
-    cout << msg << endl;
-    cout << " 4-vector :" ;
-    print("", "\n");
-    cout <<  "--------------------------" << endl;
-    cout << "     mass : " << mass << endl;
-    cout << "   energy : " << energy << endl;
-    cout << " T[MeV/A] : " << keA << endl;
-    cout << "   {A, Z} : {" << A << "," << Z <<"}" << endl;
-    cout << " momenutm : " << momentum << endl;
-    cout << "     beta : " << beta << endl;
-    cout << "    theta : " << angle[0]*rad2deg << endl;
-    cout << "      phi : " << angle[1]*rad2deg << endl;
-    cout << "==============================="<< endl;
+    printf("%s \n", msg.c_str());
+    printf(" 4-vector :");
+    printf("\n");
+    printf("--------------------------\n");
+    printf("     mass : %10.4f\n"  , mass   );
+    printf("   energy : %10.4f\n"  , energy );
+    printf(" T[MeV/A] : %10.4f\n"  , keA    );
+    printf("   {A, Z} : {%2.0f, %2.0f}\n"  , A , Z );
+    printf(" momenutm : %10.4f\n"  , momentum        );
+    printf("     beta : %10.4f\n"  , beta            );
+    printf("    theta : %10.4f\n"  , angle[0]*rad2deg);
+    printf("      phi : %10.4f\n"  , angle[1]*rad2deg);
+    printf("===============================\n");
 }
 
 #endif // VECTOR_H

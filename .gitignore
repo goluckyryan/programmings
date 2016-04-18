@@ -84,3 +84,8 @@ Session.vim
 #
 *.d
 
+### Gean4 ###
+*.wrl
+
+### root ####
+*.root

@@ -116,7 +116,11 @@ void Vector4D::print(string msg) const{
         printf("%10.3f, ",ele[i]);
     }
 
-    cout << "}\n";
+    cout << "}, ";
+    
+    printf("Mass: %10.3f MeV, ", sqrt(magnitudeSq));
+    printf("Momt: %10.3f MeV/c, ", length);
+    printf("Angle: %10.5f deg, %10.5f deg\n", theta, phi);
 
 }
 

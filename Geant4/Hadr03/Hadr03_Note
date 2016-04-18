@@ -1,0 +1,34 @@
+main()
+   +-DetectorConstruction.hh
+      +- DetectorConstruction()
+         +- DetectorMessanger.hh
+            +- DetectorMessenger()
+      +- Construct()
+         
+   +-PhysicsList.hh
+      +- PhysicsList()
+         +- GammaPhysics.hh
+      +- ConstructParticle()
+      +- SetCut()
+
+   +-ActionInitialization.hh
+      +- ActionInitialization(DetectorConstruction* detector)
+         +- PrimaryGeneratorAction.hh
+            +- PrimaryGeneratorAction()
+         +- RunAction.hh
+            +- RunAction()
+               +- Run.hh
+               +- RunMessenger.hh
+               +- HistoManager.hh
+            +- GenerateRun()
+            +- BeginOfRunAction()
+            +- EndOfRunAction()
+         +- SteppingAction.hh
+            +- SteppingAction()
+               +- 
+            +- UserSteppingAction()
+         +- SteppingVerbose.hh
+      +- BuildForMaster()
+      +- Build
+      +- InitializaSteppingVerbose()
+   +-SteppingVerbose.hh

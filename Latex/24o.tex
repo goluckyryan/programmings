@@ -1,0 +1,96 @@
+% Simple level diagram, resized and in a figure environment.
+\documentclass{article}
+
+\usepackage{tikz}
+\usepackage{verbatim}
+\usetikzlibrary{arrows}
+
+%=================== Define new command for simplicity
+\newcommand{\len}{3} %length of the energy level
+\newcommand{\spa}{4} %space the energy level
+\newcommand{\off}{0.3} % vertical offset of energy display 
+
+\newcommand{\ket}[1]{$\left|#1\right\rangle$}
+\newcommand{\jpi}[2]{#1$^{#2}$}
+\newcommand{\iso}[2]{$^{#1}$#2}
+%\newcommand{\lev}[2]{\draw [level](0,#1) -- (\len,#1) node[right]{#1, #2}}
+%\newcommand{\levS}[3]{\draw [level](#3,#1) -- (#3+\len,#1) node[right]{#1, #2}}
+%\newcommand{\thershold}[1]{\draw [color =red, level](\len,#1) -- (-1,#1) node[left]{#1}}
+
+\newcommand{\lev}[3]{
+	\draw [level](0,#1) -- (\len,#1) ;
+	\draw (\len +0.1,#1) -- (\len +0.3, #1 + #3) -- (\len +0.6, #1 + #3);
+	\node[right] at (\len +0.6,#1+#3) {#1, #2};
+	}
+
+\newcommand{\levS}[4]{
+	\draw [level](#3,#1) -- (#3+\len,#1) ;
+	\draw (#3+\len +0.1,#1) -- (#3+\len +0.3, #1 + #4) -- (#3+\len +0.6, #1 + #4);
+	\node[right] at (#3+\len +0.6,#1+#4) {#1, #2};
+	}
+	
+\newcommand{\thershold}[2]{
+	\draw [color =red, level](\len,#1) -- (-1.5,#1) node[left]{#1};
+	\node[color =black, above] at (-1.5,#1) {#2};
+	}
+
+%================== beging of doc
+\begin{document}
+\pagenumbering{gobble} % remove page number, and reset it to 1 on next page.
+
+%================== Place the TikZ picture in a figure environment.
+\begin{figure}
+\centerline{
+  \resizebox{15cm}{!}{ %reside the picture
+    \begin{tikzpicture}[
+      scale=0.5, %scale of the lines
+      level/.style={thick},
+      %level/.style={line width = 0.3 mm}, %another method for line width control
+      virtual/.style={thick,densely dashed},
+      trans/.style={thick,<->,shorten >=2pt,shorten <=2pt,>=stealth},
+      classical/.style={thin,double,<->,shorten >=4pt,shorten <=4pt,>=stealth},
+      label/.style = { font=\bf}
+    ]
+    %Name the isotope
+    \node at (9, 14){\Huge \iso{24}{O}};
+    % Draw the energy levels. Exp
+    \lev{0.0}{\jpi{0}{+}}{0};
+    \lev{4.8}{\jpi{2}{+}}{0};
+    \lev{5.7}{(\jpi{1}{+})}{0};
+    \lev{7.4}{(-)}{-\off};
+    \lev{7.6}{(+)}{+\off};
+    %thershold
+    \thershold{4.2}{\iso{23}{O}+n};
+    \thershold{6.9}{\iso{22}{O}+2n};
+    \thershold{13.8}{\iso{21}{O}+3n};
+    \thershold{17.6}{\iso{20}{O}+4n};
+    % Draw another level scheme USDB
+    \levS{0.0}{\jpi{0}{+}}{\len+\spa}{0};
+    \levS{7.5}{\jpi{0}{+}}{\len+\spa}{-2*\off};
+    \levS{6.0}{\jpi{1}{+}}{\len+\spa}{0};
+    \levS{5.0}{\jpi{2}{+}}{\len+\spa}{0};
+    \levS{8.0}{\jpi{2}{+}}{\len+\spa}{0};
+    \levS{8.0}{\jpi{3}{+}}{\len+\spa}{+2*\off};
+    \levS{7.6}{\jpi{4}{+}}{\len+\spa}{-\off+0.1};
+    % Draw another level scheme SFO
+    \levS{0.0}{\jpi{0}{+}}{\len+\len+2*\spa}{0};
+    \levS{8.7}{\jpi{0}{+}}{\len+\len+2*\spa}{0};
+    \levS{12.4}{\jpi{0}{-}}{\len+\len+2*\spa}{+\off};
+    \levS{6.5}{\jpi{1}{+}}{\len+\len+2*\spa}{+2*\off};
+    \levS{11.4}{\jpi{1}{-}}{\len+\len+2*\spa}{0};
+    \levS{5.7}{\jpi{2}{+}}{\len+\len+2*\spa}{-\off};
+    \levS{13.2}{\jpi{2}{-}}{\len+\len+2*\spa}{+\off};
+    \levS{6.2}{\jpi{3}{+}}{\len+\len+2*\spa}{-\off};
+    \levS{12.2}{\jpi{3}{-}}{\len+\len+2*\spa}{-\off/2};
+    \levS{6.2}{\jpi{4}{+}}{\len+\len+2*\spa}{+\off};
+    \levS{15.2}{\jpi{4}{-}}{\len+\len+2*\spa}{0};
+    % Draw the symbol of isotopes
+    \node[label] at (\len/2, -2) {Exp};
+    \node[label] at (\len/2+\len+\spa, -2) {USDB};
+    \node[label] at (\len/2+2*\len+2*\spa, -2) {SFO};
+    \end{tikzpicture}
+  }
+}
+\end{figure}
+
+\end{document} 

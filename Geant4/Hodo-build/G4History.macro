@@ -1,0 +1,45 @@
+/run/verbose 2
+/run/initialize
+/control/execute vis.mac
+/vis/open VRML2FILE
+/vis/sceneHandler/create VRML2FILE
+/vis/viewer/create ! ! 600
+/vis/viewer/set/autoRefresh false
+/vis/verbose errors
+/vis/drawVolume
+/vis/scene/create
+/vis/scene/add/volume world
+/vis/sceneHandler/attach
+/vis/viewer/zoom 1.4
+/vis/scene/add/trajectories smooth
+/tracking/storeTrajectory 2
+/vis/scene/notifyHandlers
+/vis/modeling/trajectories/create/drawByCharge
+/vis/modeling/trajectories/drawByCharge-0/default/setDrawStepPts true
+/vis/scene/notifyHandlers scene-0
+/vis/modeling/trajectories/drawByCharge-0/default/setStepPtsSize 2
+/vis/scene/notifyHandlers scene-0
+/vis/scene/add/hits
+/vis/scene/notifyHandlers
+/vis/scene/endOfEventAction accumulate
+/vis/viewer/set/autoRefresh true
+/vis/verbose warnings
+/vis/viewer/flush
+/vis/viewer/refresh viewer-0
+/vis/viewer/update viewer-0
+/control/execute ion.mac
+/control/verbose 2
+/run/verbose 2
+/testhadr/det/setIsotopeMat Be9 4 9 1.85 g/cm3
+/testhadr/det/setSize 10 m
+/run/reinitializeGeometry
+/run/initialize
+/vis/scene/notifyHandlers scene-0
+/process/list
+/gun/particle ion
+/gun/ion 3 7
+/gun/energy 140 MeV
+/run/printProgress 10000
+/run/beamOn 100000
+/vis/scene/notifyHandlers scene-0
+/run/abort

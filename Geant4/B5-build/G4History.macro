@@ -25,6 +25,14 @@
 /vis/viewer/set/autoRefresh true
 /vis/verbose warnings
 /vis/scene/endOfEventAction accumulate
+/control/execute run1.mac
 /run/initialize
-/run/beamOn 1
+/run/verbose 0
+/gun/particle ion
+/gun/ion 10 20
+/B5/generator/KE 1200. MeV
+/B5/generator/sigmaKE 0.
+/B5/generator/sigmaRadius 2. mm
+/run/printProgress 5
+/run/beamOn 10
 /vis/scene/notifyHandlers scene-0

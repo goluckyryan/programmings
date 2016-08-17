@@ -70,17 +70,18 @@ B5RunAction::B5RunAction(B5EventAction* eventAction)
   if ( fEventAction ) {
     analysisManager->CreateNtuple("B5", "Hits");
     analysisManager->CreateNtupleDColumn("x");    // column Id = 0
-    analysisManager->CreateNtupleDColumn("y");    // column Id = 0
-    analysisManager->CreateNtupleDColumn("orgE");    // column Id = 1
+    analysisManager->CreateNtupleDColumn("y");    // column Id = 1
+    analysisManager->CreateNtupleDColumn("z");    // column Id = 2
+    analysisManager->CreateNtupleDColumn("orgE");    // column Id = 3
     
     //std::vector<double> vec;
-    analysisManager->CreateNtupleDColumn("id1");    // column Id = 2
-    analysisManager->CreateNtupleDColumn("t1");    // column Id = 3
-    analysisManager->CreateNtupleDColumn("e1");    // column Id = 4
+    analysisManager->CreateNtupleDColumn("id1");    // column Id = 4
+    analysisManager->CreateNtupleDColumn("t1");    // column Id = 5
+    analysisManager->CreateNtupleDColumn("e1");    // column Id = 6
 
-    analysisManager->CreateNtupleDColumn("id2");    // column Id = 2
-    analysisManager->CreateNtupleDColumn("t2");    // column Id = 3
-    analysisManager->CreateNtupleDColumn("e2");    // column Id = 4
+    analysisManager->CreateNtupleDColumn("id2");    // column Id = 7
+    analysisManager->CreateNtupleDColumn("t2");    // column Id = 8
+    analysisManager->CreateNtupleDColumn("e2");    // column Id = 9
     analysisManager->FinishNtuple();
   }
 

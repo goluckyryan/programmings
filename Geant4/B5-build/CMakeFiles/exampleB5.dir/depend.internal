@@ -564,7 +564,9 @@ CMakeFiles/exampleB5.dir/B5EventAction.cc.o
  /home/goluckyryan/geant4.10.02-install/include/Geant4/G4TrackVector.hh
  /home/goluckyryan/geant4.10.02-install/include/Geant4/G4TrackingManager.hh
  /home/goluckyryan/geant4.10.02-install/include/Geant4/G4TrackingMessenger.hh
+ /home/goluckyryan/geant4.10.02-install/include/Geant4/G4Trajectory.hh
  /home/goluckyryan/geant4.10.02-install/include/Geant4/G4TrajectoryContainer.hh
+ /home/goluckyryan/geant4.10.02-install/include/Geant4/G4TrajectoryPoint.hh
  /home/goluckyryan/geant4.10.02-install/include/Geant4/G4Transform3D.hh
  /home/goluckyryan/geant4.10.02-install/include/Geant4/G4Types.hh
  /home/goluckyryan/geant4.10.02-install/include/Geant4/G4UIcommand.hh
@@ -606,6 +608,7 @@ CMakeFiles/exampleB5.dir/B5EventAction.cc.o
  /home/goluckyryan/geant4.10.02-install/include/Geant4/G4VTouchable.hh
  /home/goluckyryan/geant4.10.02-install/include/Geant4/G4VTouchable.icc
  /home/goluckyryan/geant4.10.02-install/include/Geant4/G4VTrajectory.hh
+ /home/goluckyryan/geant4.10.02-install/include/Geant4/G4VTrajectoryPoint.hh
  /home/goluckyryan/geant4.10.02-install/include/Geant4/G4VUserEventInformation.hh
  /home/goluckyryan/geant4.10.02-install/include/Geant4/G4VUserTrackInformation.hh
  /home/goluckyryan/geant4.10.02-install/include/Geant4/G4VVolumeMaterialScanner.hh
@@ -710,6 +713,7 @@ CMakeFiles/exampleB5.dir/B5EventAction.cc.o
  /home/goluckyryan/geant4.10.02-install/include/Geant4/tools/wroot/wbuf
  /home/goluckyryan/geant4.10.02-install/include/Geant4/trajectoryControl.hh
  /home/goluckyryan/geant4.10.02-install/include/Geant4/trkdefs.hh
+ /home/goluckyryan/geant4.10.02-install/include/Geant4/trkgdefs.hh
  /home/goluckyryan/geant4.10.02-install/include/Geant4/windefs.hh
 CMakeFiles/exampleB5.dir/B5HodoscopeHit.cc.o
  /home/goluckyryan/Dropbox/programmings/Geant4/B5/B5HodoscopeHit.cc

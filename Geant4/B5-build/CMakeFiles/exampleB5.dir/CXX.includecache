@@ -109,6 +109,12 @@ G4HCofThisEvent.hh
 /home/goluckyryan/Dropbox/programmings/Geant4/B5/G4HCofThisEvent.hh
 G4VHitsCollection.hh
 /home/goluckyryan/Dropbox/programmings/Geant4/B5/G4VHitsCollection.hh
+G4TrajectoryContainer.hh
+/home/goluckyryan/Dropbox/programmings/Geant4/B5/G4TrajectoryContainer.hh
+G4VTrajectory.hh
+/home/goluckyryan/Dropbox/programmings/Geant4/B5/G4VTrajectory.hh
+G4Trajectory.hh
+/home/goluckyryan/Dropbox/programmings/Geant4/B5/G4Trajectory.hh
 G4SDManager.hh
 /home/goluckyryan/Dropbox/programmings/Geant4/B5/G4SDManager.hh
 G4SystemOfUnits.hh
@@ -8180,6 +8186,30 @@ vector
 map
 -
 
+/home/goluckyryan/geant4.10.02-install/include/Geant4/G4Trajectory.hh
+stdlib.h
+-
+vector
+-
+trkgdefs.hh
+/home/goluckyryan/geant4.10.02-install/include/Geant4/trkgdefs.hh
+G4VTrajectory.hh
+/home/goluckyryan/geant4.10.02-install/include/Geant4/G4VTrajectory.hh
+G4Allocator.hh
+/home/goluckyryan/geant4.10.02-install/include/Geant4/G4Allocator.hh
+G4ios.hh
+/home/goluckyryan/geant4.10.02-install/include/Geant4/G4ios.hh
+globals.hh
+/home/goluckyryan/geant4.10.02-install/include/Geant4/globals.hh
+G4ParticleDefinition.hh
+/home/goluckyryan/geant4.10.02-install/include/Geant4/G4ParticleDefinition.hh
+G4TrajectoryPoint.hh
+/home/goluckyryan/geant4.10.02-install/include/Geant4/G4TrajectoryPoint.hh
+G4Track.hh
+/home/goluckyryan/geant4.10.02-install/include/Geant4/G4Track.hh
+G4Step.hh
+/home/goluckyryan/geant4.10.02-install/include/Geant4/G4Step.hh
+
 /home/goluckyryan/geant4.10.02-install/include/Geant4/G4TrajectoryContainer.hh
 vector
 -
@@ -8205,6 +8235,18 @@ G4VModelFactory.hh
 /home/goluckyryan/geant4.10.02-install/include/Geant4/G4VModelFactory.hh
 G4VTrajectoryModel.hh
 /home/goluckyryan/geant4.10.02-install/include/Geant4/G4VTrajectoryModel.hh
+
+/home/goluckyryan/geant4.10.02-install/include/Geant4/G4TrajectoryPoint.hh
+trkgdefs.hh
+/home/goluckyryan/geant4.10.02-install/include/Geant4/trkgdefs.hh
+G4VTrajectoryPoint.hh
+/home/goluckyryan/geant4.10.02-install/include/Geant4/G4VTrajectoryPoint.hh
+globals.hh
+/home/goluckyryan/geant4.10.02-install/include/Geant4/globals.hh
+G4ThreeVector.hh
+/home/goluckyryan/geant4.10.02-install/include/Geant4/G4ThreeVector.hh
+G4Allocator.hh
+/home/goluckyryan/geant4.10.02-install/include/Geant4/G4Allocator.hh
 
 /home/goluckyryan/geant4.10.02-install/include/Geant4/G4Transform3D.hh
 globals.hh
@@ -9121,6 +9163,16 @@ G4String.hh
 /home/goluckyryan/geant4.10.02-install/include/Geant4/G4String.hh
 G4VTrajectory.hh
 /home/goluckyryan/geant4.10.02-install/include/Geant4/G4VTrajectory.hh
+
+/home/goluckyryan/geant4.10.02-install/include/Geant4/G4VTrajectoryPoint.hh
+globals.hh
+/home/goluckyryan/geant4.10.02-install/include/Geant4/globals.hh
+vector
+-
+map
+-
+G4ThreeVector.hh
+/home/goluckyryan/geant4.10.02-install/include/Geant4/G4ThreeVector.hh
 
 /home/goluckyryan/geant4.10.02-install/include/Geant4/G4VTree.hh
 G4VGraphicsSystem.hh
@@ -10269,6 +10321,10 @@ vector
 /home/goluckyryan/geant4.10.02-install/include/Geant4/trajectoryControl.hh
 
 /home/goluckyryan/geant4.10.02-install/include/Geant4/trkdefs.hh
+G4Types.hh
+/home/goluckyryan/geant4.10.02-install/include/Geant4/G4Types.hh
+
+/home/goluckyryan/geant4.10.02-install/include/Geant4/trkgdefs.hh
 G4Types.hh
 /home/goluckyryan/geant4.10.02-install/include/Geant4/G4Types.hh
 

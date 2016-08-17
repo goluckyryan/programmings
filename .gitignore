@@ -84,6 +84,12 @@ Session.vim
 #
 *.d
 
+#Latex
+*.pdf
+*.log
+*.aux
+*.synctex.gz
+
 ### Gean4 ###
 *.wrl
 

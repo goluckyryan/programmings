@@ -37,6 +37,9 @@
 #include "G4EventManager.hh"
 #include "G4HCofThisEvent.hh"
 #include "G4VHitsCollection.hh"
+#include "G4TrajectoryContainer.hh"
+#include "G4VTrajectory.hh"
+#include "G4Trajectory.hh"
 #include "G4SDManager.hh"
 #include "G4SystemOfUnits.hh"
 #include "G4ios.hh"
@@ -123,26 +126,35 @@ void B5EventAction::EndOfEventAction(const G4Event* event)
     G4ThreeVector primary3V = event->GetPrimaryVertex(0)->GetPosition();
     G4double x = primary3V.getX();
     G4double y = primary3V.getY();
+    
+    //G4TrajectoryContainer* trajectory =event->GetTrajectoryContainer();
+    //printf(" %f \n", trajectory->size());
+    //std::vector<G4Trajectory*> rv = trajectory->GetVector();
+    //printf("%f, %f, %f \n", rv[0]); 
+    
+    G4double z = primary3V.getZ();
+    
     analysisManager->FillNtupleDColumn(0,x);
     analysisManager->FillNtupleDColumn(1,y);
+    analysisManager->FillNtupleDColumn(2,z);
     
     G4PrimaryParticle* primary = event->GetPrimaryVertex(0)->GetPrimary(0);
     G4double momt = (primary->GetMomentum()).getR();
     G4double mass = primary->GetMass();
     G4double energy = sqrt(mass*mass+momt*momt)-mass;
     //printf("%f \n", momt);
-    analysisManager->FillNtupleDColumn(2, energy);
+    analysisManager->FillNtupleDColumn(3, energy);
     
     // Hodo 1
 //    std::vector<double> vec;
 
     for (G4int i=0;i<hHC1->entries();i++)
     {
-      analysisManager->FillNtupleDColumn(3,(*hHC1)[i]->GetID());
+      analysisManager->FillNtupleDColumn(4,(*hHC1)[i]->GetID());
 
 //      vec.push_back((*hHC1)[i]->GetID());
-      analysisManager->FillNtupleDColumn(4,(*hHC1)[i]->GetTime());
-      analysisManager->FillNtupleDColumn(5,(*hHC1)[i]->GetEnergy());
+      analysisManager->FillNtupleDColumn(5,(*hHC1)[i]->GetTime());
+      analysisManager->FillNtupleDColumn(6,(*hHC1)[i]->GetEnergy());
       if( (*hHC1)[i]->GetID() !=0) break; // only for the first hit
     }
 
@@ -150,9 +162,9 @@ void B5EventAction::EndOfEventAction(const G4Event* event)
     
     for (G4int i=0;i<hHC2->entries();i++)
     {
-      analysisManager->FillNtupleDColumn(6,(*hHC2)[i]->GetID());
-      analysisManager->FillNtupleDColumn(7,(*hHC2)[i]->GetTime());
-      analysisManager->FillNtupleDColumn(8,(*hHC2)[i]->GetEnergy());   
+      analysisManager->FillNtupleDColumn(7,(*hHC2)[i]->GetID());
+      analysisManager->FillNtupleDColumn(8,(*hHC2)[i]->GetTime());
+      analysisManager->FillNtupleDColumn(9,(*hHC2)[i]->GetEnergy());   
       if( (*hHC2)[i]->GetID() !=0) break;
     }
       

@@ -8,7 +8,8 @@
 %=================== Define new command for simplicity
 \newcommand{\len}{3} %length of the energy level
 \newcommand{\spa}{7} %space the energy level
-\newcommand{\off}{0.8} % vertical offset of energy display 
+\newcommand{\off}{0.7} % vertical offset of energy display 
+\newcommand{\scale}{0.4} % scale of the picture
 
 \newcommand{\ket}[1]{$\left|#1\right\rangle$}
 \newcommand{\jpi}[2]{#1$^{#2}$}
@@ -43,7 +44,7 @@
 \centerline{
   \resizebox{15cm}{!}{ %reside the picture
     \begin{tikzpicture}[
-      scale=0.25, %scale of the lines
+      scale=\scale, %scale of the lines
       level/.style={thick},
       %level/.style={line width = 0.3 mm}, %another method for line width control
       virtual/.style={thick,densely dashed},
@@ -52,32 +53,32 @@
       label/.style = { font=\bf}
     ]
     %Name the isotope
-    \node at (\len/2+\len+\spa, 15){\Huge \iso{19}{F}};
-    % Draw the energy levels. Exp
-    \lev{0.0}{\jpi{0}{+}}{0};
-    \lev{3.2}{\jpi{2}{+}}{-2*\off};
-    \lev{4.6}{(\jpi{3}{+})}{-\off*2};
-    \lev{4.9}{(\jpi{0}{+})}{-\off};
-    \lev{5.8}{?}{-\off};
-    \lev{6.5}{(\jpi{2}{+})}{-\off/2};
-    \lev{6.9}{(\jpi{4}{+})}{+\off/2};
-    \lev{7.7}{(-)}{+\off};
-    \lev{8.8}{(-)}{+\off};
-    \lev{10.6}{(-)}{+\off};
-    \lev{13.3}{(-)}{0};
+    \node at (\len+\spa, 10){\Huge \iso{19}{F}};
+    % Draw the energy levels. Exp positive parity
+    \lev{0.00}{\jpi{1/2}{+}}{0};
+    \lev{0.20}{\jpi{5/2}{+}}{\off};
+    \lev{1.55}{\jpi{3/2}{+}}{0};
+    \lev{2.78}{\jpi{9/2}{+}}{0};
+    \lev{3.91}{\jpi{3/2}{+}}{0};
+    \lev{4.38}{\jpi{7/2}{+}}{0};
+    \lev{4.55}{\jpi{5/2}{+}}{+\off};
+    \lev{4.65}{\jpi{13/2}{+}}{+2*\off};
+    \lev{5.11}{\jpi{5/2}{+}}{+2*\off};
     %thershold
     \thershold{10.4}{\iso{18}{F}+n};
+    \thershold{8.0}{\iso{18}{O}+p};
     %\thershold{10.6}{\iso{20}{O}+2n};
     %\thershold{18.3}{\iso{19}{O}+3n};
     % Draw another level scheme USDB
-    \levS{0.0}{\jpi{0}{+}}{\len+\spa}{0};
-    \levS{4.8}{\jpi{0}{+}}{\len+\spa}{-\off/2};
-    \levS{1\off}{\jpi{1}{+}}{\len+\spa}{0};
-    \levS{3.2}{\jpi{2}{+}}{\len+\spa}{0};
-    \levS{6.4}{\jpi{2}{+}}{\len+\spa}{-\off/2+0.3};
-    \levS{8.5}{\jpi{2}{+}}{\len+\spa}{+\off/2};
-    \levS{4.8}{\jpi{3}{+}}{\len+\spa}{+\off/2};
-    \levS{6.7}{\jpi{4}{+}}{\len+\spa}{+\off/2+0.3};
+    \levS{0.00}{\jpi{1/2}{+}}{\len+\spa}{0};
+    \levS{6.21}{\jpi{1/2}{+}}{\len+\spa}{+\off};
+    \levS{1.77}{\jpi{3/2}{+}}{\len+\spa}{0};
+    \levS{6.82}{\jpi{3/2}{+}}{\len+\spa}{+\off};
+    \levS{0.08}{\jpi{5/2}{+}}{\len+\spa}{+\off};
+    \levS{4.97}{\jpi{5/2}{+}}{\len+\spa}{+\off};
+    \levS{4.87}{\jpi{7/2}{+}}{\len+\spa}{0};
+    \levS{6.12}{\jpi{7/2}{+}}{\len+\spa}{0};
+    \levS{2.60}{\jpi{9/2}{+}}{\len+\spa}{0};
     % Draw another level scheme SFO
     %\levS{0.0}{\jpi{0}{+}}{\len+\len+2*\spa}{0};
     %\levS{3.5}{\jpi{0}{+}}{\len+\len+2*\spa}{-2*\off+0.3};
@@ -92,7 +93,7 @@
     %\levS{3.8}{\jpi{4}{+}}{\len+\len+2*\spa}{+\off};
     %\levS{11.8}{\jpi{4}{-}}{\len+\len+2*\spa}{+3*\off};
     % Draw the symbol of isotopes
-    \node[label] at (\len/2, -2) {Exp};
+    \node[label] at (\len/2, -2) {Exp(+)};
     \node[label] at (\len/2+\len+\spa, -2) {USDB};
     %\node[label] at (\len/2+2*\len+2*\spa, -2) {SFO};
     \end{tikzpicture}

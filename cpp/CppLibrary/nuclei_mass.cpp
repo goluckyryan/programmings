@@ -18,6 +18,10 @@ void PrintP(double P[3], string name);
 
 int main (int argc, char *argv[])
 {
+   //printf("%d \n", argc );
+   if ( argc != 4 && argc != 6){
+      Usage();
+   }
 
    int    Z, A, Za, Aa;
    string Opt = "--";
@@ -31,8 +35,6 @@ int main (int argc, char *argv[])
       Z= atoi(argv[3]);
       Aa= atoi(argv[4]);
       Za= atoi(argv[5]);      
-   }else{
-      Usage();
    }
    
    int id1 = atoi(Opt.substr(2,1).c_str());

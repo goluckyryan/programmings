@@ -2,7 +2,9 @@
 #define NUCLEUS_H
 
 #include <QString>
-#include "nuclei_mass.h"
+#include "constant.h"
+#include <QFile>
+#include <QDebug>
 
 class Nucleus
 {
@@ -13,10 +15,10 @@ public:
     double mass, Z, A, N, BEA, Sp, Sn;
     QString name;
 
-/*
+
     double KEA, Momt, Gamma, Beta, Brho;
     double TOF, FLightLength;
-/*
+
     void SetKEA(double kea);
     void SetMomt(double momt);
     void SetGamma(double g);
@@ -31,9 +33,14 @@ public:
         this->TOF = tof;
         this->FLightLength = this->TOF / this->BEA / c;
     }
-*/
+
 private:
-    /*
+
+    double Nucleus_Mass(int z, int a);
+    QString Nucleus_Name(int z, int a);
+    double SeparationEnergy (int z, int a, int Nn, int Np);
+
+
     void ZeroKinematics()
     {
         this->KEA = 0;
@@ -73,7 +80,7 @@ private:
         Gamma2Beta(g);
         this->Brho = this->mass * g * this->Beta / c / this->Z;
     }
-*/
+
 };
 
 #endif // NUCLEUS_H

@@ -99,4 +99,16 @@ Session.vim
 ### Qt ####
 *.pro.user
 Qt/build-RelativisticKinematics-Desktop_Qt_5_7_0_clang_64bit-Debug/
+Qt/build*/
+
+### Android SDK ###
+*.apk
+*.ap_
+*.class
+.metadata
+bin/
+gen/
+local.properties
+Thumbs.db
+
 

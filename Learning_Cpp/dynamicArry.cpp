@@ -6,21 +6,15 @@
 
 */
 
-
-
-
 #include <iostream>
 
 using namespace std;
 
 void multiple ( int *pointer ){
-
 	sizeof(pointer);
-
 }
 
 int main() {
-
 
 	int array_size;
 
@@ -32,7 +26,6 @@ int main() {
 	int *p = new int [array_size]; //make a pointer with size and type is int
 	
 	//alternative int *p = new int; if make it this way, when delete the pointer, it may crash due to unknow size of the pointer.
-	
 	for ( int i = 0 ; i < array_size ; i++ ) {
 		p[i]=(i+1)*3;
 		cout << p[i] << endl;
@@ -67,9 +60,7 @@ int main() {
 		delete [] p2[i];
 	}	
 	delete [] p2;
-	
-
-	
+		
 	return 0;
 
 }

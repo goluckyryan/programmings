@@ -95,3 +95,8 @@ Session.vim
 
 ### root ####
 *.root
+
+### Qt ####
+*.pro.user
+Qt/build-RelativisticKinematics-Desktop_Qt_5_7_0_clang_64bit-Debug/
+

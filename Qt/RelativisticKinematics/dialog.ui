@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>New_Windows</class>
- <widget class="QDialog" name="New_Windows">
+ <author/>
+ <comment/>
+ <exportmacro/>
+ <class>Dialog</class>
+ <widget name="Dialog" class="QDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -13,33 +15,35 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
-    <widget class="QPlainTextEdit" name="plainTextEdit"/>
-   </item>
-   <item row="1" column="0">
-    <widget class="QDialogButtonBox" name="buttonBox">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-     </property>
-    </widget>
-   </item>
-  </layout>
+  <widget name="buttonBox" class="QDialogButtonBox">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>240</y>
+     <width>341</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+   </property>
+  </widget>
  </widget>
+ <pixmapfunction/>
  <resources/>
  <connections>
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>New_Windows</receiver>
+   <receiver>Dialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>248</x>
-     <y>274</y>
+     <y>254</y>
     </hint>
     <hint type="destinationlabel">
      <x>157</x>
@@ -50,7 +54,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>New_Windows</receiver>
+   <receiver>Dialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

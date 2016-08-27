@@ -27,11 +27,11 @@ public:
 
     void CalTOF(double fl){
         this->FLightLength = fl;
-        this->TOF = fl / this->BEA / c;
+        this->TOF = fl / this->Beta / c;
     }
     void CalFlightLength(double tof){
         this->TOF = tof;
-        this->FLightLength = this->TOF / this->BEA / c;
+        this->FLightLength = this->TOF / this->Beta / c;
     }
 
 private:

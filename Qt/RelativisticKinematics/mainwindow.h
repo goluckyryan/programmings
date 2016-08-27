@@ -20,9 +20,15 @@ public:
 private slots:
     void on_actionNew_Windows_triggered();
 
+    void displayKinematics();
     void on_pushButton_clicked();
-
     void on_pushButton_KE_clicked();
+    void on_pushButton_momt_clicked();
+    void on_pushButton_Gamma_clicked();
+    void on_pushButton_Beta_clicked();
+    void on_pushButton_Brho_clicked();
+    void on_pushButton_FL_clicked();
+    void on_pushButton_TOF_clicked();
 
 private:
     Ui::MainWindow *ui;

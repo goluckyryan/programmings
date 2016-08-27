@@ -138,7 +138,7 @@ double Nucleus::SeparationEnergy(int z, int a, int Nn, int Np)
 
 
 void Nucleus::SetKEA(double kea){
-    this->KEA = kea;
+    KEA = kea;
     KEA2Gamma(kea);
     Gamma2Beta(this->Gamma);
     Gamma2Momt(this->Gamma);

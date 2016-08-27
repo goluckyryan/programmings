@@ -23,6 +23,7 @@ const double hbarc = 197.272; // MeV fm;
 const double c = 299.792458; // mm/ns; 
 
 //cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+/*
 double kg2MeV(double m){
     return m*c_SI*c_SI/e/1e6;
 }
@@ -51,10 +52,13 @@ double ev2nm(double eV){
   // photon energy to nm
   return hbarc/2/pi/eV;
 }
-
+*/
 //cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-const double mp = kg2MeV(mp_SI);
-const double mn = kg2MeV(mn_SI);
+//const double mp = kg2MeV(mp_SI);
+//const double mn = kg2MeV(mn_SI);
+
+const double mp = 938.272046;
+const double mn = 939.565378;
 
 
 

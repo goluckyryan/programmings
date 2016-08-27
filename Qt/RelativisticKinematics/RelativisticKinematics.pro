@@ -19,7 +19,8 @@ SOURCES += main.cpp\
 
 HEADERS  += mainwindow.h \
     constant.h \
-    dialog.h
+    dialog.h \
+    nucleus.h
 
 FORMS    += mainwindow.ui \
     dialog.ui

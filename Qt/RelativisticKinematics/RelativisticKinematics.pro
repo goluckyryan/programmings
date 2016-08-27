@@ -18,10 +18,8 @@ SOURCES += main.cpp\
     nucleus.cpp
 
 HEADERS  += mainwindow.h \
-    nuclei_mass.h \
     constant.h \
-    dialog.h \
-    nucleus.h
+    dialog.h
 
 FORMS    += mainwindow.ui \
     dialog.ui

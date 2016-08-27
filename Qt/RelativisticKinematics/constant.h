@@ -1,5 +1,5 @@
-#ifndef constant
-#define constant
+#ifndef CONSTANT_H
+#define CONSTANT_H
 #include <cmath>
 
 const double pi   = acos(-1.0);

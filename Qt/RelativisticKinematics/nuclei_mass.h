@@ -1,16 +1,10 @@
 #ifndef NUCLEIMASS_H
 #define NUCLEIMASS_H
 
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <stdio.h>
 #include "constant.h" // amu
-#include <stdlib.h>  //atoi
 #include <QDebug>
 #include <QFile>
 #include <QString>
-using namespace std;
 
 QString dataPath=":/massTable/mass12.txt";
 
@@ -124,7 +118,7 @@ QString Nucleus_Name(int Z, int A){
 
 }
 
-double Sp (int Z, int A, int Nn, int Np){
+double SeparationEnergy (int Z, int A, int Nn, int Np){
 
   if ( A == 1 ) return 0;
 

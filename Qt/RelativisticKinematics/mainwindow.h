@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+//#include "nucleus.h"
+#include "dialog.h"
 
 namespace Ui {
 class MainWindow;
@@ -24,7 +26,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-
+    //Nucleus *nu;
 
 };
 

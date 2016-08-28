@@ -6,7 +6,7 @@
 
 QT       += core gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 
 TARGET = Qt_GUI
 TEMPLATE = app
@@ -15,12 +15,14 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     dialog.cpp \
-    nucleus.cpp
+    nucleus.cpp \
+    qcustomplot.cpp
 
 HEADERS  += mainwindow.h \
     constant.h \
     dialog.h \
-    nucleus.h
+    nucleus.h \
+    qcustomplot.h
 
 FORMS    += mainwindow.ui \
     dialog.ui

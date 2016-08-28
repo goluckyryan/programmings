@@ -5,6 +5,7 @@
 #include "nucleus.h"
 #include "dialog.h"
 
+
 namespace Ui {
 class MainWindow;
 }

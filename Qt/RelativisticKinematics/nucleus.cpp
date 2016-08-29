@@ -40,17 +40,15 @@ double Nucleus::Nucleus_Mass(int z, int a)
           lineNum ++ ;
           line = myfile.readLine();
 
-          //qDebug() << lineNum << "," << line;
-
           if (lineNum >= numLineStart ){
             list_Z = line.mid(10, 5).toInt();
-            list_A = line.mid(15,5).toInt();
+            list_A = line.mid(15, 5).toInt();
             list_BEA = line.mid(55,11).toDouble();
             if ( a == list_A && z == list_Z) {
                 mass = list_Z*mp + (list_A-list_Z)*mn - list_BEA/1000*list_A;
                 flag = 1;
             }else if ( list_A > a) {
-              break;
+                break;
             }
 
           }
@@ -95,14 +93,16 @@ QString Nucleus::Nucleus_Name(int z, int a)
 
           if (lineNum >= numLineStart ){
               list_Z = line.mid(10, 5).toInt();
-              list_A = line.mid(15,5).toInt();
-              name   = line.mid(19,3);
-            if ( a == list_A && z == list_Z) {
-                   flag = 1;
-            }else if ( list_A > z) {
-              break;
-            }
+              list_A = line.mid(15, 5).toInt();
+              name   = line.mid(19, 3);
 
+              //qDebug() << line << "|" << name << "|" << list_Z << "|" << list_A;
+
+              if ( a == list_A && z == list_Z) {
+                   flag = 1;
+              }else if ( list_A > a) {
+                   break;
+              }
           }
         }
         myfile.close();
@@ -110,12 +110,24 @@ QString Nucleus::Nucleus_Name(int z, int a)
       else {
           qDebug() << "Unable to open" << ":/massTable/mass12.txt";
         }
-      //if( isspace(name[0])) name.erase(0, 1);
+
+      //delete space
+      if( name.left(1) == " "){
+          name = name.mid(1);
+          if(name.left(1) == " "){
+              name = name.mid(1);
+          }
+          if(name.right(1) == " "){
+              name = name.left(1);
+          }
+      }
 
       if (flag == 1){
+          this->name = name;
           return name;
       }else{
-           return "---";
+          this->name = "--";
+          return "--";
       }
 }
 

@@ -16,16 +16,19 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     dialog.cpp \
     nucleus.cpp \
-    qcustomplot.cpp
+    qcustomplot.cpp \
+    dialog2.cpp
 
 HEADERS  += mainwindow.h \
     constant.h \
     dialog.h \
     nucleus.h \
-    qcustomplot.h
+    qcustomplot.h \
+    dialog2.h
 
 FORMS    += mainwindow.ui \
-    dialog.ui
+    dialog.ui \
+    dialog2.ui
 
 DISTFILES += \
     mass12.txt

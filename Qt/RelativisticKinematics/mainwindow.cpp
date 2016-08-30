@@ -5,10 +5,12 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
     nu(NULL),
-    di(NULL)
+    di(NULL),
+    di2(NULL)
 {
     ui->setupUi(this);
     di = new Dialog(this);
+    di2 = new Dialog2(this);
 
     ui->lineEdit_Z->setText("1");
     ui->lineEdit_A->setText("1");
@@ -22,6 +24,7 @@ MainWindow::~MainWindow()
     delete ui;
     delete nu;
     delete di;
+    delete di2;
 }
 
 void MainWindow::on_actionNew_Windows_triggered()
@@ -164,4 +167,15 @@ void MainWindow::on_lineEdit_Z_textChanged(const QString &arg1)
 void MainWindow::on_lineEdit_A_textChanged(const QString &arg1)
 {
     SetMass();
+}
+
+void MainWindow::on_actionNew_Dialog2_triggered()
+{
+    if( di2->isHidden()){
+        di2->setGeometry(this->geometry().width(),
+                         di->geometry().height(),
+                         di2->geometry().width(),
+                         di2->geometry().height() );
+        di2->show();
+    }
 }

@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "nucleus.h"
 #include "dialog.h"
+#include "dialog2.h"
 #include <QFile>
 #include <QDateTime>
 
@@ -40,10 +41,13 @@ private slots:
     void on_lineEdit_Z_textChanged(const QString &arg1);
     void on_lineEdit_A_textChanged(const QString &arg1);
 
+    void on_actionNew_Dialog2_triggered();
+
 private:
     Ui::MainWindow *ui;
     Nucleus *nu;
     Dialog *di;
+    Dialog2 *di2;
     char str[200];
     bool massFlag; // calculated mass or not.
 

@@ -502,7 +502,6 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionNew_Windows"/>
-   <addaction name="actionNew_Dialog2"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionNew_Windows">

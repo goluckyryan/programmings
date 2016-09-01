@@ -17,18 +17,17 @@ SOURCES += main.cpp\
     dialog.cpp \
     nucleus.cpp \
     qcustomplot.cpp \
-    dialog2.cpp
+    fourvector.cpp
 
 HEADERS  += mainwindow.h \
     constant.h \
     dialog.h \
     nucleus.h \
     qcustomplot.h \
-    dialog2.h
+    fourvector.h
 
 FORMS    += mainwindow.ui \
-    dialog.ui \
-    dialog2.ui
+    dialog.ui
 
 DISTFILES += \
     mass12.txt

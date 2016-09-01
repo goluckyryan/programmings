@@ -4,7 +4,6 @@
 #include <QMainWindow>
 #include "nucleus.h"
 #include "dialog.h"
-#include "dialog2.h"
 #include <QFile>
 #include <QDateTime>
 
@@ -47,7 +46,6 @@ private:
     Ui::MainWindow *ui;
     Nucleus *nu;
     Dialog *di;
-    Dialog2 *di2;
     char str[200];
     bool massFlag; // calculated mass or not.
 

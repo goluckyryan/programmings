@@ -377,17 +377,26 @@ void Matrix::PrintVector(QString str)
     msg.sprintf("%s(%d,%d) = ", str.toStdString().c_str(), this->rows, this->cols);
 
     int n = 0;
-    if(this->rows == 1) n = this->cols;
-    if(this->cols == 1) n = this->rows;
+    if(this->rows == 1){
+        n = this->cols;
+    }else if(this->cols == 1) {
+        n = this->rows;
+    }else{
+        msg += "is not a vector";
+        qDebug() << msg;
+        SendMsg(msg);
+        return;
+    }
 
     if( p != NULL){
         msg += "[" ;
-        for (int j = 0 ; j < n; j++){
+        for (int j = 0 ; j < n-1; j++){
             if(this->rows == 1) tmp.sprintf("%7.3f, ",p[0][j]);
             if(this->cols == 1) tmp.sprintf("%7.3f, ",p[j][0]);
             msg += tmp;
         }
-        tmp.sprintf("]");
+        if(this->rows == 1) tmp.sprintf("%7.3f ]",p[0][n-1]);
+        if(this->cols == 1) tmp.sprintf("%7.3f ] ",p[n-1][0]);
         msg += tmp;
         qDebug().noquote() << msg;
         SendMsg(msg);

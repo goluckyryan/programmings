@@ -16,56 +16,120 @@ Nucleus::Nucleus(int z, int a)
 
 }
 
+Nucleus::Nucleus(QString sym)
+{
+    this->name = sym;
+    this->mass = Nucleus_Mass(sym); // the A and Z also found
+    this->N = this->A - this->Z;
+
+    this->BEA = (this->mass - this->Z * mp - this->N * mn )/ this->A;
+
+    this->Sp = SeparationEnergy(this->Z, this->A, 0, 1);
+    this->Sn = SeparationEnergy(this->Z, this->A, 1, 0);
+
+    ZeroKinematics();
+}
+
 double Nucleus::Nucleus_Mass(int z, int a)
 {
     QString line;
-      int    lineNum=0;
-      int    list_A, list_Z;
-      double list_BEA, mass;
+    int    lineNum=0;
+    int    list_A, list_Z;
+    double list_BEA, mass;
 
-      int    flag=0;
+    int    flag=0;
 
-      int numLineStart = 40;
-      int numLineEnd  = 3392;
+    int numLineStart = 40;
+    int numLineEnd  = 3392;
 
-      if ( a >= 50 && a < 100) numLineStart = 447; //545;
-      if ( a >=100 && a < 150) numLineStart = 1072;//1100;
-      if ( a >=150 && a < 200) numLineStart = 1833;//1899;
-      if ( a >=200 ) numLineStart = 2534;//2622;
+    if ( a >= 50 && a < 100) numLineStart = 447; //545;
+    if ( a >=100 && a < 150) numLineStart = 1072;//1100;
+    if ( a >=150 && a < 200) numLineStart = 1833;//1899;
+    if ( a >=200 ) numLineStart = 2534;//2622;
 
-      QFile myfile(":/massTable/mass12.txt");
-      if (myfile.open(QIODevice::ReadOnly | QIODevice::Text)){
+    QFile myfile(":/massTable/mass12.txt");
+    if (myfile.open(QIODevice::ReadOnly | QIODevice::Text)){
         while ( flag == 0 && lineNum <numLineEnd)
         {
-          lineNum ++ ;
-          line = myfile.readLine();
+            lineNum ++ ;
+            line = myfile.readLine();
 
-          if (lineNum >= numLineStart ){
-            list_Z = line.mid(10, 5).toInt();
-            list_A = line.mid(15, 5).toInt();
-            list_BEA = line.mid(55,11).toDouble();
-            if ( a == list_A && z == list_Z) {
-                mass = list_Z*mp + (list_A-list_Z)*mn - list_BEA/1000*list_A;
-                flag = 1;
-            }else if ( list_A > a) {
-                break;
+            if (lineNum >= numLineStart ){
+                list_Z = line.mid(10, 5).toInt();
+                list_A = line.mid(15, 5).toInt();
+                list_BEA = line.mid(55,11).toDouble();
+                if ( a == list_A && z == list_Z) {
+                    mass = list_Z*mp + (list_A-list_Z)*mn - list_BEA/1000*list_A;
+                    flag = 1;
+                }else if ( list_A > a) {
+                    break;
+                }
             }
-
-          }
         }
         myfile.close();
-      }
-      else {
-          qDebug() << "Unable to open " << ":/massTable/mass12.txt";
-      }
+    }
+    else {
+        qDebug() << "Unable to open " << ":/massTable/mass12.txt";
+    }
 
-      if (flag == 1){
+    if (flag == 1){
+    return mass;
+    }else{
+    return -404;
+    }
+
+    return 0;
+}
+
+double Nucleus::Nucleus_Mass(QString sym)
+{
+    QString line;
+    int    lineNum = 0;
+    int    list_A, list_Z;
+    QString list_el;
+    double list_BEA, mass;
+
+    int    flag=0;
+
+    int numLineStart = 40;
+    int numLineEnd  = 3392;
+
+    QFile myfile(":/massTable/mass12.txt");
+    if (myfile.open(QIODevice::ReadOnly | QIODevice::Text)){
+        while ( flag == 0 && lineNum <numLineEnd)
+        {
+            lineNum ++ ;
+            line = myfile.readLine();
+
+            if (lineNum >= numLineStart ){
+                list_el = line.mid(20,2);
+                list_el.remove(QChar(' '));
+                list_Z = line.mid(10, 5).toInt();
+                list_A = line.mid(15, 5).toInt();
+                list_BEA = line.mid(55,11).toDouble();
+                //qDebug() << list_el << ", " << list_Z << ", " << list_A;
+                if ( sym == list_el) {
+                    mass = list_Z*mp + (list_A-list_Z)*mn - list_BEA/1000*list_A;
+                    this->A = list_A;
+                    this->Z = list_Z;
+                    flag = 1;
+                    break;
+                }
+            }
+        }
+        myfile.close();
+    }
+    else {
+        qDebug() << "Unable to open " << ":/massTable/mass12.txt";
+    }
+
+    if (flag == 1){
         return mass;
-      }else{
+    }else{
         return -404;
-      }
+    }
 
-      return 0;
+    return 0;
 }
 
 QString Nucleus::Nucleus_Name(int z, int a)

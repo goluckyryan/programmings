@@ -37,7 +37,7 @@ void MainWindow::on_actionNew_Windows_triggered()
 
     //once instance
     if( di->isHidden()){
-        di->setGeometry(this->geometry().width(), 50, di->geometry().width(), di->geometry().height() );
+        //di->setGeometry(this->geometry().width(), 50, di->geometry().width(), di->geometry().height() );
         di->show();
     }
 
@@ -159,6 +159,10 @@ void MainWindow::log(QString str, bool end)
 void MainWindow::on_lineEdit_Z_textChanged(const QString &arg1)
 {
     SetMass();
+
+    FourVector vec;
+    vec.Print();
+
 }
 
 void MainWindow::on_lineEdit_A_textChanged(const QString &arg1)

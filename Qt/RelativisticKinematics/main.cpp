@@ -7,11 +7,8 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
-    w.setGeometry(0,0, w.geometry().width(), w.geometry().height());
+    //w.setGeometry(0,0, w.geometry().width(), w.geometry().height());
     w.show();
-
-   // QLabel *lab = new QLabel("mass [MeV/c <sup>2</sup>]");
-    //lab->show();
 
     return a.exec();
 }

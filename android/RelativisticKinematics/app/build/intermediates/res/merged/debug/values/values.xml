@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="A_label">A</string>
+    <string name="BEA_label">BE/A [MeV]</string>
+    <string name="Brho_label">Brho [T.m]</string>
+    <string name="Sn_label">Sn [MeV]</string>
+    <string name="Sp_label">Sp [MeV]</string>
+    <string name="Z_label">Z</string>
+    <string name="app_name">Relativistic Kinematics</string>
+    <string name="beta_label">beta</string>
+    <string name="gamma_label">gamma</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="ke_label">K.E. [AMeV]</string>
+    <string name="length_label">length[mm]</string>
+    <string name="mass_label">mass [MeV c<sup><small>-2</small></sup>]</string>
+    <string name="menu_settings">Exit (under Const.)</string>
+    <string name="momt_label">momt [MeV c<sup><small>-1</small></sup>]</string>
+    <string name="tof_label">ToF [ns]</string>
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+</resources>

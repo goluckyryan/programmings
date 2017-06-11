@@ -11,7 +11,7 @@
 
 ///  a matrix class of aribtary size
 
-using namespace std;
+///using namespace std;
 
 class Exception
 {
@@ -20,17 +20,9 @@ public:
   Exception(const char* arg): msg(arg){}
 };
 
-// swap two values
-void Swap(double& a, double& b)
-{
-  double temp = a;
-  a = b;
-  b = temp;
-}
 
 class Matrix{
     public:
-        int row, col;
 
 		Matrix();
         Matrix(int row, int col);
@@ -48,9 +40,14 @@ class Matrix{
 		// assigment operator
 		Matrix & operator = (const Matrix &mat);
         
-        //Get element;
+        //Interface;  Get element; 
         double & operator ()(const int i, const int j);
         double Get(const int row, const int col) const;
+        Matrix GetColVector(const int col) const;
+        Matrix GetRowVector(const int row) const;
+        int GetRow() const { return row;}
+        int GetCol() const { return col;}
+        int* Dimension() const;
         
         //Matrix with a constant 
         Matrix operator + (const double v);
@@ -89,22 +86,18 @@ class Matrix{
         bool operator == (const Matrix &mat); //compare matrix
         bool operator != (const Matrix &mat); //compare matrix
         
-        Matrix GetColVector(const int col);
-        Matrix GetRowVector(const int row);
-        
         //Matrix self manipulation
         Matrix Transpose(); //matrix transpose
         Matrix Minor(const int i, const int j) const;
-        int* Dimension() const;
         double Det();
-        
         Matrix Inverse();
-        
         Matrix GaussianElimination();
-        
         Matrix GetDiagVector();
-        
         double Trace();
+        double Mangnitude();
+        Matrix Normalize();
+        
+        Matrix* QRDecomposition();
         
         //Eigen system //TODO
         Matrix EigenvalueMatrix(){
@@ -112,12 +105,21 @@ class Matrix{
 		}
         Matrix EigenVetorMatrix();
         
-  
 		// Print
         void Print() const;
-        void Print(string) const;
+        void Print(std::string) const;
+        
 	private:
 		double **ele;
+		int row, col;
+		
+		// swap two values
+		void Swap(double& a, double& b)
+		{
+		  double temp = a;
+		  a = b;
+		  b = temp;
+		}
         
 };
 
@@ -348,7 +350,7 @@ bool Matrix::operator != (const Matrix &mat){
 	return !(*this == mat);
 }
 
-Matrix Matrix::GetColVector(const int col){
+Matrix Matrix::GetColVector(const int col) const{
 	Matrix res(this->row, 1);
 	
 	for(int i = 1; i <= this->row; i++){
@@ -357,7 +359,7 @@ Matrix Matrix::GetColVector(const int col){
 	return res;
 }
 
-Matrix Matrix::GetRowVector(const int row){
+Matrix Matrix::GetRowVector(const int row) const{
 	Matrix res(1, this->col);
 	
 	for(int i = 1; i <= this->col; i++){
@@ -425,7 +427,7 @@ void Matrix::Print() const{
 	}
 }
 
-void Matrix::Print(string str) const{
+void Matrix::Print(std::string str) const{
     printf("%s(%d,%d)= \n", str.c_str(), this->row, this->col);
     this->Print();
 }
@@ -606,11 +608,91 @@ double Matrix::Trace(){
 	}
 }
 
+double Matrix::Mangnitude(){
+	double sq = 0;
+	
+	for(int i = 1; i <= row ; i++){
+		for(int j = 1; j <= col ; j++){	
+			sq += pow(Get(i,j),2);
+		}
+	}
+	
+	return sqrt(sq);
+	
+}
+
+Matrix Matrix::Normalize(){
+	
+	Matrix res = *this;
+	
+	double sq = Mangnitude();
+	
+	return res/sq;
+}
+
+Matrix* Matrix::QRDecomposition(){
+	
+	if( row == col ){
+		Matrix* u = new Matrix[col];
+		for(int i = 1; i <= col; i++){
+			u[i-1] = GetColVector(i);
+		}
+		for(int i = 1; i <= col; i++){
+			printf("================= %d\n", i);
+			u[i-1].Print("u");
+			
+			for(int j = 1; j < i; j++){
+				Matrix k = u[j-1];
+				k = k.Normalize();
+				printf("k %d\n", j);
+				
+				double a = (u[i-1].Transpose() * k)(1,1);
+				printf(" a %f \n", a);
+				(a*k).Print();
+				u[i-1] = u[i-1] - a * k;
+				
+			}
+			
+			//double a = (u[i-1].Transpose() * h)(1,1);
+			u[i-1].Print("u");
+			
+		}
+		
+		printf("========+++++++++=========\n");
+		for(int i = 0; i < col; i++){
+			
+			u[i] = u[i].Normalize();
+			u[i].Print("u");
+		}
+
+		//Forming Q matrix from u[i]
+		Matrix Q(row, col);
+		for(int i = 1; i <= row; i++){
+			for(int j = 1; j <= col; j++){
+				Q(i,j) = u[j-1].Get(i,1);
+			}
+		}
+		
+		//R matrix is Q.Transpose()* a; Q.Transpose() = Q.Inverse();
+		Matrix a = *this;
+		Matrix R = Q.Transpose() * a;
+		
+		Matrix *output = new Matrix[2];
+		output[0] = Q;
+		output[1] = R;
+		
+		return output;
+	
+	}else{
+		throw Exception("The algorithm is only for square matrix currently.");
+		return NULL;
+	}
+	
+}
+
 Matrix Matrix::EigenVetorMatrix(){
 	Matrix ev = EigenvalueMatrix();
-	
-	
-	
+
 	return ev; 
 }
 

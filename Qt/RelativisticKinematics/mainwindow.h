@@ -7,6 +7,7 @@
 #include "nucleus.h"
 #include "dialog.h"
 #include "fourvector.h"
+#include "lorentzian.h"
 
 namespace Ui {
 class MainWindow;
@@ -25,7 +26,8 @@ private slots:
     void on_actionNew_Windows_triggered();
 
     void displayKinematics();
-    void SetMass();
+    void SetMass(int Z, int A);
+    void SetMassbyName(QString sym);
 
     void on_pushButton_FL_clicked();
     void on_pushButton_TOF_clicked();
@@ -38,10 +40,11 @@ private slots:
 
     void log(QString str, bool end);
 
-    void on_lineEdit_Z_textChanged(const QString &arg1);
-    void on_lineEdit_A_textChanged(const QString &arg1);
-
     //void on_actionNew_Dialog2_triggered();
+
+    void on_lineEdit_Name_editingFinished();
+    void on_lineEdit_Z_editingFinished();
+    void on_lineEdit_A_editingFinished();
 
 private:
     Ui::MainWindow *ui;

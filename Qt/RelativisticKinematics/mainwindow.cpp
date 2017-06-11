@@ -12,13 +12,9 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->lineEdit_Z->setText("1");
     ui->lineEdit_A->setText("1");
-    //SetMass();
+    SetMass(1,1);
     ui->lineEdit_Z->setFocus();
 
-    FourVector vec;
-    vec.PrintVector("vec");
-    vec.SetFourVector(3,1,1,1,0);
-    vec.PrintVector("vec");
 }
 
 MainWindow::~MainWindow()
@@ -62,11 +58,8 @@ void MainWindow::displayKinematics()
 }
 
 
-void MainWindow::SetMass()
+void MainWindow::SetMass(int Z, int A)
 {
-    int Z = (ui->lineEdit_Z->text()).toInt();
-    int A = (ui->lineEdit_A->text()).toInt();
-
     nu = new Nucleus(Z,A);
 
     //qDebug() << nu->Z << ","<< nu->A << "," << nu->mass;
@@ -83,9 +76,28 @@ void MainWindow::SetMass()
     massFlag = 1;
 }
 
+void MainWindow::SetMassbyName(QString sym)
+{
+    nu = new Nucleus(sym);
+
+    ui->lineEdit_Mass->setText(QString::number(nu->mass));
+    ui->lineEdit_A->setText(QString::number(nu->A));
+    ui->lineEdit_Z->setText(QString::number(nu->Z));
+    ui->lineEdit_Sp->setText(QString::number(nu->Sp));
+    ui->lineEdit_Sn->setText(QString::number(nu->Sn));
+    ui->lineEdit_BEA->setText(QString::number(nu->BEA));
+
+    sprintf(str,"Z=%2d, %3d%2s, Mass: %10.4f ",nu->Z, nu->A, nu->name.toStdString().c_str(), nu->mass);
+    log(str, 1);
+
+    massFlag = 1;
+}
+
 void MainWindow::on_pushButton_FL_clicked()
 {
-    if( massFlag == 0 ) SetMass();
+    int Z = (ui->lineEdit_Z->text()).toInt();
+    int A = (ui->lineEdit_A->text()).toInt();
+    if( massFlag == 0 ) SetMass(Z, A);
     double tof = ui->lineEdit_TOF->text().toDouble();
     nu->CalFlightLength(tof);
     ui->lineEdit_FL->setText(QString::number(nu->FLightLength));
@@ -93,7 +105,9 @@ void MainWindow::on_pushButton_FL_clicked()
 
 void MainWindow::on_pushButton_TOF_clicked()
 {
-    if( massFlag == 0 ) SetMass();
+    int Z = (ui->lineEdit_Z->text()).toInt();
+    int A = (ui->lineEdit_A->text()).toInt();
+    if( massFlag == 0 ) SetMass(Z, A);
     double fl = ui->lineEdit_FL->text().toDouble();
     nu->CalTOF(fl);
     ui->lineEdit_TOF->setText(QString::number(nu->TOF));
@@ -102,7 +116,9 @@ void MainWindow::on_pushButton_TOF_clicked()
 void MainWindow::on_doubleSpinBox_KEA_valueChanged(double arg1)
 {
     arg1 = ui->doubleSpinBox_KEA->value();
-    if( massFlag == 0 ) SetMass();
+    int Z = (ui->lineEdit_Z->text()).toInt();
+    int A = (ui->lineEdit_A->text()).toInt();
+    if( massFlag == 0 ) SetMass(Z, A);
     nu->SetKEA(arg1);
     displayKinematics();
 }
@@ -110,14 +126,18 @@ void MainWindow::on_doubleSpinBox_KEA_valueChanged(double arg1)
 void MainWindow::on_doubleSpinBox_momt_valueChanged(double arg1)
 {
     arg1 = ui->doubleSpinBox_momt->value();
-    if( massFlag == 0 ) SetMass();
+    int Z = (ui->lineEdit_Z->text()).toInt();
+    int A = (ui->lineEdit_A->text()).toInt();
+    if( massFlag == 0 ) SetMass(Z, A);
     nu->SetMomt(arg1);
     displayKinematics();
 }
 
 void MainWindow::on_doubleSpinBox_Gamma_valueChanged(double arg1)
 {
-    if( massFlag == 0 ) SetMass();
+    int Z = (ui->lineEdit_Z->text()).toInt();
+    int A = (ui->lineEdit_A->text()).toInt();
+    if( massFlag == 0 ) SetMass(Z, A);
     arg1 = ui->doubleSpinBox_Gamma->value();
     nu->SetGamma(arg1);
     displayKinematics();
@@ -125,7 +145,9 @@ void MainWindow::on_doubleSpinBox_Gamma_valueChanged(double arg1)
 
 void MainWindow::on_doubleSpinBox_Beta_valueChanged(double arg1)
 {
-    if( massFlag == 0 ) SetMass();
+    int Z = (ui->lineEdit_Z->text()).toInt();
+    int A = (ui->lineEdit_A->text()).toInt();
+    if( massFlag == 0 ) SetMass(Z, A);
     arg1 = ui->doubleSpinBox_Beta->value();
     nu->SetBeta(arg1);
     displayKinematics();
@@ -133,7 +155,9 @@ void MainWindow::on_doubleSpinBox_Beta_valueChanged(double arg1)
 
 void MainWindow::on_doubleSpinBox_Brho_valueChanged(double arg1)
 {
-    if( massFlag == 0 ) SetMass();
+    int Z = (ui->lineEdit_Z->text()).toInt();
+    int A = (ui->lineEdit_A->text()).toInt();
+    if( massFlag == 0 ) SetMass(Z, A);
     arg1 = ui->doubleSpinBox_Brho->value();
     nu->SetBrho(arg1);
     displayKinematics();
@@ -160,14 +184,22 @@ void MainWindow::log(QString str, bool end)
 
 }
 
-void MainWindow::on_lineEdit_Z_textChanged(const QString &arg1)
+void MainWindow::on_lineEdit_Name_editingFinished()
 {
-    SetMass();
-
+    QString sym = ui->lineEdit_Name->text();
+    SetMassbyName(sym);
 }
 
-void MainWindow::on_lineEdit_A_textChanged(const QString &arg1)
+void MainWindow::on_lineEdit_Z_editingFinished()
 {
-    SetMass();
+    int Z = (ui->lineEdit_Z->text()).toInt();
+    int A = (ui->lineEdit_A->text()).toInt();
+    SetMass(Z, A);
 }
 
+void MainWindow::on_lineEdit_A_editingFinished()
+{
+    int Z = (ui->lineEdit_Z->text()).toInt();
+    int A = (ui->lineEdit_A->text()).toInt();
+    SetMass(Z, A);
+}

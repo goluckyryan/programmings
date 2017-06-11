@@ -18,7 +18,8 @@ SOURCES += main.cpp\
     nucleus.cpp \
     qcustomplot.cpp \
     matrix.cpp \
-    fourvector.cpp
+    fourvector.cpp \
+    lorentzian.cpp
 
 HEADERS  += mainwindow.h \
     constant.h \
@@ -26,7 +27,8 @@ HEADERS  += mainwindow.h \
     nucleus.h \
     qcustomplot.h \
     matrix.h \
-    fourvector.h
+    fourvector.h \
+    lorentzian.h
 
 FORMS    += mainwindow.ui \
     dialog.ui

@@ -10,9 +10,11 @@ class Nucleus
 {
 public:
     Nucleus(int z, int a);
+    Nucleus(QString sym);
     //~Nucleus();
 
-    double mass, Z, A, N, BEA, Sp, Sn;
+    int Z, A, N;
+    double mass,  BEA, Sp, Sn;
     QString name;
 
 
@@ -37,6 +39,7 @@ public:
 private:
 
     double Nucleus_Mass(int z, int a);
+    double Nucleus_Mass(QString sym);
     QString Nucleus_Name(int z, int a);
     double SeparationEnergy (int z, int a, int Nn, int Np);
 

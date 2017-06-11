@@ -4,15 +4,15 @@
 #include <cmath>
 #include <QVector>
 #include "matrix.h"
-//#include "nucleus.h"
+#include "nucleus.h"
 
 class FourVector: public Matrix
 {
 public:
     FourVector();
-    FourVector(double a, double b, double c, double d, int id);
-    void SetFourVector(double a, double b, double c, double d, int id);
-    void SetMass(double A, double Z);
+    FourVector(double a, double b, double c, double d);
+    void SetFourVector(double a, double b, double c, double d);
+    void SetMassKEDirection(int A, int Z, double KE_MeV, double theta_Deg, double phi_Deg);
 
     QVector<double> toQVector();
     QVector<double> toMomentumQVector();
@@ -34,11 +34,12 @@ public:
 
     double KE(){ return Energy() - Mass();}
     double Beta(){ return Momentum()/Energy();}
-    double Gamma(){ return Mass()/Energy();}
+    double Gamma(){ return Energy()/Mass();}
 
 private:
     int A, Z; // mass number, charge number;
     double energy;
+    double mass;
 
 };
 

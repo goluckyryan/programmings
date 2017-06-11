@@ -3,36 +3,47 @@
 FourVector::FourVector() :
     Matrix(4,1)
 {
-    SetMass(0,0);
-    energy = 0;
+    this->A = 0;
+    this->Z = 0;
+    this->energy = 0;
 }
 
-FourVector::FourVector(double a, double b, double c, double d, int id):
+FourVector::FourVector(double a, double b, double c, double d):
     Matrix(4,1)
 {
-    //vec = new Matrix(4,1);
-    SetFourVector(a,b,c,d,id);
-    SetMass(0,0);
+    SetFourVector(a,b,c,d);
+    this->A = 0;
+    this->Z = 0;
+    this->energy = a;
 }
 
-void FourVector::SetFourVector(double a, double b, double c, double d, int id)
+void FourVector::SetFourVector(double a, double b, double c, double d)
 {
-    //id = 0, construct by a, b, c, d
-    //id = 1,           by mass, T, theta, phi
-    if(id == 0){
-        p[0][0] = a;
-        p[1][0] = b;
-        p[2][0] = c;
-        p[3][0] = d;
-        energy = a;
-    }
-
+    p[0][0] = a;
+    p[1][0] = b;
+    p[2][0] = c;
+    p[3][0] = d;
+    energy = a;
 }
 
-void FourVector::SetMass(double A, double Z)
+void FourVector::SetMassKEDirection(int A, int Z, double KE_MeV, double theta_Deg, double phi_Deg)
 {
     this->A = A;
     this->Z = Z;
+    Nucleus nucleus(Z,A);
+    nucleus.SetKEA(KE_MeV/A);
+    this->mass = nucleus.mass;
+    this->energy = this->mass + nucleus.KEA * A;
+
+    double momt = nucleus.Momt;
+
+    double theta = theta_Deg * deg2rad;
+    double phi = phi_Deg * deg2rad;
+
+    p[0][0] = energy;
+    p[1][0] = momt * sin(theta) * cos(phi);
+    p[2][0] = momt * sin(theta) * sin(phi);
+    p[3][0] = momt * cos(theta);
 }
 
 QVector<double> FourVector::toQVector(){

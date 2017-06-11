@@ -6,6 +6,7 @@
 #include "dialog.h"
 #include <QFile>
 #include <QDateTime>
+#include "fourvector.h"
 
 namespace Ui {
 class MainWindow;
@@ -40,7 +41,7 @@ private slots:
     void on_lineEdit_Z_textChanged(const QString &arg1);
     void on_lineEdit_A_textChanged(const QString &arg1);
 
-    void on_actionNew_Dialog2_triggered();
+    //void on_actionNew_Dialog2_triggered();
 
 private:
     Ui::MainWindow *ui;

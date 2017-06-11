@@ -15,6 +15,10 @@ MainWindow::MainWindow(QWidget *parent) :
     //SetMass();
     ui->lineEdit_Z->setFocus();
 
+    FourVector vec;
+    vec.PrintVector("vec");
+    vec.SetFourVector(3,1,1,1,0);
+    vec.PrintVector("vec");
 }
 
 MainWindow::~MainWindow()
@@ -159,9 +163,6 @@ void MainWindow::log(QString str, bool end)
 void MainWindow::on_lineEdit_Z_textChanged(const QString &arg1)
 {
     SetMass();
-
-    FourVector vec;
-    vec.Print();
 
 }
 

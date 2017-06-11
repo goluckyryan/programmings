@@ -2,10 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "nucleus.h"
-#include "dialog.h"
 #include <QFile>
 #include <QDateTime>
+#include "nucleus.h"
+#include "dialog.h"
 #include "fourvector.h"
 
 namespace Ui {

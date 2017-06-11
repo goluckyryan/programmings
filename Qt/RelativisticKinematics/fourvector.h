@@ -3,7 +3,6 @@
 
 #include <cmath>
 #include <QVector>
-#include "constant.h"
 #include "matrix.h"
 //#include "nucleus.h"
 
@@ -38,7 +37,6 @@ public:
     double Gamma(){ return Mass()/Energy();}
 
 private:
-    Matrix *vec;
     int A, Z; // mass number, charge number;
     double energy;
 

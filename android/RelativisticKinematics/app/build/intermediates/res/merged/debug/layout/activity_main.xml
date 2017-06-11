@@ -1,0 +1,325 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+    
+<!--   ================================================= MASS  -->
+    <EditText
+        android:id="@+id/Sp_text"
+        android:layout_width="116dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:selectAllOnFocus="true"
+        android:inputType="numberDecimal"
+        android:layout_below="@+id/Sp_view"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/Sp_view"
+        android:layout_alignEnd="@+id/Sp_view"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/mass_view"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/mass_label"
+        android:textSize="20sp" />
+    <EditText
+        android:id="@+id/mass_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/mass_view"
+        android:layout_alignBottom="@+id/mass_view"
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        android:selectAllOnFocus="true"
+        android:inputType="numberDecimal"
+        android:textAlignment="textStart" />
+    
+<!--   ================================================= Charge  -->
+
+    <!--   ================================================= MASS NUMBER -->
+
+    <!--   ================================================= SEPERATION ENERGY  -->
+     <TextView
+        android:id="@+id/Sp_view"
+         android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/A_view"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/Sp_label"
+        android:textSize="20sp"
+         android:layout_width="120dp" />
+
+    <!--   ================================================= SEPERATION ENERGY  -->
+
+    <!--   ================================================= KINETIC ENERGY PRE NUCLEON  -->
+<!-- Absolute position  -->
+    <Button
+        android:id="@+id/ke_but"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="210dp"  
+        android:text="@string/ke_label" />
+    <EditText
+        android:id="@+id/ke_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ke_but"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:ems="10"
+        android:selectAllOnFocus="true"
+        android:inputType="numberDecimal"
+        android:textAlignment="textStart">
+    </EditText>
+    
+<!--   ================================================= MOMENTUM  -->
+    <Button
+        android:id="@+id/momt_but"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_alignRight="@+id/ke_but"
+        android:layout_below="@+id/ke_but"
+        android:layout_marginTop="5dp"
+        android:text="@string/momt_label" />
+    <EditText
+        android:id="@+id/momt_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/momt_but"
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        android:selectAllOnFocus="true"
+        android:inputType="numberDecimal"
+        android:textAlignment="textStart">
+    </EditText>
+    
+<!--   ================================================= GAMMA  -->
+    <Button
+        android:id="@+id/gamma_but"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_alignRight="@+id/momt_but"
+        android:layout_below="@+id/momt_but"
+        android:layout_marginTop="5dp"
+        android:text="@string/gamma_label" />
+    <EditText
+        android:id="@+id/gamma_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/gamma_but"
+        android:layout_alignBottom="@+id/gamma_but"
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        android:selectAllOnFocus="true"
+        android:inputType="numberDecimal"
+        android:textAlignment="textStart" />
+        
+<!--   ================================================= BETA  -->
+    <Button
+        android:id="@+id/beta_but"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_alignRight="@+id/gamma_but"
+        android:layout_below="@+id/gamma_but"
+        android:layout_marginTop="5dp"
+        android:text="@string/beta_label" />
+    <EditText
+        android:id="@+id/beta_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/beta_but"
+        android:layout_alignBottom="@+id/beta_but"
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        android:selectAllOnFocus="true"
+        android:inputType="numberDecimal"
+        android:textAlignment="textStart" />
+    
+<!--   ================================================= LENGTH  -->
+    <TextView
+        android:id="@+id/length_view"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_alignRight="@+id/beta_but"
+        android:layout_below="@+id/beta_but"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/length_label"
+        android:textSize="20sp" />
+    <EditText
+        android:id="@+id/length_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/length_view"
+        android:layout_alignBottom="@+id/length_view"
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        android:selectAllOnFocus="true"
+        android:inputType="numberDecimal"
+        android:textAlignment="textStart" />
+    
+<!--   ================================================= TIME OF FLIGHT  -->
+    <Button
+        android:id="@+id/tof_but"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_alignRight="@+id/length_view"
+        android:layout_below="@+id/length_view"
+        android:layout_marginTop="5dp"
+        android:text="@string/tof_label" />
+    <EditText
+        android:id="@+id/tof_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tof_but"
+        android:layout_alignBottom="@+id/tof_but"
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        android:selectAllOnFocus="true"
+        android:inputType="numberDecimal"
+        android:textAlignment="textStart" />
+    
+<!--   ================================================= RIGIDITY  -->
+    <Button
+        android:id="@+id/Brho_but"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_alignRight="@+id/tof_but"
+        android:layout_below="@+id/tof_but"
+        android:layout_marginTop="5dp"
+        android:text="@string/Brho_label" />
+    <EditText
+        android:id="@+id/Brho_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Brho_but"
+        android:layout_alignBottom="@+id/Brho_but"
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        android:selectAllOnFocus="true"
+        android:inputType="numberDecimal"
+        android:textAlignment="textStart" />
+
+    <TextView
+        android:id="@+id/A_view"
+        android:layout_height="40dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/A_label"
+        android:textSize="20sp"
+        android:layout_alignTop="@+id/Z_text"
+        android:layout_toRightOf="@+id/Z_text"
+        android:layout_toEndOf="@+id/Z_text"
+        android:layout_width="40dp" />
+
+    <EditText
+        android:id="@+id/A_text"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:selectAllOnFocus="true"
+        android:inputType="number"
+        android:layout_alignBaseline="@+id/Sym_text"
+        android:layout_alignBottom="@+id/Sym_text"
+        android:layout_toRightOf="@+id/A_view"
+        android:layout_toEndOf="@+id/A_view"
+        android:textAlignment="center"
+        android:gravity="center_vertical|center"
+        android:singleLine="false" />
+
+    <EditText
+        android:id="@+id/Sym_text"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:selectAllOnFocus="true"
+        android:inputType="number"
+        android:layout_below="@+id/mass_view"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:gravity="center_vertical|center"
+        android:clickable="false" />
+    <EditText
+        android:id="@+id/Z_text"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:selectAllOnFocus="true"
+        android:inputType="number"
+        android:layout_below="@+id/mass_text"
+        android:layout_toRightOf="@+id/mass_view"
+        android:layout_toEndOf="@+id/mass_view"
+        android:layout_width="100dp"
+        android:textAlignment="center"
+        android:gravity="center_vertical|center" />
+
+
+    <TextView
+       android:id="@+id/BEA_view"
+        android:layout_height="40dp"
+        android:gravity="center_vertical|center_horizontal"
+       android:text="@string/BEA_label"
+       android:textSize="20sp"
+        android:layout_below="@+id/A_view"
+        android:layout_centerHorizontal="true"
+        android:layout_width="120dp" />
+
+    <TextView
+        android:id="@+id/Z_view"
+        android:layout_height="40dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/Z_label"
+        android:textSize="20sp"
+        android:layout_width="40dp"
+        android:layout_below="@+id/mass_view"
+        android:layout_toLeftOf="@+id/Z_text"
+        android:layout_toStartOf="@+id/Z_text" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_height="40dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/Sn_label"
+        android:textSize="20sp"
+        android:layout_width="120dp"
+        android:layout_below="@+id/A_view"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:id="@+id/BEA_text"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:selectAllOnFocus="true"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:layout_alignBaseline="@+id/Sn_text"
+        android:layout_alignBottom="@+id/Sn_text"
+        android:layout_alignLeft="@+id/BEA_view"
+        android:layout_alignStart="@+id/BEA_view" />
+
+    <EditText
+        android:id="@+id/Sn_text"
+        android:layout_width="116dp"
+        android:ems="10"
+        android:selectAllOnFocus="true"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:layout_height="40dp"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
+</RelativeLayout>

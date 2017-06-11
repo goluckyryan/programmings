@@ -1,0 +1,353 @@
+[
+    {
+        "outputFile": "D:\\Dropbox\\programmings\\android\\RelativisticKinematics\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 37,
+                    "endOffset": 88
+                },
+                "from": {
+                    "file": "D:\\Dropbox\\programmings\\android\\RelativisticKinematics\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 638,
+                        "endColumn": 37,
+                        "endOffset": 671
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 93,
+                    "endColumn": 48,
+                    "endOffset": 137
+                },
+                "from": {
+                    "file": "D:\\Dropbox\\programmings\\android\\RelativisticKinematics\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 676,
+                        "endColumn": 48,
+                        "endOffset": 720
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 142,
+                    "endColumn": 49,
+                    "endOffset": 187
+                },
+                "from": {
+                    "file": "D:\\Dropbox\\programmings\\android\\RelativisticKinematics\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 470,
+                        "endColumn": 49,
+                        "endOffset": 515
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 192,
+                    "endColumn": 45,
+                    "endOffset": 233
+                },
+                "from": {
+                    "file": "D:\\Dropbox\\programmings\\android\\RelativisticKinematics\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 771,
+                        "endColumn": 45,
+                        "endOffset": 812
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 238,
+                    "endColumn": 45,
+                    "endOffset": 279
+                },
+                "from": {
+                    "file": "D:\\Dropbox\\programmings\\android\\RelativisticKinematics\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 725,
+                        "endColumn": 45,
+                        "endOffset": 766
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 284,
+                    "endColumn": 37,
+                    "endOffset": 317
+                },
+                "from": {
+                    "file": "D:\\Dropbox\\programmings\\android\\RelativisticKinematics\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 600,
+                        "endColumn": 37,
+                        "endOffset": 633
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 322,
+                    "endColumn": 60,
+                    "endOffset": 378
+                },
+                "from": {
+                    "file": "D:\\Dropbox\\programmings\\android\\RelativisticKinematics\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 56,
+                        "endColumn": 60,
+                        "endOffset": 112
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 383,
+                    "endColumn": 43,
+                    "endOffset": 422
+                },
+                "from": {
+                    "file": "D:\\Dropbox\\programmings\\android\\RelativisticKinematics\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 327,
+                        "endColumn": 43,
+                        "endOffset": 366
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 427,
+                    "endColumn": 45,
+                    "endOffset": 468
+                },
+                "from": {
+                    "file": "D:\\Dropbox\\programmings\\android\\RelativisticKinematics\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 281,
+                        "endColumn": 45,
+                        "endOffset": 322
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 473,
+                    "endColumn": 52,
+                    "endOffset": 521
+                },
+                "from": {
+                    "file": "D:\\Dropbox\\programmings\\android\\RelativisticKinematics\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 117,
+                        "endColumn": 52,
+                        "endOffset": 165
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 526,
+                    "endColumn": 48,
+                    "endOffset": 570
+                },
+                "from": {
+                    "file": "D:\\Dropbox\\programmings\\android\\RelativisticKinematics\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 232,
+                        "endColumn": 48,
+                        "endOffset": 276
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 575,
+                    "endColumn": 51,
+                    "endOffset": 622
+                },
+                "from": {
+                    "file": "D:\\Dropbox\\programmings\\android\\RelativisticKinematics\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 371,
+                        "endColumn": 51,
+                        "endOffset": 418
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 627,
+                    "endColumn": 79,
+                    "endOffset": 702
+                },
+                "from": {
+                    "file": "D:\\Dropbox\\programmings\\android\\RelativisticKinematics\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 520,
+                        "endColumn": 79,
+                        "endOffset": 595
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 707,
+                    "endColumn": 61,
+                    "endOffset": 764
+                },
+                "from": {
+                    "file": "D:\\Dropbox\\programmings\\android\\RelativisticKinematics\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 170,
+                        "endColumn": 61,
+                        "endOffset": 227
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 769,
+                    "endColumn": 79,
+                    "endOffset": 844
+                },
+                "from": {
+                    "file": "D:\\Dropbox\\programmings\\android\\RelativisticKinematics\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 817,
+                        "endColumn": 79,
+                        "endOffset": 892
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 849,
+                    "endColumn": 46,
+                    "endOffset": 891
+                },
+                "from": {
+                    "file": "D:\\Dropbox\\programmings\\android\\RelativisticKinematics\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 423,
+                        "endColumn": 46,
+                        "endOffset": 465
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 896,
+                    "endLine": 24,
+                    "endColumn": 12,
+                    "endOffset": 1182
+                },
+                "from": {
+                    "file": "D:\\Dropbox\\programmings\\android\\RelativisticKinematics\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 191,
+                        "endLine": 12,
+                        "endColumn": 12,
+                        "endOffset": 481
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 25,
+                    "startColumn": 4,
+                    "startOffset": 1187,
+                    "endLine": 27,
+                    "endColumn": 12,
+                    "endOffset": 1342
+                },
+                "from": {
+                    "file": "D:\\Dropbox\\programmings\\android\\RelativisticKinematics\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 522,
+                        "endLine": 17,
+                        "endColumn": 12,
+                        "endOffset": 679
+                    }
+                }
+            }
+        ]
+    }
+]

@@ -9,9 +9,9 @@
 #include <stdlib.h>  //atoi
 using namespace std;
 
-string dataPath="/home/goluckyryan/Dropbox/programmings/cpp/CppLibrary/mass.txt";
-//string dataPath="/Users/mobileryan/Dropbox/programmings/Cpp/CppLibrary/mass12.txt";
-//string dataPath="mass12.txt";
+//string dataPath="/home/goluckyryan/Dropbox/programmings/cpp/CppLibrary/mass16.txt";
+//string dataPath="/Users/mobileryan/Dropbox/programmings/Cpp/CppLibrary/mass16.txt";
+string dataPath="mass16.txt";
 
 // about the mass12.txt
 // Mass Excess = (ATOMIC MASS - A)*amu | e.g. n : (1.088664.91585E-6-1)*amu
@@ -24,7 +24,7 @@ double Nucleus_Mass(int Z, int A)
   string line;
   int    lineNum=0;
   int    list_A, list_Z;
-  double list_BEA, mass;
+  double list_BEA, mass, massError;
 
   ifstream myfile;
   int    flag=0;
@@ -50,9 +50,11 @@ double Nucleus_Mass(int Z, int A)
       if (lineNum >= numLineStart ){
         list_Z     = atoi((line.substr(10,5)).c_str());
       	list_A     = atoi((line.substr(15,5)).c_str());
-      	list_BEA = atof((line.substr(55,11)).c_str());
+      	list_BEA   = atof((line.substr(54,11)).c_str());
+        
       	if ( A == list_A && Z == list_Z) {
       		mass = list_Z*mp + (list_A-list_Z)*mn - list_BEA/1000*list_A;
+            massError = atof((line.substr(65,7)).c_str());
      		flag = 1;
       	}else if ( list_A > A) {
           break;

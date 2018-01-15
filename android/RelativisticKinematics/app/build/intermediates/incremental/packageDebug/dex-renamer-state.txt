@@ -1,4 +1,7 @@
-#Fri Sep 30 22:07:03 JST 2016
-base.0=D\:\\Dropbox\\programmings\\android\\RelativisticKinematics\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+#Tue Jun 13 03:40:41 JST 2017
+base.0=C\:\\Users\\user\\Desktop\\RelativisticKinematics\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_be0114c67309ea7e3f4455c86fdd741fb35e6bb7
+renamed.1=classes2.dex
 renamed.0=classes.dex
-file.0=D\:\\Dropbox\\programmings\\android\\RelativisticKinematics\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
+file.1=C\:\\Users\\user\\Desktop\\RelativisticKinematics\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_721c2e5094ccc4d0fcff2b74c52df5b770aa7861\\classes.dex
+base.1=C\:\\Users\\user\\Desktop\\RelativisticKinematics\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_721c2e5094ccc4d0fcff2b74c52df5b770aa7861
+file.0=C\:\\Users\\user\\Desktop\\RelativisticKinematics\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_be0114c67309ea7e3f4455c86fdd741fb35e6bb7\\classes.dex

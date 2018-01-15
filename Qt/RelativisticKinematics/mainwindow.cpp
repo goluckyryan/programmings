@@ -5,10 +5,10 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
     nu(NULL),
-    di(NULL)
+    knockoutDialog(NULL)
 {
     ui->setupUi(this);
-    di = new Dialog(this);
+    knockoutDialog = new KnockoutDialog(this);
 
     ui->lineEdit_Z->setText("1");
     ui->lineEdit_A->setText("1");
@@ -21,7 +21,7 @@ MainWindow::~MainWindow()
 {
     delete ui;
     delete nu;
-    delete di;
+    delete knockoutDialog;
 }
 
 void MainWindow::on_actionNew_Windows_triggered()
@@ -36,13 +36,13 @@ void MainWindow::on_actionNew_Windows_triggered()
     //di->show();
 
     //once instance
-    if( di->isHidden()){
+    if( knockoutDialog->isHidden()){
         //di->setGeometry(this->geometry().width(), 50, di->geometry().width(), di->geometry().height() );
-        di->show();
+        knockoutDialog->show();
     }
 
-    if( di->exec() == QDialog::Accepted){
-        qDebug() << di->test;
+    if( knockoutDialog->exec() == QDialog::Accepted){
+        qDebug() << knockoutDialog->test;
     }
 
 }

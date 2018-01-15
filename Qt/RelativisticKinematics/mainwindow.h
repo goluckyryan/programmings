@@ -5,7 +5,7 @@
 #include <QFile>
 #include <QDateTime>
 #include "nucleus.h"
-#include "dialog.h"
+#include "knockoutdialog.h"
 #include "fourvector.h"
 #include "lorentzian.h"
 
@@ -49,7 +49,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     Nucleus *nu;
-    Dialog *di;
+    KnockoutDialog *knockoutDialog;
     char str[200];
     bool massFlag; // calculated mass or not.
 

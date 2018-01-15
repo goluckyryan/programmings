@@ -2,49 +2,22 @@
 <items version="2" >
 
     <item
-        is-multidex="false"
-        jar="C:\Users\goluc\StudioProjects\RelativisticKinematics\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="C:\Users\user\Desktop\RelativisticKinematics\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
         optimize="true"
-        revision="24.0.1"
-        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
-        <dex dex="C:\Users\goluc\StudioProjects\RelativisticKinematics\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.4.0_1306d1b948e99d9d1afd00df6b0ae135a29e92e1.jar" />
+        revision="26.0.0"
+        sha1="1127a7f7990b5f8b93f8f6549910dd623a7feec1">
+        <dex dex="C:\Users\user\Desktop\RelativisticKinematics\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_721c2e5094ccc4d0fcff2b74c52df5b770aa7861\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="D:\Dropbox\programmings\android\RelativisticKinematics\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="C:\Users\user\Desktop\RelativisticKinematics\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
         optimize="true"
-        revision="24.0.1"
-        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
-        <dex dex="D:\Dropbox\programmings\android\RelativisticKinematics\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.4.0_64a60d7dc8edb0e49512354675dbec255d122ee3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\goluc\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.1"
-        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
-        <dex dex="C:\Users\goluc\StudioProjects\RelativisticKinematics\app\build\intermediates\pre-dexed\debug\support-annotations-23.4.0_484b2c9a3395d102da81e7bb411becbb486759f6.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\goluc\StudioProjects\RelativisticKinematics\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.1"
-        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
-        <dex dex="C:\Users\goluc\StudioProjects\RelativisticKinematics\app\build\intermediates\pre-dexed\debug\internal_impl-23.4.0_e70256183eea98fc599a2a381048be078371122e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Dropbox\programmings\android\RelativisticKinematics\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.1"
-        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
-        <dex dex="D:\Dropbox\programmings\android\RelativisticKinematics\app\build\intermediates\pre-dexed\debug\internal_impl-23.4.0_3f3067589a0f3502ca5f30f4a43d5dd028f3e310.jar" />
+        revision="26.0.0"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="C:\Users\user\Desktop\RelativisticKinematics\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_be0114c67309ea7e3f4455c86fdd741fb35e6bb7\classes.dex" />
     </item>
 
 </items>

@@ -80,6 +80,7 @@ void Mass_cal(int A, int Z){
    double BE = (Z*mp + (A-Z)*mn - mass)/A;
 
    if (mass > 0){
+     printf(" using mass data : %s \n", "mass16.txt");
      printf(" mass of \e[47m\e[31m%3d%s\e[m nucleus (Z,A)=(%3d,%3d) is \e[47m\e[31m%12.5f\e[m MeV, BE/A=%7.5f\n",A,name.c_str(), Z,A, mass, BE);     
      printf(" mass in amu : %12.5f u\n",mass/amu);
      printf(" S1p: %8.4f| S1n: %8.4f| S(2H ): %8.4f| S1p1n : %8.4f\n", SpBreak(Z,A, 0, 1), SpBreak(Z,A, 1, 0), Sp(Z,A, 1, 1), SpBreak(Z,A,1,1));

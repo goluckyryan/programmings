@@ -14,24 +14,24 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    dialog.cpp \
     nucleus.cpp \
     qcustomplot.cpp \
     matrix.cpp \
     fourvector.cpp \
-    lorentzian.cpp
+    lorentzian.cpp \
+    knockoutdialog.cpp
 
 HEADERS  += mainwindow.h \
     constant.h \
-    dialog.h \
     nucleus.h \
     qcustomplot.h \
     matrix.h \
     fourvector.h \
-    lorentzian.h
+    lorentzian.h \
+    knockoutdialog.h
 
 FORMS    += mainwindow.ui \
-    dialog.ui
+    knockoutdialog.ui
 
 DISTFILES += \
     mass12.txt

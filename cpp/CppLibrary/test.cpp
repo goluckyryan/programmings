@@ -3,6 +3,7 @@
 //#include "fourVector.h"
 
 #include <stdio.h> //printf
+#include "isotopes.h"
 
 //pass by value, return value
 //the object is the symbol, the symbol be copied.
@@ -43,16 +44,17 @@ int main(){
 //   (mat1^vk).print("mat.v1");
 
 
-	int a = 0;
-	int *p = new int;
-	*p = 0;
+//	int a = 0;
+//	int *p = new int;
+//	*p = 0;
+//	
+//	printf("%d, %d\n", a, *p);
+//	
+//	
+//	printf("%d, %d\n", func(a), *gunc(p));
 	
-	printf("%d, %d\n", a, *p);
-	
-	
-	printf("%d, %d\n", func(a), *gunc(p));
-	
-	
+
+   Isotopes nucleus("12C");
    
    return 0;
 

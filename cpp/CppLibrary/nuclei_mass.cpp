@@ -1,6 +1,6 @@
 #include "nuclei_mass.h"
 #include "constant.h"
-#include "nuclei_mass.h"
+//#include "isotopes.h"
 #include "fourVector.h"
 #include "RotMatrix4D.h"
 #include "lorentzian.h"
@@ -73,7 +73,7 @@ void Usage(){
 }
 
 void Mass_cal(int A, int Z){
-
+    
    double mass = Nucleus_Mass(Z,A);
    string name = Nucleus_Name(Z,A);
 

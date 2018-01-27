@@ -53,9 +53,16 @@ int main(){
 //	
 //	printf("%d, %d\n", func(a), *gunc(p));
 	
+  Isotopes test(12, 6);
 
-   Isotopes nucleus("12C");
+  printf(" mass = %f, name = %s \n", test.Mass, test.Name.c_str());
+
+   Isotopes nucleus("209Bi");
+   printf(" mass = %f, name = %s \n", nucleus.Mass, nucleus.Name.c_str());
+
+   printf(" Sp = %f \n",  nucleus.CalSp(1,0));
    
+
    return 0;
 
 }

@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <string>
 #include <stdio.h>
 #include "constant.h" // amu
@@ -24,12 +25,11 @@ public:
    int A, Z;
    double Mass, MassError, BEA;
    string Name, Symbol;
-   double Sp, Sn;
    string dataSource;
    
    Isotopes(int a, int z);
    Isotopes(string name);
-   void CalSp(int na, int nz);
+   double CalSp(int na, int nz);
    
 private:
    void FindMassByAZ(int a, int z); // give mass, massError, BEA, Name, Symbol;
@@ -40,75 +40,20 @@ private:
 Isotopes::Isotopes(int a, int z){
     this->A = a;
     this->Z = z;
-    
     FindMassByAZ(a,z); 
-    
-    this->Sp = 0;
-    this->Sn = 0;
-    
     this->dataSource = dataPath;
 }
 
 Isotopes::Isotopes(string name){
     
-    string temp = name;
-    
-    printf("%s \n", temp.c_str());
-    
-    temp.replace(temp.begin(), temp.end(), '0', ' '); 
-    temp.replace(temp.begin(), temp.end(), '1', ' ');
-    temp.replace(temp.begin(), temp.end(), '2', ' ');
-    temp.replace(temp.begin(), temp.end(), '3', ' ');
-    temp.replace(temp.begin(), temp.end(), '4', ' ');
-    temp.replace(temp.begin(), temp.end(), '5', ' ');
-    temp.replace(temp.begin(), temp.end(), '6', ' ');
-    temp.replace(temp.begin(), temp.end(), '7', ' ');
-    temp.replace(temp.begin(), temp.end(), '8', ' ');
-    temp.replace(temp.begin(), temp.end(), '9', ' ');
-
-    printf("%s \n", temp.c_str());
-
-    for(int i=0; temp[i]; i++)
-     if(temp[i] == ' ') temp[i] = '\b';
-
-    this->Symbol = temp;
-
-    temp = name;
-    temp.replace(temp.begin(), temp.end(), this->Symbol.c_str(), ' ');
-    
-    this->A = atoi(temp.c_str());
-    
-    printf(" Symbol = %s , Mass = %d\n", this->Symbol.c_str(), this->A);
-    
     FindMassByName(name); 
-    
-    this->Sp = 0;
-    this->Sn = 0;
-    
     this->dataSource = dataPath;
 }
 
 void Isotopes::FindMassByAZ(int a, int z){
-    
-}
-
-void Isotopes::FindMassByName(string name){
-    
-}
-
-void Isotopes::CalSp(int na, int nz){
-    
-}
-
-
-
-
-double Nucleus_Mass(int Z, int A)
-{
   string line;
   int    lineNum=0;
   int    list_A, list_Z;
-  double list_BEA, mass, massError;
 
   ifstream myfile;
   int    flag=0;
@@ -123,10 +68,8 @@ double Nucleus_Mass(int Z, int A)
 
   myfile.open(dataPath.c_str());
 
-  if (myfile.is_open())
-  {
-    while (/*! myfile.eof() &&*/ flag == 0 && lineNum <numLineEnd)
-    {
+  if (myfile.is_open()) {
+    while (/*! myfile.eof() &&*/ flag == 0 && lineNum <numLineEnd){
       lineNum ++ ;
       //printf("%3d  ",lineNum);
       getline (myfile,line);
@@ -134,110 +77,125 @@ double Nucleus_Mass(int Z, int A)
       if (lineNum >= numLineStart ){
         list_Z     = atoi((line.substr(10,5)).c_str());
       	list_A     = atoi((line.substr(15,5)).c_str());
-      	list_BEA   = atof((line.substr(54,11)).c_str());
-        
+
       	if ( A == list_A && Z == list_Z) {
-      		mass = list_Z*mp + (list_A-list_Z)*mn - list_BEA/1000*list_A;
-            massError = atof((line.substr(65,7)).c_str());
+            this->BEA       = atof((line.substr(54,11)).c_str());
+      		this->Mass      = list_Z*mp + (list_A-list_Z)*mn - this->BEA/1000*list_A;
+            this->MassError = atof((line.substr(65,7)).c_str());
+            this->Symbol    = line.substr(20,2);
+            ostringstream ss;
+            ss << A << this->Symbol;
+            this->Name      = ss.str();
      		flag = 1;
       	}else if ( list_A > A) {
+          this->BEA  = -404;
+          this->Mass = -404;
+          this->MassError = -404;
+          this->Symbol = "non";
+          this->Name   = "non";
           break;
         }
 
       }
     }
     myfile.close();
+  }else {
+    printf("Unable to open %s\n", dataPath.c_str());
   }
-  else printf("Unable to open %s\n", dataPath.c_str());
-
-  if (flag == 1){
-    return mass;
-  }else{
-  	return -404;
-  }
-
-  return 0;
 }
 
-string Nucleus_Name(int Z, int A){
+void Isotopes::FindMassByName(string name){
 
-  string line, name;
-  int    lineNum=0;
-  int    list_A, list_Z;
-  ifstream myfile;
-  int    flag=0;
+    // done seperate the Mass number and the name 
+    string temp = name;
+    int lastDigit = 0;
 
-  int numLineStart = 40;
-  int numLineEnd  = 3392;
-
-  if ( A >= 50 && A < 100) numLineStart = 545;
-  if ( A >=100 && A < 150) numLineStart = 1100;
-  if ( A >=150 && A < 200) numLineStart = 1899;
-  if ( A >=200 ) numLineStart = 2622;
-
-  myfile.open(dataPath.c_str());
-
-  if (myfile.is_open())
-  {
-    while ( flag == 0 && lineNum <numLineEnd)
-    {
-      lineNum ++ ;
-      getline (myfile,line);
-
-      if (lineNum >= numLineStart ){
-      	list_Z     = atoi((line.substr(10,5)).c_str());
-      	list_A     = atoi((line.substr(15,5)).c_str());
-      	name       = line.substr(19,3);
-      	if ( A == list_A && Z == list_Z) {
-     		   flag = 1;
-      	}else if ( list_A > A) {
-          break;
-        }
-
-      }
+    for(int i=0; temp[i]; i++){
+      if(temp[i] == '0') lastDigit =  i; 
+      if(temp[i] == '1') lastDigit =  i; 
+      if(temp[i] == '2') lastDigit =  i; 
+      if(temp[i] == '3') lastDigit =  i; 
+      if(temp[i] == '4') lastDigit =  i; 
+      if(temp[i] == '5') lastDigit =  i; 
+      if(temp[i] == '6') lastDigit =  i; 
+      if(temp[i] == '7') lastDigit =  i; 
+      if(temp[i] == '8') lastDigit =  i; 
+      if(temp[i] == '9') lastDigit =  i; 
     }
-    myfile.close();
-  }
-  else printf("Unable to open %s\n", dataPath.c_str());
 
-  if( isspace(name[0])) name.erase(0, 1);
+    this->Symbol = temp.erase(0,  lastDigit +1);
 
-  if (flag == 1){
-      return name;
-  }else{
-  	   return "---";
-  }
+    temp = name;
+    int len = temp.length();
+    temp = temp.erase(lastDigit+1, len);
+    
+    this->A = atoi(temp.c_str());    
+    //printf(" Symbol = %s , Mass = %d\n", this->Symbol.c_str(), this->A);
 
+    // find the nucleus in the data
+    string line;
+    int    lineNum=0;
+    int    list_A;
+    string list_symbol;
+
+    ifstream myfile;
+    int    flag=0;
+
+    int numLineStart = 40;
+    int numLineEnd  = 3392;
+
+    if ( this->A >= 50 && this->A < 100) numLineStart = 447; //545;
+    if ( this->A >=100 && this->A < 150) numLineStart = 1072;//1100;
+    if ( this->A >=150 && this->A < 200) numLineStart = 1833;//1899;
+    if ( this->A >=200 ) numLineStart = 2534;//2622;
+
+    myfile.open(dataPath.c_str());
+
+    if (myfile.is_open()) {
+      while (/*! myfile.eof() &&*/ flag == 0 && lineNum <numLineEnd){
+        lineNum ++ ;
+        //printf("%3d  ",lineNum);
+        getline (myfile,line);
+
+        if (lineNum >= numLineStart ){
+          list_symbol  = line.substr(20,2);
+          list_A       = atoi((line.substr(15,5)).c_str());
+
+          //printf(" A = %d, Sym = %s \n", list_A, list_symbol.c_str());
+
+          if ( this->A == list_A &&  this->Symbol == list_symbol) {
+            this->Z         = atoi((line.substr(10,5)).c_str());
+            this->BEA       = atof((line.substr(54,11)).c_str());
+      		this->Mass      = this->Z*mp + (list_A-this->Z)*mn - this->BEA/1000*list_A;
+            this->MassError = atof((line.substr(65,7)).c_str());
+            ostringstream ss;
+            ss << this->A << this->Symbol;
+            this->Name      = ss.str();
+     		flag = 1;
+          }else if ( list_A > this->A) {
+            this->BEA  = -404;
+            this->Mass = -404;
+            this->MassError = -404;
+            this->Symbol = "non";
+            this->Name   = "non";
+            break;
+          }
+
+        }
+      }
+      myfile.close();
+    }else {
+      printf("Unable to open %s\n", dataPath.c_str());
+    }
 }
 
-double Sp (int Z, int A, int Nn, int Np){
+double Isotopes::CalSp(int Np, int Nn){
+  Isotopes nucleusD(A - Np - Nn, Z - Np);  
 
-  if ( A == 1 ) return 0;
-
-  double massP, massD1, massD2;
-
-  massP = Nucleus_Mass(Z,A);
-  massD1 = Nucleus_Mass(Z-Np,A-Np-Nn);
-  massD2 = Nucleus_Mass(Np, Np+Nn);
-
-  if ( massP != -404 && massD1 != -404 && massD2 != -404) {
-    return massD1 + massD2 - massP;
+  if( nucleusD.Mass != -404){
+	return nucleusD.Mass + Nn*mn + Np*mp - this->Mass;
   }else{
-    return -0.000;
-  }
-
-}
-
-double SpBreak (int Z, int A, int Nn, int Np){
-  double mass, massD;
-
-  mass  = Nucleus_Mass(Z,A);
-  massD = Nucleus_Mass(Z-Np, A-Np-Nn);
-
-  if( mass != -404 && massD != -404){
-    return massD + Nn*mn + Np*mp - mass;
-  }else{
-    return -0.000;
+	return -404;
   }
 }
 

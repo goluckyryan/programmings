@@ -1,9 +1,0 @@
-1) Download JDK
-2) mkae sure the jdk..\..\bin in included in window enviroment varible
-3) open cmd or power-shell
-4) go to source folder
-	javac.exe HelloWorld.javac
----------- done
-
-################## to run
-1) java -cp . HelloWorld

@@ -29,6 +29,43 @@ int checkExistElement(vector<string> vec, string data){
   return 0;
 }
 
+bool is_number(const string& s){
+    string::const_iterator it = s.begin();
+    while (it != s.end() && isdigit(*it)) ++it;
+    return !s.empty() && it == s.end();
+}
+
+int JConvertor(const string jStr){
+
+  if( jStr == "0") return  0;
+  if( jStr == "1") return  1;
+  if( jStr == "2") return  2;
+  if( jStr == "3") return  3;
+  if( jStr == "4") return  4;
+  if( jStr == "5") return  5;
+  if( jStr == "6") return  6;
+  if( jStr == "7") return  7;
+  if( jStr == "8") return  8;
+  if( jStr == "9") return  9;
+  if( jStr == "a") return 10;
+  if( jStr == "b") return 11;
+  if( jStr == "c") return 12;
+  if( jStr == "d") return 13;
+  if( jStr == "e") return 14;
+  if( jStr == "f") return 15;
+  if( jStr == "g") return 16;
+  if( jStr == "h") return 17;
+  if( jStr == "i") return 18;
+  if( jStr == "j") return 19;
+  if( jStr == "k") return 20;
+  if( jStr == "l") return 21;
+  if( jStr == "m") return 22;
+  if( jStr == "n") return 23;
+
+  return -1;
+}
+
+
 string StateConvertor(int n, int l, int j){
 
   string output;
@@ -357,12 +394,14 @@ ReadLSFFile::ReadLSFFile(string readFile, double maxEnergy, double minSF, int mo
     //---- extract
     if( startExtractFlag ){
       if( line.length() < 2 ) continue;
-      
+
       double twoSpin;
       double eng;
       if( mode == 0 ){
         eng = atof(line.substr(29, 8).c_str());
-        twoSpin = atof(line.substr(19,2).c_str());
+        twoSpin = JConvertor(line.substr(20,1));
+        //twoSpin = atof(line.substr(20,1).c_str());
+        //printf("|%s|, %.0f\n", line.substr(20,1).c_str(), twoSpin);
       }else{
         eng = atof(line.substr(11, 8).c_str());
         twoSpin = atof(line.substr(1,2).c_str());
@@ -566,6 +605,7 @@ int main(int argc, char * argv[]){
   
   for( int j = 0; j < energySF[i].combinedEnergySF.size(); j++){
     double twoSpin = energySF[i].combinedEnergySF[j][0];
+
     if( fmod(twoSpin, 2) == 0.0 ){
       fprintf(file_out, "%8.0f,", twoSpin/2.);
     }else{

@@ -1,7 +1,0 @@
-/home/goluckyryan/Dropbox/programmings/Geant4/Hodo-build/CMakeFiles/install.dir
-/home/goluckyryan/Dropbox/programmings/Geant4/Hodo-build/CMakeFiles/list_install_components.dir
-/home/goluckyryan/Dropbox/programmings/Geant4/Hodo-build/CMakeFiles/rebuild_cache.dir
-/home/goluckyryan/Dropbox/programmings/Geant4/Hodo-build/CMakeFiles/Hadr03.dir
-/home/goluckyryan/Dropbox/programmings/Geant4/Hodo-build/CMakeFiles/install/strip.dir
-/home/goluckyryan/Dropbox/programmings/Geant4/Hodo-build/CMakeFiles/install/local.dir
-/home/goluckyryan/Dropbox/programmings/Geant4/Hodo-build/CMakeFiles/edit_cache.dir

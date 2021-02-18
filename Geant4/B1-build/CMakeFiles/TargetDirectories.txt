@@ -1,2 +1,0 @@
-/home/goluckyryan/Dropbox/programmings/Geant4/B1-build/CMakeFiles/B1.dir
-/home/goluckyryan/Dropbox/programmings/Geant4/B1-build/CMakeFiles/exampleB1.dir
